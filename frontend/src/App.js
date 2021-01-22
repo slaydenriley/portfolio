@@ -1,28 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import fetchUsers from './actions/fetchUsers'
+import UsersContainer from './containers/usersContainer'
 
 
 class App extends Component {
-  componentDidMount() {
-    this.props.fetchUsers({type: 'FETCH_USERS', payload: 'UserAccount'})
-  }
 
   render() {
     return (
       <div className="App">
-        Hi, I'm Riley.
+        <UsersContainer />
       </div>
     )
   };
 };
 
-/*
-const mapStateToProps = (state) => {
-  return {
-    users: state.users
-  }
-}
-*/
-
-export default connect(null, {fetchUsers})(App);
+export default App;
