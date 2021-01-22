@@ -4,7 +4,7 @@ class ProjectSerializer
   end
 
   def to_serialized_json
-    options = {}
+    options = {:only => [:name, :link, :description, :user_id]}
 
     @listing.to_json(options)
 
