@@ -8,7 +8,7 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 
 // Set Up Store
-let reducer = userReducer()
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(userReducer, composeEnhancers(applyMiddleware(thunk)))
 

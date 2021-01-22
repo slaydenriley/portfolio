@@ -1,5 +1,11 @@
 import React from 'react'
 
-export default class Users extends React.Component {
-
+const Users = (props) => {
+  return (
+    <div>
+      {props.user.map(user => <li key={user.id}>{user.name})</li>)}
+    </div>
+  )
 }
+
+export default Users
