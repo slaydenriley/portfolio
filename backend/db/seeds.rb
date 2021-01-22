@@ -25,7 +25,7 @@ riley = User.create(
   description: "My name is Riley Slayden and this is my portfolio",
   password_digest: "#{User.digest('codydog')}")
 
-## Create Listings
+## Create Projects
 gigger = riley.projects.build(
   name: "Gigger",
   description: "Very nice banjo for sale!",
@@ -37,6 +37,20 @@ gigger_comment = gigger.project_comments.build(
   content: "Hey, this is a comment. Really nice project!"
 )
 
+## Create Posts
+post = riley.posts.build(
+  title: "This is my first blog post!",
+  content: "Hey, this is the content of this first blog post. Enjoy!"
+)
+
+post_comment = post.post_comments.build(
+  author_name: "Morgan Hubbard",
+  author_email: "mbhubbard@gmail.com",
+  content: "First comment on a first blog post"
+)
+
 riley.save
 gigger.save
 gigger_comment.save
+post.save
+post_comment.save
