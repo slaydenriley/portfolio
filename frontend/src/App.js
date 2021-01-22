@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import Home from './components/Home.js';
+import fetchUsers from './actions/fetchUsers'
 
 
 class App extends Component {
   componentDidMount() {
-    fetch('http://localhost:3001/users')
-    .then(resp => resp.json())
-    .then(data => console.log(data))
+    this.props.fetchUsers({type: 'FETCH_USERS', payload: 'UserAccount'})
   }
 
   render() {
@@ -18,4 +18,12 @@ class App extends Component {
   };
 };
 
-export default App;
+/*
+const mapStateToProps = (state) => {
+  return {
+    users: state.users
+  }
+}
+*/
+
+export default connect(null, {fetchUsers})(App);
