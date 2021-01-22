@@ -44,10 +44,10 @@ class ProjectCommentsController < ApplicationController
 
   def project_comments_params
     params.require(:project_comment).permit(
-      :name,
-      :link,
-      :description,
-      :user_id
+      :author_name,
+      :author_email,
+      :content,
+      :post_id
     )
   end
 
