@@ -5,7 +5,8 @@ import Home from './components/Home.js';
 class App extends Component {
   render() {
     return (
-      <Home/>
+      <div>
+      </div>
     )
   };
 };
