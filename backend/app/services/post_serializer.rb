@@ -4,7 +4,7 @@ class PostSerializer
   end
 
   def to_serialized_json
-    options = {}
+    options = {:only => [:title, :content, :user_id]}
 
     @listing.to_json(options)
 
