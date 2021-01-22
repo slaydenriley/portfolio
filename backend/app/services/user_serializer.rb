@@ -4,10 +4,9 @@ class UserSerializer
   end
 
   def to_serialized_json
-    options = {}
+    options = {:only => [:name, :email, :description]}
 
     @listing.to_json(options)
-
 
   end
 end
