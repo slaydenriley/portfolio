@@ -1,7 +1,16 @@
-export default function userReducer(state = {users: []}, action) {
+export default function userReducer(state = {current: {}}, action) {
   switch(action.type) {
     case 'FETCH_USERS':
-      return {users: action.payload}
+      return {
+        current: action.payload
+      }
+
+
+    case 'LOGIN':
+      return {
+        current: action.user,
+      }
+
     default:
       return state
   }
