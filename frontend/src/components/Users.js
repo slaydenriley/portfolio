@@ -11,5 +11,3 @@ const Users = (props) => {
 }
 
 export default Users
-
-//props.users.map(user => <div key={user.id}><em>Logged in: {user.name}</em></div>)
