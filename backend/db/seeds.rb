@@ -43,6 +43,11 @@ post = riley.posts.build(
   content: "Hey, this is the content of this first blog post. Enjoy!"
 )
 
+second_post = riley.posts.build(
+  title: "This is my SECOND blog post!",
+  content: "Hey, this is the content of this second blog post. Enjoy! Maecenas ac rhoncus nisl. Etiam vehicula pretium pellentesque. Suspendisse rhoncus vulputate sapien, nec volutpat lectus gravida non. Curabitur luctus sodales tellus eget semper. Curabitur aliquet lacus tellus, quis eleifend lorem tempus nec. Aenean convallis tristique mauris, et maximus libero mollis sit amet. Phasellus tincidunt sapien sed arcu tempus bibendum. Sed pharetra justo in nisi posuere ultricies. Maecenas luctus interdum maximus."
+)
+
 post_comment = post.post_comments.build(
   author_name: "Morgan Hubbard",
   author_email: "mbhubbard@gmail.com",
