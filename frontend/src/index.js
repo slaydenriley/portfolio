@@ -7,6 +7,7 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import rootReducer from './reducers/rootReducer.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css'
 
 // Set Up Store
 
