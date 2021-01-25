@@ -5,6 +5,8 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <NavLink to="/">Home</NavLink>
+      <NavLink to="/projects">Projects</NavLink>
+      <NavLink to="/posts">Posts</NavLink>
     </div>
   );
 };
