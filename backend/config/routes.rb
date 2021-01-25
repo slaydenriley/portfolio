@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  resources :post_comments
-  resources :project_comments
-  resources :posts
-  resources :projects
+  resources :posts do
+    resources :post_comments
+  end
+
+  resources :projects do
+    resources :project_comments
+  end
+
+
   resources :users
 
   post '/login',    to: 'sessions#create'
