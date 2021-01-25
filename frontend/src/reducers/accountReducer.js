@@ -1,6 +1,6 @@
-export default function userReducer(state = [], action) {
+export default function accountReducer(state = [], action) {
   switch(action.type) {
-    case 'FETCH_USERS':
+    case 'FETCH_ACCOUNT':
       return action.payload
 
     default:
