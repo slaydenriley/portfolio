@@ -2,11 +2,11 @@ import React from 'react';
 import NavBar from './components/NavBar.js'
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './components/Home';
-import Projects from './components/Projects';
 
 import Login from './components/Login';
 import AccountContainer from './containers/accountContainer';
 import PostsContainer from './containers/postsContainer';
+import ProjectsContainer from './containers/projectsContainer';
 
 const App = (props) => {
   return (
@@ -14,7 +14,7 @@ const App = (props) => {
       <div className="app">
         <NavBar />
         <Route exact path="/" component={Home} />
-        <Route exact path="/projects" component={Projects} />
+        <Route exact path="/projects" component={ProjectsContainer} />
         <Route exact path="/posts" component={PostsContainer} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/account" component={AccountContainer} />
