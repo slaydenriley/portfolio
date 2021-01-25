@@ -6,7 +6,7 @@ const Posts = props => {
       <h1>Blog Posts</h1>
       {props.posts.map(post =>
         <div key={post.id}>
-          <h2>Title: {post.title}</h2>
+          <a href={"/posts/" + post.id}><h2>Title: {post.title}</h2></a>
           <p>{post.content}</p>
         </div>)}
     </div>
