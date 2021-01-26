@@ -1,9 +1,12 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import {Navbar, Nav} from 'react-bootstrap'
 
-const Login = () => {
+const Login = props => {
   return (
     <div>
-      <h1>Login</h1>
+    <h1>Log In</h1>
+    
     </div>
   );
 };
