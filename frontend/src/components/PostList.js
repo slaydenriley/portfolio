@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class Posts extends React.Component {
+class PostList extends React.Component {
 
   render() {
     return (
@@ -11,11 +11,10 @@ class Posts extends React.Component {
           <div key={post.id}>
             <h2>Title: {post.title}</h2>
             <Link key={post.id} to={`/posts/${post.id}`}>Read More...</Link>
-
           </div>)}
       </div>
     );
   }
 }
 
-export default Posts;
+export default PostList;

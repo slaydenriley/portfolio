@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import fetchProjects from '../actions/fetchProjects'
-import Projects from '../components/Projects'
+import ProjectList from '../components/ProjectList'
 
 class ProjectsContainer extends React.Component {
   componentDidMount() {
@@ -12,7 +12,7 @@ class ProjectsContainer extends React.Component {
   render() {
     return (
       <div>
-        <Projects projects={this.props.projects} />
+        <ProjectList projects={this.props.projects} />
       </div>
     )
   }

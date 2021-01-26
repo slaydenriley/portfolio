@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Projects = props => {
+const ProjectList = props => {
   return (
     <div className="projects">
       <h1>Projects</h1>
@@ -13,4 +13,4 @@ const Projects = props => {
   );
 };
 
-export default Projects;
+export default ProjectList;
