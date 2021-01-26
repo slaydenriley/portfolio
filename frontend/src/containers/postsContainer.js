@@ -14,8 +14,7 @@ class PostsContainer extends React.Component {
   render() {
     return (
       <div>
-
-        <Route path={`/posts/:id`} component={ShowPost} posts={this.props.posts}/>
+        <Route path="/posts/:id" render={(routerProps) => <ShowPost {...routerProps} posts={this.props.posts}/>} />
         <PostList posts={this.props.posts} />
       </div>
     )
@@ -28,3 +27,5 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {fetchPosts})(PostsContainer)
+
+//        <Route path="/posts/:id" render={() => <ShowPost posts={this.props.posts}/>}/>
