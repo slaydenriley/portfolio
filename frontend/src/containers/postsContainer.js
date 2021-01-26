@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import fetchPosts from '../actions/fetchPosts'
 import PostList from '../components/PostList'
 import ShowPost from '../components/ShowPost'
-import { Route } from 'react-router-dom'
+import {Route} from 'react-router-dom';
 
 class PostsContainer extends React.Component {
   componentDidMount() {
@@ -14,6 +14,8 @@ class PostsContainer extends React.Component {
   render() {
     return (
       <div>
+
+        <Route path={`/posts/:id`} component={ShowPost} posts={this.props.posts}/>
         <PostList posts={this.props.posts} />
       </div>
     )

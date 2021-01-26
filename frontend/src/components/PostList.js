@@ -11,6 +11,7 @@ class PostList extends React.Component {
           <div key={post.id}>
             <h2>Title: {post.title}</h2>
             <Link key={post.id} to={`/posts/${post.id}`}>Read More...</Link>
+
           </div>)}
       </div>
     );

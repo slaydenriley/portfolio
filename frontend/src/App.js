@@ -7,7 +7,7 @@ import Login from './components/Login';
 import AccountContainer from './containers/accountContainer';
 import PostsContainer from './containers/postsContainer';
 import ProjectsContainer from './containers/projectsContainer';
-import ShowPost from './components/ShowPost'
+
 
 const App = (props) => {
   return (
@@ -15,11 +15,11 @@ const App = (props) => {
       <div className="app">
         <NavBar />
         <Route exact path="/" component={Home} />
-        <Route exact path="/projects" component={ProjectsContainer} />
-        <Route exact path="/posts" component={PostsContainer} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/account" component={AccountContainer} />
-        <Route path="/posts/:id" component={ShowPost} />
+        <Route path="/projects" component={ProjectsContainer} />
+        <Route path="/posts" component={PostsContainer} />
+        <Route path="/login" component={Login} />
+        <Route path="/account" component={AccountContainer} />
+
       </div>
     </Router>
   );
