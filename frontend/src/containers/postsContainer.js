@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 
 import fetchPosts from '../actions/fetchPosts'
 import Posts from '../components/Posts'
+import SinglePost from '../components/singlePost'
+import { Route } from 'react-router-dom'
 
 class PostsContainer extends React.Component {
   componentDidMount() {

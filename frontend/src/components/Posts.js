@@ -1,10 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Posts extends React.Component {
-
-  handleClick = (id) => {
-    console.log(id)
-  }
 
   render() {
     return (
@@ -13,8 +10,8 @@ class Posts extends React.Component {
         {this.props.posts.map(post =>
           <div key={post.id}>
             <h2>Title: {post.title}</h2>
-            <p>{post.content}</p>
-            <button onClick={this.handleClick(post.id)}>Read More...</button>
+            <Link key={post.id} to={`/posts/${post.id}`}>Read More...</Link>
+
           </div>)}
       </div>
     );

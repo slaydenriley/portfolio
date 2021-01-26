@@ -7,6 +7,7 @@ import Login from './components/Login';
 import AccountContainer from './containers/accountContainer';
 import PostsContainer from './containers/postsContainer';
 import ProjectsContainer from './containers/projectsContainer';
+import SinglePost from './components/singlePost'
 
 const App = (props) => {
   return (
@@ -18,6 +19,7 @@ const App = (props) => {
         <Route exact path="/posts" component={PostsContainer} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/account" component={AccountContainer} />
+        <Route path="/posts/:id" component={SinglePost} />
       </div>
     </Router>
   );

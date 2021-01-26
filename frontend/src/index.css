@@ -10,6 +10,6 @@
   text-decoration: none;
 }
 
-.home, .projects, .posts, .account, .login {
+.home, .projects, .posts, .account, .login, .single-post {
   padding: 40px;
 }
