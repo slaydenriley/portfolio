@@ -4,9 +4,13 @@ import {Navbar, Nav} from 'react-bootstrap'
 
 const Login = props => {
   return (
-    <div>
-    <h1>Log In</h1>
-    
+    <div class="login">
+      <h1>Log In</h1>
+        <form>
+          <input type="text" placeholder="Email"></input>
+          <input type="text" placeholder="Password"></input>
+          <input type="submit"></input>
+        </form>
     </div>
   );
 };

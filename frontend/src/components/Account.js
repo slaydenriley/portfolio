@@ -3,7 +3,7 @@ import React from 'react'
 const Account = (props) => {
 
   return (
-    <div>
+    <div class="account">
       <h1>My Account</h1>
 
       {props.account.map(user =>

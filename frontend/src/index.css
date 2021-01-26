@@ -1,1 +1,15 @@
+.navbar a {
+  margin: 5px;
+  color: white;
+}
 
+.navbar a:hover {
+  margin: 5px;
+  color: lightblue;
+  transform: scale(1.1);
+  text-decoration: none;
+}
+
+.home, .projects, .posts, .account, .login {
+  padding: 40px;
+}

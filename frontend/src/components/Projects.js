@@ -2,7 +2,7 @@ import React from 'react';
 
 const Projects = props => {
   return (
-    <div>
+    <div class="projects">
       <h1>Projects</h1>
       {props.projects.map(project =>
         <div key={project.id}>
