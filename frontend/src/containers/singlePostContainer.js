@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 
 import fetchSinglePost from '../actions/fetchSinglePost'
 import ShowPost from '../components/ShowPost'
-import PostComments from '../components/PostComments'
 
 
 class SinglePostContainer extends React.Component {
@@ -16,7 +15,6 @@ class SinglePostContainer extends React.Component {
     return (
       <div>
         <ShowPost post={this.props.post} />
-        <PostComments comments={this.props.post.post_comments}/>
       </div>
     )
   }

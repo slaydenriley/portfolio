@@ -10,6 +10,7 @@ class PostList extends React.Component {
         {this.props.posts.map(post =>
           <div key={post.id}>
             <h2>Title: {post.title}</h2>
+            <em>Comments: {post.post_comments.length}</em><br/>
             <Link key={post.id} to={`/posts/${post.id}`}>Read More...</Link>
 
           </div>)}

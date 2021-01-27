@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import LoginContainer from '../containers/loginContainer'
 import loginUser from '../actions/loginUser'
+import { Redirect } from 'react-router-dom';
 
 //import { NavLink } from 'react-router-dom';
 //import {Navbar, Nav} from 'react-bootstrap'
@@ -23,12 +24,6 @@ class Login extends React.Component {
     event.preventDefault()
     let formData = {user: this.state}
     this.props.loginUser(formData)
-    this.setState({
-      user: {
-        email: '',
-        password: ''
-      }
-    })
   };
 
   render() {
