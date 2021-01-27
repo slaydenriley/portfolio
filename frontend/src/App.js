@@ -7,6 +7,7 @@ import Login from './components/Login';
 import AccountContainer from './containers/accountContainer';
 import PostsContainer from './containers/postsContainer';
 import ProjectsContainer from './containers/projectsContainer';
+import SinglePostContainer from './containers/singlePostContainer';
 
 
 const App = (props) => {
@@ -16,9 +17,10 @@ const App = (props) => {
         <NavBar />
         <Route exact path="/" component={Home} />
         <Route exact path="/projects" component={ProjectsContainer} />
-        <Route path="/posts" component={PostsContainer} />
+        <Route exact path="/posts" component={PostsContainer} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/account" component={AccountContainer} />
+        <Route path="/posts/:id" component={SinglePostContainer} />
 
       </div>
     </Router>

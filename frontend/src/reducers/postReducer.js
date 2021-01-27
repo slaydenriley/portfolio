@@ -3,9 +3,6 @@ export default function postReducer(state = [], action) {
     case 'FETCH_POSTS':
       return action.payload
 
-    case 'FETCH_POST_COMMENTS':
-      return action.payload
-
     default:
       return state
   }
