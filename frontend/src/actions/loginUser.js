@@ -1,6 +1,5 @@
 export default function loginUser(formData) {
     return (dispatch) => {
-      console.log(formData)
         fetch(`http://localhost:3001/login`, {
             headers: {
                 'Content-Type': 'application/json',

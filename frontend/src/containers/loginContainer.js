@@ -5,19 +5,6 @@ import Login from '../components/Login'
 
 class LoginContainer extends React.Component {
 
-  handleChange = (event) => {
-    event.preventDefault()
-    const {name, value} = event.target
-    this.setState({
-      [name]: value
-    })
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault()
-    console.log("hey!")
-  };
-
   render() {
     return (
       <div>

@@ -9,25 +9,26 @@ import loginUser from '../actions/loginUser'
 class Login extends React.Component {
 
   state = {
-    user: {
-      email: '',
-      password: ''
-    }
+    email: '',
+    password: ''
   }
 
-  handleChange = (event) => {
+  handleChange = (event) =>  {
     this.setState({
-      user: {
-        [event.target.name]: event.target.value
-      }
+      [event.target.name]: event.target.value
     })
   }
 
   handleSubmit = (event) => {
-    console.log(this.state)
     event.preventDefault()
-    let formData = {...this.state}
+    let formData = {user: this.state}
     this.props.loginUser(formData)
+    this.setState({
+      user: {
+        email: '',
+        password: ''
+      }
+    })
   };
 
   render() {

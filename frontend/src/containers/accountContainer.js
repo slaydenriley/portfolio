@@ -6,7 +6,7 @@ import Account from '../components/Account'
 
 class AccountContainer extends React.Component {
   componentDidMount() {
-    this.props.fetchAccount()
+    //this.props.fetchAccount()
   }
 
   render() {
