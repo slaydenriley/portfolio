@@ -8,11 +8,3 @@ export default function fetchSinglePost(id) {
     }))
   }
 }
-
-
-/* (post => dispatch({
-  type: 'FETCH_SINGLE_POST',
-  payload: post
-}))
-
-*/

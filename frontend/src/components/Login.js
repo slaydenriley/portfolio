@@ -1,18 +1,50 @@
 import React from 'react';
+import {connect} from 'react-redux'
+import LoginContainer from '../containers/loginContainer'
+import loginUser from '../actions/loginUser'
+
 //import { NavLink } from 'react-router-dom';
 //import {Navbar, Nav} from 'react-bootstrap'
 
-const Login = props => {
-  return (
-    <div className="login">
-      <h1>Log In</h1>
-        <form>
-          <input type="text" placeholder="Email"></input>
-          <input type="text" placeholder="Password"></input>
-          <input type="submit"></input>
-        </form>
-    </div>
-  );
-};
+class Login extends React.Component {
 
-export default Login;
+  state = {
+    user: {
+      email: '',
+      password: ''
+    }
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      user: {
+        [event.target.name]: event.target.value
+      }
+    })
+  }
+
+  handleSubmit = (event) => {
+    console.log(this.state)
+    event.preventDefault()
+    let formData = {...this.state}
+    this.props.loginUser(formData)
+  };
+
+  render() {
+    return (
+      <div className="login">
+        <h1>Login</h1>
+        <form onSubmit={this.handleSubmit}>
+
+          <input type='text' placeholder='Email' value={this.props.email} name="email" onChange={this.handleChange}/><br/>
+
+          <input type='password' placeholder='Password' value={this.props.password} name="password" onChange={this.handleChange}/><br/>
+          <input type="submit"/>
+        </form>
+      </div>
+    )
+  }
+}
+
+
+export default connect(null, {loginUser})(Login)
