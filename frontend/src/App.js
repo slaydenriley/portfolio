@@ -10,20 +10,24 @@ import SinglePostContainer from './containers/singlePostContainer';
 import LoginContainer from './containers/loginContainer';
 
 
-const App = (props) => {
-  return (
-    <Router>
-      <div className="app">
-        <NavBar />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/projects" component={ProjectsContainer} />
-        <Route exact path="/posts" component={PostsContainer} />
-        <Route exact path="/login" component={LoginContainer} />
-        <Route path="/posts/:id" component={SinglePostContainer} />
+class App extends React.Component {
 
-      </div>
-    </Router>
-  );
+  render() {
+    return (
+      <Router>
+        <div className="app">
+          <NavBar />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/projects" component={ProjectsContainer} />
+          <Route exact path="/posts" component={PostsContainer} />
+          <Route exact path="/login" component={LoginContainer} />
+          <Route path="/posts/:id" component={SinglePostContainer} />
+
+
+        </div>
+      </Router>
+    )
+  }
 };
 
 export default App;
