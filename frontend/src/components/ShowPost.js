@@ -1,5 +1,4 @@
 import React from 'react';
-import PostComments from '../components/PostComments'
 
 const ShowPost = props => {
 
@@ -7,9 +6,9 @@ const ShowPost = props => {
     <div className="single-post">
       <h1>{props.post.title}</h1>
       <p>{props.post.content}</p>
-      <PostComments />
     </div>
   )
 };
 
 export default ShowPost;
+//  <p>{props.post.post_comments.map(com => com.content)}</p>
