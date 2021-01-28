@@ -7,7 +7,7 @@ import singlePostReducer from './singlePostReducer'
 const rootReducer = combineReducers({
   account: accountReducer,
   posts: postReducer,
-  post: singlePostReducer,
+  single_post: singlePostReducer,
   projects: projectReducer
 })
 

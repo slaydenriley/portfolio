@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 
 import fetchPosts from '../actions/fetchPosts'
 import PostList from '../components/PostList'
-import ShowPost from '../components/ShowPost'
 import {Route} from 'react-router-dom';
 
 class PostsContainer extends React.Component {
@@ -14,7 +13,6 @@ class PostsContainer extends React.Component {
   render() {
     return (
       <div>
-        <Route path="/posts/:id" render={(routerProps) => <ShowPost {...routerProps} posts={this.props.posts}/>} />
         <PostList posts={this.props.posts} />
       </div>
     )
@@ -27,5 +25,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {fetchPosts})(PostsContainer)
-
-//        <Route path="/posts/:id" render={() => <ShowPost posts={this.props.posts}/>}/>

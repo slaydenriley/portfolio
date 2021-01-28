@@ -7,32 +7,32 @@ import PostComments from '../components/PostComments'
 
 
 class SinglePostContainer extends React.Component {
+
   componentDidMount() {
     let id = this.props.match.params.id
     this.props.fetchSinglePost(id)
   }
 
   handleLoading = () => {
-    if (this.props.requesting === true) {
-      return <div>Loading...</div>
-    }
-    else {
-      
+    if (this.props.post.requesting) {
+      return <div>Loading</div>
+    } else {
+      return <ShowPost post={this.props.post.post} />
     }
   }
 
   render() {
     return (
       <div>
-        <ShowPost post={this.props.post} />
-        {this.handleLoading()}
+      {this.handleLoading()}
       </div>
     )
   }
 }
 const mapStateToProps = state => {
   return {
-    post: state.post
+    post: state.single_post,
+    requesting: state.requesting
   }
 }
 
