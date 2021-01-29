@@ -13,6 +13,5 @@ class ProjectSerializer
 
     @listing.to_json(options)
 
-
   end
 end
