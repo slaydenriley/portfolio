@@ -2,8 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import fetchSingleProject from '../actions/fetchSingleProject'
-import ShowProject from '../components/ShowProject'
-import ProjectComments from '../components/ProjectComments';
+import ShowProject from '../components/projects/ShowProject'
+import ProjectComments from '../components/projects/ProjectComments';
 import { BlockReserveLoading } from 'react-loadingg';
 
 

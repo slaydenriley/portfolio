@@ -4,9 +4,6 @@ import LoginContainer from '../containers/loginContainer'
 import loginUser from '../actions/loginUser'
 import { Redirect } from 'react-router-dom';
 
-//import { NavLink } from 'react-router-dom';
-//import {Navbar, Nav} from 'react-bootstrap'
-
 class Login extends React.Component {
 
   state = {

@@ -10,6 +10,15 @@
   text-decoration: none;
 }
 
+.login {
+  font-size: 25px;
+  padding: 10px;
+}
+
+.login input {
+  margin-top: 10px;
+}
+
 .home, .projects, .posts, .account, .login, .single-post {
   padding-top: 50px;
   padding-left: 300px;

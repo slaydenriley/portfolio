@@ -2,8 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import fetchSinglePost from '../actions/fetchSinglePost'
-import ShowPost from '../components/ShowPost'
-import PostComments from '../components/PostComments'
+import ShowPost from '../components/posts/ShowPost'
+import PostComments from '../components/posts/PostComments'
 import { BlockReserveLoading } from 'react-loadingg';
 
 
