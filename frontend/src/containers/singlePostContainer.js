@@ -17,7 +17,7 @@ class SinglePostContainer extends React.Component {
     if (this.props.post.requesting) {
       return <div>Loading</div>
     } else {
-      return <ShowPost post={this.props.post.post} />
+      return <ShowPost post={this.props.post.post} comments={this.props.post.post.post_comments} />      
     }
   }
 
