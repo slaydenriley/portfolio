@@ -4,7 +4,12 @@ class ProjectSerializer
   end
 
   def to_serialized_json
-    options = {:only => [:id, :name, :link, :description, :user_id]}
+    options = {
+      :only => [
+        :id, :name, :description, :user_id, :link],
+      include:
+        [project_comments: {:only => [:author_name, :author_email, :content, :created_at]}]
+    }
 
     @listing.to_json(options)
 
