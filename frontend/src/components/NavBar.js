@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 import {Navbar} from 'react-bootstrap'
 
 const NavBar = () => {
-  
+
   return (
 
     <div>
-      <Navbar bg="dark">
+      <Navbar bg="dark" className="">
         <Navbar.Brand className="font-weight-bold text-muted">
           Riley Slayden
         </Navbar.Brand>
@@ -15,7 +15,6 @@ const NavBar = () => {
         <NavLink to="/projects">Projects</NavLink>
         <NavLink to="/posts">Posts</NavLink>
 
-        <NavLink to="/login">Login</NavLink>
       </Navbar>
     </div>
   );

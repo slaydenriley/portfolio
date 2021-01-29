@@ -1,9 +1,9 @@
 const PostComments = (props) => {
 
-    <div class="home">
+    <div>
       <h2><u>Comments</u></h2>
         {props.comments.map(comment =>
-            <div key={comment.id}>
+            <div className="post-comment" key={comment.id}>
             <em>{comment.author_name}</em>
             <p>{comment.content}</p>
             </div>)

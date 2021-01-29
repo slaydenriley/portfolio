@@ -11,5 +11,37 @@
 }
 
 .home, .projects, .posts, .account, .login, .single-post {
-  padding: 40px;
+  padding-top: 50px;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+.post-content {
+  text-align: left;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+.post-title {
+  background-color: lightblue;
+  padding: 10px;
+}
+
+.post-comment {
+  background-color: lightgreen;
+}
+
+.footer {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  background-color: black;
+}
+
+.app {
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
 }

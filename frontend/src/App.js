@@ -8,6 +8,7 @@ import PostsContainer from './containers/postsContainer';
 import ProjectsContainer from './containers/projectsContainer';
 import SinglePostContainer from './containers/singlePostContainer';
 import LoginContainer from './containers/loginContainer';
+import Footer from "./components/Footer";
 
 
 class App extends React.Component {
@@ -22,7 +23,7 @@ class App extends React.Component {
           <Route exact path="/posts" component={PostsContainer} />
           <Route exact path="/login" component={LoginContainer} />
           <Route path="/posts/:id" component={SinglePostContainer} />
-
+          <Footer />
 
         </div>
       </Router>
