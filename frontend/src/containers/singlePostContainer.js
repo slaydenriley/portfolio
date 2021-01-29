@@ -7,6 +7,7 @@ import PostComments from '../components/posts/PostComments'
 import { BlockReserveLoading } from 'react-loadingg';
 
 
+
 class SinglePostContainer extends React.Component {
 
   componentDidMount() {

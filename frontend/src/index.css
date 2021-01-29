@@ -19,7 +19,7 @@
   margin-top: 10px;
 }
 
-.home, .projects, .posts, .account, .login, .single-post {
+.home, .projects, .posts, .account, .login, .single-post, .dashboard {
   padding-top: 50px;
   padding-left: 300px;
   padding-right: 300px;
@@ -50,14 +50,10 @@
 }
 
 .app {
-  text-align: center;
   position: relative;
   min-height: 100vh;
 }
 
-.post-list {
-  text-align: left;
-  padding-left: 500px;
-  padding-right: 500px;
-  padding-top: 40px;
+.dashboard-components {
+  width: 50%;
 }
