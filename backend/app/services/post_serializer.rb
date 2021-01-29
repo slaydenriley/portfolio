@@ -4,7 +4,6 @@ class PostSerializer
   end
 
   def to_serialized_json
-
     options = {
       :only => [
         :id, :title, :content, :user_id],
@@ -13,6 +12,13 @@ class PostSerializer
     }
 
     @post.to_json(options)
+  end
 
+  def to_small_json
+    options = {
+      :only => [
+        :id, :title, :created_at, :updated_at]
+    }
+    @post.to_json(options)
   end
 end

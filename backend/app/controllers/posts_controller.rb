@@ -3,7 +3,6 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
     if post.save
       render json: PostSerializer.new(post).to_serialized_json
-      session[:user_id] = post.id
     else
       payload = {
         error: "Something went wrong. Please try again.",
@@ -19,8 +18,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    users = Post.all
-    render json: PostSerializer.new(users).to_serialized_json
+    posts = Post.all
+    render json: PostSerializer.new(posts).to_small_json
   end
 
   def edit
