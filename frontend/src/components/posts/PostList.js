@@ -9,9 +9,7 @@ class PostList extends React.Component {
         <h1><u>Blog Posts</u></h1>
         {this.props.posts.map(post =>
           <div key={post.id} className="post-list">
-            <h1><em>{post.title}</em></h1>
-            <p>{post.content.substring(0, 250)}... <em><Link key={post.id} to={`/posts/${post.id}`}>Read More</Link></em></p>
-            <em>Comments: {post.post_comments.length}</em>
+            <Link key={post.id} to={`/posts/${post.id}`}><h3><em>{post.title}</em></h3></Link>
           </div>)}
       </div>
     );
