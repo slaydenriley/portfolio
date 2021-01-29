@@ -7,6 +7,7 @@ import Home from './components/Home';
 import PostsContainer from './containers/postsContainer';
 import ProjectsContainer from './containers/projectsContainer';
 import SinglePostContainer from './containers/singlePostContainer';
+import SingleProjectContainer from './containers/singleProjectContainer';
 import LoginContainer from './containers/loginContainer';
 import Footer from "./components/Footer";
 
@@ -23,6 +24,7 @@ class App extends React.Component {
           <Route exact path="/posts" component={PostsContainer} />
           <Route exact path="/login" component={LoginContainer} />
           <Route path="/posts/:id" component={SinglePostContainer} />
+          <Route path="/projects/:id" component={SingleProjectContainer} />
           <Footer />
 
         </div>
