@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       login!
       render json: {
         logged_in: true,
-        user: @user
+        user: UserSerializer.new(@user).to_serialized_json
       }
     else
       render json: {
