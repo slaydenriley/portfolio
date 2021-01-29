@@ -6,14 +6,6 @@ import Login from '../components/Login'
 import { Redirect } from 'react-router-dom';
 
 class LoginContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoggedIn: false,
-      user: {}
-     };
-  }
-
 
   render() {
     return (
@@ -24,10 +16,4 @@ class LoginContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    account: state.account
-  }
-}
-
-export default connect(mapStateToProps, {loginUser})(LoginContainer)
+export default LoginContainer
