@@ -1,20 +1,41 @@
+import React from 'react'
+import {connect} from 'react-redux'
+import addPostComment from '../../actions/addPostComment'
 
-const CommentInput = props => {
+class CommentInput extends React.Component {
+  state = {
+    email: '',
+    author_name: '',
+    content: ''
+  }
 
-  return (
-    <div className="comment-input">
-      <form>
-        <h2>Add New Comment</h2>
-          <input type="text" placeholder="Your Name"/><br/>
-          <input type="text" placeholder="Your Email"/><br/>
-          <textarea placeholder="What do you think?"/><br/>
-          <input type="submit"/>
-      </form>
-    </div>
-  )
-};
+  handleChange = (event) =>  {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
 
-export default CommentInput
+  handleSubmit = (event) => {
+    event.preventDefault()
+    let formData = {}
+    this.props.addPostComment(formData)
+  };
+
+  render() {
+    return (
+      <div className="comment-input">
+        <form>
+          <h2>Add New Comment</h2>
+            <input type="text" placeholder="Your Name"/><br/>
+            <input type="text" placeholder="Your Email"/><br/>
+            <textarea placeholder="What do you think?"/><br/>
+            <input type="submit"/>
+          </form>
+      </div>)
+    }
+}
+
+export default connect(null, {addPostComment})(CommentInput)
 
 /*
 {props.account.map(user =>
