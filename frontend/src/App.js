@@ -11,8 +11,6 @@ import SingleProjectContainer from './containers/singleProjectContainer';
 import LoginContainer from './containers/loginContainer';
 import Footer from "./components/Footer";
 
-
-
 class App extends React.Component {
 
 

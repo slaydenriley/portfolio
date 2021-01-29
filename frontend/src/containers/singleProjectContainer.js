@@ -3,7 +3,8 @@ import {connect} from 'react-redux'
 
 import fetchSingleProject from '../actions/fetchSingleProject'
 import ShowProject from '../components/ShowProject'
-import ProjectComments from '../components/ProjectComments'
+import ProjectComments from '../components/ProjectComments';
+import { BlockReserveLoading } from 'react-loadingg';
 
 
 class SingleProjectContainer extends React.Component {
@@ -15,7 +16,7 @@ class SingleProjectContainer extends React.Component {
 
   handleLoading = () => {
     if (this.props.project.requesting) {
-      return <div>Loading</div>
+      return <BlockReserveLoading />;
     } else {
       return <ShowProject project={this.props.project.project} comments={this.props.project.project.project_comments} />
     }
