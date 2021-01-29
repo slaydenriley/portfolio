@@ -10,12 +10,12 @@
   text-decoration: none;
 }
 
-.login {
+.login, .comment-input {
   font-size: 25px;
   padding: 10px;
 }
 
-.login input {
+.login input, .comment-input input, .comment-input textarea {
   margin-top: 10px;
 }
 

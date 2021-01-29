@@ -1,5 +1,7 @@
 import {strftime} from 'strftime'
 import React from 'react';
+import PostComments from '../posts/PostComments'
+import CommentInput from '../posts/CommentInput'
 
 const ShowPost = props => {
 
@@ -7,13 +9,8 @@ const ShowPost = props => {
     <div className="single-post">
       <div className="post-title"><h1>{props.post.title}</h1></div>
       <p className="post-content">{props.post.content}</p>
-      <h2><u>Comments</u></h2>
-      {props.comments.map(comment =>
-        <div>
-          <em>By: {comment.author_name}, {comment.created_at} </em>
-          <p>{comment.content}</p>
-
-        </div>)}
+      <PostComments comments={props.comments} />
+      <CommentInput />
     </div>
   )
 };

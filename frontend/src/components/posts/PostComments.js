@@ -1,18 +1,20 @@
-const PostComments = (props) => {
 
-    <div>
-      <h2><u>Comments</u></h2>
-        {props.comments.map(comment =>
-            <div className="post-comment" key={comment.id}>
-            <em>{comment.author_name}</em>
-            <p>{comment.content}</p>
-            </div>)
-          }
+import React from 'react'
+class PostComments extends React.Component {
 
-      <input type="text">Add New Comment</input>
-      <input type="submit">Post</input>
-    </div>
-
+  render() {
+    return (
+      <div className="post_comments">
+        <h1><u>Comments</u></h1>
+        {this.props.comments.map(comment =>
+          <div key={comment.id} className="comment-list">
+            <h3><em>By: {comment.author_name}</em></h3>
+            <p>{comment.created_at}</p>
+            <em>{comment.content}</em>
+          </div>)}
+      </div>
+    );
+  }
 }
 
 export default PostComments
