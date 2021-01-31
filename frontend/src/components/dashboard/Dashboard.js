@@ -1,17 +1,20 @@
 import React from 'react';
-import JoditEditor from "jodit-react";
+import NewPost from './posts/NewPost'
+import PostEditor from './posts/PostEditor'
+import {NavLink} from "react-router-dom"
 
-const Dashboard = props => {
+class Dashboard extends React.Component {
 
-  return (
-    <div className="dashboard">
-      <h1><u>Dashboard</u></h1>
-        <div className="dashboard-components">
-          <h2>Create New Post</h2>
-            <JoditEditor />
-        </div>
-    </div>
-  )
+  render() {
+    return (
+      <div className="dashboard">
+        <h1><u>Dashboard</u></h1>
+          <div className="dashboard-components">
+            <NavLink to="/dashboard/posts/new">New Post</NavLink>
+            <NavLink to="/dashboard/posts/edit">Edit Posts</NavLink>
+          </div>
+        </div>)
+  }
 };
 
 export default Dashboard;

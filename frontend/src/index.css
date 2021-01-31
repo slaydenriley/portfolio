@@ -21,8 +21,7 @@
 
 .home, .projects, .posts, .account, .login, .single-post, .dashboard {
   padding-top: 50px;
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: 10px;
 }
 
 .post-content {
@@ -47,6 +46,8 @@
   bottom: 0;
   color: white;
   background-color: black;
+  padding-top: 10px;
+
 }
 
 .app {
