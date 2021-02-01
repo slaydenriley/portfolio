@@ -7,20 +7,17 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const NewPost = (props) => {
   return (
-    <div class="new-post">
+    <div>
       <h2>Create New Post</h2>
-      <input type="text" name="title" placeholder="Post Title"/>
-      <br/>
-      <br/>
-
-      <Editor
-        toolbarClassName="toolbarClassName"
-        wrapperClassName="textEditor"
-      
-      />
-      <br/>
-      <br/>
-      <input type="submit"/>
+        <form className="new-post">
+          <input type="text" name="title" placeholder="Post Title"/>
+            <br/>
+            <br/>
+          <textarea name="content" placeholder="Begin Writing"/>
+            <br/>
+            <br/>
+            <input type="submit"/>
+        </form>
     </div>
   )
 }

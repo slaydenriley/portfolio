@@ -12,6 +12,7 @@ class Dashboard extends React.Component {
           <div className="dashboard-components">
             <NavLink to="/dashboard/posts/new">New Post</NavLink>
             <NavLink to="/dashboard/posts/edit">Edit Posts</NavLink>
+            <NavLink to="/dashboard/account/edit">Edit Account</NavLink>
           </div>
         </div>)
   }
