@@ -8,9 +8,10 @@ const ShowPost = props => {
   return (
     <div className="single-post">
       <div className="post-title"><h1>{props.post.title}</h1></div>
-      <p className="post-content">{props.post.content}</p>
+      <div dangerouslySetInnerHTML={{ __html: props.post.content}} />
       <PostComments comments={props.comments} />
       <CommentInput />
+
     </div>
   )
 };

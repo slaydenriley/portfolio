@@ -1,9 +1,4 @@
 import React from 'react';
-import { Editor } from "react-draft-wysiwyg";
-import {EditorState} from "draft-js";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-
-
 
 const NewPost = (props) => {
   return (
@@ -13,7 +8,7 @@ const NewPost = (props) => {
           <input type="text" name="title" placeholder="Post Title"/>
             <br/>
             <br/>
-          <textarea name="content" placeholder="Begin Writing"/>
+
             <br/>
             <br/>
             <input type="submit"/>
@@ -23,3 +18,5 @@ const NewPost = (props) => {
 }
 
 export default NewPost;
+
+//  <textarea name="content" placeholder="Begin Writing"/>
