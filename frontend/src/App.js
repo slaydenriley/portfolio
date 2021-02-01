@@ -13,6 +13,7 @@ import LoginContainer from './containers/loginContainer';
 import DashboardContainer from './containers/dashboardContainer';
 import LogoutContainer from './containers/logoutContainer';
 import NewPostContainer from './containers/dashboard/NewPostContainer';
+import EditPostContainer from './containers/dashboard/EditPostContainer';
 import Footer from "./components/Footer";
 
 class App extends React.Component {
@@ -29,10 +30,11 @@ class App extends React.Component {
           <Route path="/posts/:id" component={SinglePostContainer} />
           <Route path="/projects/:id" component={SingleProjectContainer} />
           <Route exact path="/dashboard" component={DashboardContainer} />
-          <Route path="/logout" component={LogoutContainer} />
+          <Route exact path="/logout" component={LogoutContainer} />
           <Route exact path="/dashboard/posts/new" component={NewPostContainer} />
+          <Route exact path="/dashboard/posts/edit" component={EditPostContainer} />
 
-          <Footer />
+        
         </div>
       </Router>
     )

@@ -10,18 +10,29 @@
   text-decoration: none;
 }
 
-.login, .comment-input {
+input {
   font-size: 25px;
   padding: 10px;
 }
 
-.login input, .comment-input input, .comment-input textarea {
+.new-post input {
+  width: 300px;
+}
+
+.textEditor {
+  height: 300px;
+  border: 1px solid grey;
+  padding: 10px;
+}
+
+.login input, .comment-input input, .comment-input textarea, .new-post{
   margin-top: 10px;
 }
 
-.home, .projects, .posts, .account, .login, .single-post, .dashboard {
+.home, .projects, .posts, .account, .login, .single-post, .dashboard, .post-editor, .new-post {
   padding-top: 50px;
-  padding-left: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .post-content {
