@@ -12,6 +12,18 @@ export default function singlePostReducer(state = { post: [], requesting: true }
         requesting: false
       }
 
+    case 'START_POSTING_POST':
+      return {
+        post: state.post,
+        requesting: true
+      }
+
+    case 'POST_POST':
+      return {
+        post: action.payload,
+        requesting: false
+      }
+
     default:
       return state
   }

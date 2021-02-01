@@ -36,14 +36,14 @@ class NewPostContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="new-post">
         <div onSubmit={this.handleSubmit.bind(this)} onChange={this.handleChange.bind(this)}>
           <NewPost />
           <Editor
             //editorState={this.state.content}
             toolbarClassName="toolbarClassName"
-            wrapperClassName="wrapperClassName"
-            editorClassName="editorClassName"
+            wrapperClassName="textEditorWrap"
+            editorClassName="textEditor"
             onEditorStateChange={this.handleEditorChange}
             />
         </div>

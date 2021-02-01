@@ -16,13 +16,16 @@ input {
 }
 
 .new-post input {
-  width: 300px;
+  width: 30%;
 }
 
 .textEditor {
-  height: 300px;
   border: 1px solid grey;
   padding: 10px;
+}
+
+.textEditorWrap {
+  width: 60%;
 }
 
 .login input, .comment-input input, .comment-input textarea, .new-post{

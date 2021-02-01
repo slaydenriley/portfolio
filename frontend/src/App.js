@@ -34,7 +34,6 @@ class App extends React.Component {
           <Route exact path="/dashboard/posts/new" component={NewPostContainer} />
           <Route exact path="/dashboard/posts/edit" component={EditPostContainer} />
 
-        
         </div>
       </Router>
     )

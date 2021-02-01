@@ -1,5 +1,6 @@
 export default function addNewPost(formData) {
     return (dispatch) => {
+        dispatch({ type: 'START_POSTING_POST' });
         fetch(`http://localhost:3001/posts`, {
             headers: {
                 'Content-Type': 'application/json',
@@ -9,6 +10,9 @@ export default function addNewPost(formData) {
             body: JSON.stringify(formData)
         })
         .then(res => res.json())
-        .then(post => console.log(post))
+        .then(post => dispatch({
+          type: 'POST_POST',
+          payload: post
+        }))
+      }
     }
-}
