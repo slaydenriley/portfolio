@@ -33,7 +33,7 @@ class App extends React.Component {
           <Route exact path="/logout" component={LogoutContainer} />
           <Route exact path="/dashboard/posts/new" component={NewPostContainer} />
           <Route exact path="/dashboard/posts/edit" component={EditPostContainer} />
-          <Footer />
+      
         </div>
       </Router>
     )
