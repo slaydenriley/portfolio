@@ -10,10 +10,9 @@ import {connect} from 'react-redux'
 import addNewPost from '../../actions/addNewPost.js'
 
 class NewPostContainer extends React.Component {
-
   state = {
     title: '',
-    user_id: this.props.user.id,
+    user_id: this.props.user_id.id,
     content: '',
     redirectToNewPage: false
   };
@@ -22,6 +21,7 @@ class NewPostContainer extends React.Component {
     this.setState({
       [event.target.name]: event.target.value
     })
+    console.log(this.state)
   };
 
   handleSubmit = (event) => {
@@ -62,4 +62,10 @@ class NewPostContainer extends React.Component {
   }
 }
 
-export default connect(null, {addNewPost})(NewPostContainer)
+const mapStateToProps = (state) => {
+    return {
+        user_id: JSON.parse(state.account.user)
+    };
+};
+
+export default connect(mapStateToProps, {addNewPost})(NewPostContainer)
