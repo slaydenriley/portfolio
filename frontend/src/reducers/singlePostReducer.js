@@ -25,8 +25,6 @@ export default function singlePostReducer(state = { post: [], requesting: true, 
         redirectToNewPage: true
       }
 
-
-
     default:
       return state
   }
