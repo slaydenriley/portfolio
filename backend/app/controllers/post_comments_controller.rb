@@ -2,7 +2,8 @@ class PostCommentsController < ApplicationController
   def create
     post_comment = PostComment.new(post_comment_params)
     if post_comment.save
-      render json: CommentSerializer.new(post_comment).to_serialized_json
+      post = Post.find_by(id: post_comment.post_id)
+      render json: PostSerializer.new(post).to_serialized_json
     else
       payload = {
         error: "Something went wrong. Please try again.",
