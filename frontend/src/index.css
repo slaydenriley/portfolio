@@ -42,11 +42,15 @@ input {
   text-align: left;
   line-height: 1.7;
   font-size: 18px;
+  width: 70%;
+  padding-left: 70px;
 }
 
 .post-title {
   background-color: lightblue;
   padding: 10px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .post-comment {

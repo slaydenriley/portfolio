@@ -1,6 +1,7 @@
 import React from 'react'
 import NewPost from '../../components/dashboard/posts/NewPost'
 import { Editor } from "react-draft-wysiwyg";
+import { Redirect } from 'react-router-dom'
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import {EditorState} from "draft-js";
 import {stateToHTML} from 'draft-js-export-html';
@@ -12,8 +13,9 @@ class NewPostContainer extends React.Component {
 
   state = {
     title: '',
-    user_id: "7",
-    content: ''
+    user_id: this.props.user.id,
+    content: '',
+    redirectToNewPage: false
   };
 
   handleChange = event => {
@@ -26,12 +28,21 @@ class NewPostContainer extends React.Component {
     event.preventDefault()
     const formData = this.state
     this.props.addNewPost(formData)
+
+    // Need to find a way to do this AFTER post is successful
+    this.state.redirectToNewPage = true
+    this.handleRedirect()
   };
+
+  handleRedirect = () => {
+    if (this.state.redirectToNewPage === true) {
+      <Redirect to="/posts"/>
+    }
+  }
 
   handleEditorChange = (editorState) => {
     let html = stateToHTML(editorState.getCurrentContent())
     this.state.content = html
-    console.log(this.state)
   }
 
   render() {
@@ -40,7 +51,6 @@ class NewPostContainer extends React.Component {
         <div onSubmit={this.handleSubmit.bind(this)} onChange={this.handleChange.bind(this)}>
           <NewPost />
           <Editor
-            //editorState={this.state.content}
             toolbarClassName="toolbarClassName"
             wrapperClassName="textEditorWrap"
             editorClassName="textEditor"

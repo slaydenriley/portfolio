@@ -1,4 +1,4 @@
-export default function singlePostReducer(state = { post: [], requesting: true }, action) {
+export default function singlePostReducer(state = { post: [], requesting: true, redirectToNewPage: false }, action) {
   switch(action.type) {
     case 'START_FETCHING_POST':
       return {
@@ -21,7 +21,8 @@ export default function singlePostReducer(state = { post: [], requesting: true }
     case 'POST_POST':
       return {
         post: action.payload,
-        requesting: false
+        requesting: false,
+        redirectToNewPage: true
       }
 
     default:
