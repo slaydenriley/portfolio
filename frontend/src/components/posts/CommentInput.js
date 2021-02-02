@@ -4,9 +4,10 @@ import addPostComment from '../../actions/addPostComment'
 
 class CommentInput extends React.Component {
   state = {
-    email: '',
+    author_email: '',
     author_name: '',
-    content: ''
+    content: '',
+    post_id: this.props.post_id
   }
 
   handleChange = (event) =>  {
@@ -17,18 +18,18 @@ class CommentInput extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    let formData = {}
+    let formData = this.state
     this.props.addPostComment(formData)
   };
 
   render() {
     return (
       <div className="comment-input">
-        <form>
+        <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <h2>Add New Comment</h2>
-            <input type="text" placeholder="Your Name"/><br/>
-            <input type="text" placeholder="Your Email"/><br/>
-            <textarea placeholder="What do you think?"/><br/>
+            <input type="text" name="author_name" placeholder="Your Name"/><br/>
+            <input type="text" name="author_email" placeholder="Your Email"/><br/>
+            <textarea name="content" placeholder="What do you think?"/><br/>
             <input type="submit"/>
           </form>
       </div>)

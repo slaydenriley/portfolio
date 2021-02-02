@@ -1,6 +1,6 @@
 export default function addPostComment(formData) {
     return (dispatch) => {
-        fetch(`http://localhost:3001/posts/${formData.id}`, {
+        fetch(`http://localhost:3001/posts/${formData.post_id}/comments`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -9,6 +9,6 @@ export default function addPostComment(formData) {
             body: JSON.stringify(formData)
         })
         .then(res => res.json())
-        .then(user => dispatch({type: '', payload: user}))
+        .then(comment => console.log(comment))
     }
 }
