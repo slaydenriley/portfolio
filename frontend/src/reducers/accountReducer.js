@@ -6,6 +6,13 @@ export default function accountReducer(state = { account: [], logged_in: false }
     case "LOGIN_USER":
       return action.payload
 
+    case "LOGOUT_USER":
+      return {
+        account: [],
+        logged_in: false
+      }
+
+
     default:
       return state
   }

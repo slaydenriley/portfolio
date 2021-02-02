@@ -1,14 +1,19 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import logout from '../actions/logoutUser'
+import {Redirect} from 'react-router-dom'
 
 class LogoutContainer extends React.Component {
 
+  componentWillMount() {
+    this.props.dispatch(logout());
+  }
+
   render() {
-    return (
-      <div>
-        <h1>Logout</h1>
-      </div>
+    return(
+      <Redirect to="/" />
     )
   }
 }
 
-export default LogoutContainer
+export default connect()(LogoutContainer)
