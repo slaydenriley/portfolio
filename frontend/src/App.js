@@ -6,9 +6,9 @@ import {connect} from 'react-redux'
 
 //import AccountContainer from './containers/accountContainer';
 import PostsContainer from './containers/postsContainer';
-import ProjectsContainer from './containers/projectsContainer';
+
 import SinglePostContainer from './containers/singlePostContainer';
-import SingleProjectContainer from './containers/singleProjectContainer';
+
 import LoginContainer from './containers/loginContainer';
 import DashboardContainer from './containers/dashboardContainer';
 import LogoutContainer from './containers/logoutContainer';
@@ -25,11 +25,11 @@ class App extends React.Component {
         <div className="app">
           <NavBar logged_in={this.props.logged_in}/>
           <Route exact path="/" component={Home} />
-          <Route exact path="/projects" component={ProjectsContainer} />
+
           <Route exact path="/posts" component={PostsContainer} />
           <Route exact path="/login" component={LoginContainer} />
           <Route path="/posts/:id" component={SinglePostContainer} />
-          <Route path="/projects/:id" component={SingleProjectContainer} />
+
           <Route exact path="/dashboard" component={DashboardContainer} />
           <Route exact path="/logout" component={LogoutContainer} />
           <Route exact path="/dashboard/posts/new" component={NewPostContainer} />
