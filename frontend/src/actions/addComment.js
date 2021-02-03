@@ -1,4 +1,4 @@
-export default function addPostComment(formData) {
+export default function addComment(formData) {
     return (dispatch) => {
         dispatch({ type: 'START_FETCHING_POST' });
         fetch(`http://localhost:3001/posts/${formData.post_id}/comments`, {

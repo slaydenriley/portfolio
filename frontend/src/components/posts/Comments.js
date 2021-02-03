@@ -1,13 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import deletePostComment from '../../actions/deletePostComment'
+import deleteComment from '../../actions/deleteComment'
 
 
-class PostComments extends React.Component {
+class Comments extends React.Component {
 
   handleSubmit = (e, id, post_id) => {
     e.preventDefault()
-    this.props.deletePostComment(id, post_id)
+    this.props.deleteComment(id, post_id)
   }
 
   render() {
@@ -28,7 +28,7 @@ class PostComments extends React.Component {
   }
 }
 
-export default connect(null, {deletePostComment})(PostComments)
+export default connect(null, {deleteComment})(Comments)
 
 /*
 {props.account.map(user =>

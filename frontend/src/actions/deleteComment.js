@@ -1,4 +1,4 @@
-export default function addPostComment(id, post_id) {
+export default function deleteComment(id, post_id) {
     return (dispatch) => {
         dispatch({ type: 'START_FETCHING_POST' });
         fetch(`http://localhost:3001/comments/${id}`, {
