@@ -1,6 +1,6 @@
 class CommentSerializer
-  def initialize(post_comment)
-    @comment = post_comment
+  def initialize(comment)
+    @comment = comment
   end
 
   def to_serialized_json

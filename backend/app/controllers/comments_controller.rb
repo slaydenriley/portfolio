@@ -1,8 +1,8 @@
-class PostCommentsController < ApplicationController
+class CommentsController < ApplicationController
   def create
-    post_comment = PostComment.new(post_comment_params)
-    if post_comment.save
-      post = Post.find_by(id: post_comment.post_id)
+    comment = Comment.new(comment_params)
+    if comment.save
+      post = Post.find_by(id: comment.post_id)
       render json: PostSerializer.new(post).to_serialized_json
     else
       payload = {
@@ -14,9 +14,9 @@ class PostCommentsController < ApplicationController
   end
 
   def destroy
-    post_comment = PostComment.find_by(id: params[:id])
-    post = Post.find_by(id: post_comment.post_id)
-    if post_comment.destroy
+    comment = Comment.find_by(id: params[:id])
+    post = Post.find_by(id: comment.post_id)
+    if comment.destroy
       render json: PostSerializer.new(post).to_serialized_json
     else
       payload = {
@@ -29,8 +29,8 @@ class PostCommentsController < ApplicationController
 
   private
 
-  def post_comment_params
-    params.require(:post_comment).permit(
+  def comment_params
+    params.require(:comment).permit(
       :id,
       :author_name,
       :author_email,
