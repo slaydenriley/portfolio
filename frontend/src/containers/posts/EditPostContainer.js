@@ -1,5 +1,5 @@
 import React from 'react'
-import PostEditor from '../../components/dashboard/posts/PostEditor'
+import PostEditor from '../../components/posts/PostEditor'
 
 class EditPostContainer extends React.Component {
 

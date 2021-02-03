@@ -1,5 +1,5 @@
 import React from 'react'
-import NewPost from '../../components/dashboard/posts/NewPost'
+import NewPost from '../../components/posts/NewPost'
 import { Editor } from "react-draft-wysiwyg";
 import { Redirect } from 'react-router-dom'
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";

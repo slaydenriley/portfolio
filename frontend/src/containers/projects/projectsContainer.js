@@ -13,7 +13,7 @@ class ProjectsContainer extends React.Component {
   render() {
     return (
       <div>
-        <PostList posts={this.props.posts.filter(post => post.project === true)} />
+        <PostList posts={this.props.posts.filter(post => post.project === true)} title_name="Projects" />
       </div>
     )
   }
