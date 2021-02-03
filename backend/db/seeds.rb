@@ -7,10 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-Project.destroy_all
 Post.destroy_all
-ProjectComment.destroy_all
-PostComment.destroy_all
+Comment.destroy_all
 
 def User.digest(string)
   cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -23,7 +21,8 @@ riley = User.create(
   name: "Riley Slayden",
   email: "slaydenriley@gmail.com",
   description: "My name is Riley Slayden and this is my portfolio",
-  password_digest: "#{User.digest('codydog')}")
+  password_digest: "#{User.digest('codydog')}",
+  admin: true)
 
 ## Create Posts
 post = riley.posts.build(
