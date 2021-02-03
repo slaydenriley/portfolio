@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import logout from '../actions/logoutUser'
+import logout from '../../actions/logoutUser'
 import {Redirect} from 'react-router-dom'
 
 class LogoutContainer extends React.Component {

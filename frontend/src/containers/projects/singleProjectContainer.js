@@ -1,11 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import fetchSinglePost from '../actions/fetchSinglePost'
-import ShowPost from '../components/posts/ShowPost'
-import Comments from '../components/posts/Comments'
+import fetchSinglePost from '../../actions/fetchSinglePost'
+import ShowPost from '../../components/posts/ShowPost'
+import Comments from '../../components/posts/Comments'
 import { BlockReserveLoading } from 'react-loadingg';
 
-class SinglePostContainer extends React.Component {
+class SingleProjectContainer extends React.Component {
 
   componentDidMount() {
     let id = this.props.match.params.id
@@ -36,7 +36,7 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {fetchSinglePost})(SinglePostContainer)
+export default connect(mapStateToProps, {fetchSinglePost})(SingleProjectContainer)
 
 //        <Route path="/posts/:id" render={() => <ShowPost posts={this.props.posts}/>}/>
 // <PostComments comments={this.props.post.post_comments} />
