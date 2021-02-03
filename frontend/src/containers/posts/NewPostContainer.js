@@ -12,7 +12,7 @@ import addNewPost from '../../actions/addNewPost.js'
 class NewPostContainer extends React.Component {
   state = {
     title: '',
-    user_id: this.props.user_id.id,
+    user_id: this.props.user_id,
     content: '',
     redirectToNewPage: false
   };
@@ -63,7 +63,7 @@ class NewPostContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        user_id: JSON.parse(state.account.user)
+        user_id: state.account.account.id
     };
 };
 

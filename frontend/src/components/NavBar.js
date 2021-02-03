@@ -18,7 +18,6 @@ const NavBar = props => {
           <NavLink to="/posts">Posts</NavLink>
           <NavLink to="/dashboard">Dashboard</NavLink>
           <NavLink to="/logout">Logout</NavLink>
-          <NavLink to="/logged">Logged</NavLink>
 
         </Navbar>
       </div>
@@ -31,6 +30,7 @@ const NavBar = props => {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/posts">Posts</NavLink>
+          <NavLink to="/login">Login</NavLink>
 
         </Navbar>
       </div>
