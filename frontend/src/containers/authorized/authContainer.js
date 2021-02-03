@@ -8,16 +8,11 @@ class AuthContainer extends React.Component {
   }
 
   loginStatus = () => {
-    axios.get('http://localhost:3001/logged_in',
-   {withCredentials: true})
-    .then(response => {
-      if (response.data.logged_in) {
-        console.log(response)
-      } else {
-        console.log(response)
-      }
-    })
-    .catch(error => console.log('api errors:', error))
+    return fetch('http://localhost:3001/logged_in', {
+      method: 'GET',
+      credentials: 'include'})
+    .then(res => res.json())
+    .then(res => console.log(res))
   }
 
   render() {

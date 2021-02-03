@@ -6,7 +6,8 @@ export default function loginUser(formData) {
                 'Accept': 'application/json'
             },
             method: 'POST',
-            body: JSON.stringify(formData)
+            body: JSON.stringify(formData),
+            credentials: 'include'
         })
         .then(res => res.json())
         .then(user => dispatch({type: 'LOGIN_USER', payload: user}))
