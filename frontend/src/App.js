@@ -18,10 +18,14 @@ import DashboardContainer from './containers/dashboard/dashboardContainer';
 import LogoutContainer from './containers/authorized/logoutContainer';
 import NewPostContainer from './containers/posts/NewPostContainer';
 import EditPostContainer from './containers/posts/EditPostContainer';
-import AuthContainer from './containers/authorized/authContainer';
+import loginStatus from './actions/loginStatus'
 import Footer from "./components/Footer";
 
 class App extends React.Component {
+
+  componentDidMount() {
+    this.props.loginStatus()
+  }
 
   render() {
     return (
@@ -39,7 +43,7 @@ class App extends React.Component {
           <Route exact path="/logout" component={LogoutContainer} />
           <Route exact path="/dashboard/posts/new" component={NewPostContainer} />
           <Route exact path="/dashboard/posts/edit" component={EditPostContainer} />
-          <Route exact path="/logged" component={AuthContainer} />
+
 
         </div>
       </Router>
@@ -47,10 +51,12 @@ class App extends React.Component {
   }
 };
 
-const mapStateToProps = state => ({
-  logged_in: state.account.logged_in
-});
+const mapStateToProps = (state) => {
+  return {
+    logged_in: state.account.logged_in
+  }
+}
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, {loginStatus})(App);
 
 //<Route exact path="/account" component={AccountContainer} />
