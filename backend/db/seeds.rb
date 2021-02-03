@@ -25,28 +25,18 @@ riley = User.create(
   description: "My name is Riley Slayden and this is my portfolio",
   password_digest: "#{User.digest('codydog')}")
 
-## Create Projects
-gigger = riley.projects.build(
-  name: "Gigger",
-  description: "This is my first Ruby on Rails project.
-  Gigger is an app for bands and venues to manage gigs.
-  People can also discover shows in their area on Gigger.",
-  link: "www.google.com")
-
-gigger_comment = gigger.project_comments.build(
-  author_name: "Morgan Hubbard",
-  author_email: "mbhubbard@gmail.com",
-  content: "Hey, this is a comment. Really nice project!"
-)
-
 ## Create Posts
 post = riley.posts.build(
   title: "This is my first blog post!",
-  content: "Hey, this is the content of this first blog post. Enjoy!"
+  content: "Hey, this is the content of this first blog post. Enjoy!",
+  post: false,
+  project: true,
 )
 
 second_post = riley.posts.build(
   title: "This is my SECOND blog post!",
+  post: true,
+  project: false,
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel ligula vel mauris ornare convallis.
   Quisque eget ipsum sit amet orci gravida viverra. Curabitur dapibus sed lacus nec feugiat.
   Curabitur porttitor, risus eu pulvinar interdum, est nulla porttitor sapien,
@@ -83,20 +73,19 @@ second_post = riley.posts.build(
 )
 
 
-post_comment = post.post_comments.build(
+comment = post.comments.build(
   author_name: "Morgan Hubbard",
   author_email: "mbhubbard@gmail.com",
   content: "First comment on a first blog post"
 )
 
-second_post_comment = second_post.post_comments.build(
+second_comment = second_post.comments.build(
   author_name: "Cade Slayden",
   author_email: "cade@gmail.com",
   content: "Awesome blog post dude!!!"
 )
 
 riley.save
-gigger.save
-gigger_comment.save
 post.save
-post_comment.save
+comment.save
+second_comment.save
