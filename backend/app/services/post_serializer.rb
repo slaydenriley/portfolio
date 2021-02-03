@@ -17,7 +17,7 @@ class PostSerializer
   def to_small_json
     options = {
       :only => [
-        :id, :title, :created_at, :updated_at]
+        :id, :title, :created_at, :updated_at, :post, :project]
     }
     @post.to_json(options)
   end
