@@ -3,10 +3,6 @@ Rails.application.routes.draw do
     resources :post_comments
   end
 
-  resources :projects do
-    resources :project_comments
-  end
-
 
   resources :users
 
