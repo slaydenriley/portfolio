@@ -2,8 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import fetchPosts from '../../actions/fetchPosts'
-import PostList from '../../components/posts/PostList'
-import {Route} from 'react-router-dom';
+import ProjectList from '../../components/projects/ProjectList'
 
 class ProjectsContainer extends React.Component {
   componentDidMount() {
@@ -13,7 +12,7 @@ class ProjectsContainer extends React.Component {
   render() {
     return (
       <div>
-        <PostList posts={this.props.posts.filter(post => post.project === true)} title_name="Projects" />
+        <ProjectList posts={this.props.posts.filter(post => post.project === true)} title_name="Projects" />
       </div>
     )
   }

@@ -1,6 +1,4 @@
 import React from 'react';
-import NewPost from '../posts/NewPost'
-import PostEditor from '../posts/PostEditor'
 import {NavLink} from "react-router-dom"
 
 class Dashboard extends React.Component {

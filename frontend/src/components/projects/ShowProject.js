@@ -1,8 +1,9 @@
+import {strftime} from 'strftime'
 import React from 'react';
 import Comments from '../posts/Comments'
 import CommentInput from '../posts/CommentInput'
 
-const ShowPost = props => {
+const ShowProject = props => {
   return (
     <div className="single-post">
       <div className="post-title"><h1>{props.post.title}</h1></div>
@@ -14,4 +15,4 @@ const ShowPost = props => {
   )
 };
 
-export default ShowPost;
+export default ShowProject;

@@ -3,9 +3,8 @@ import NewPost from '../../components/posts/NewPost'
 import { Editor } from "react-draft-wysiwyg";
 import { Redirect } from 'react-router-dom'
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import {EditorState} from "draft-js";
 import {stateToHTML} from 'draft-js-export-html';
-import {convertToRaw} from 'draft-js';
+
 import {connect} from 'react-redux'
 import addNewPost from '../../actions/addNewPost.js'
 
@@ -29,7 +28,7 @@ class NewPostContainer extends React.Component {
     this.props.addNewPost(formData)
 
     // Need to find a way to do this AFTER post is successful
-    this.state.redirectToNewPage = true
+    this.setState({redirectToNewPage: true})
     this.handleRedirect()
   };
 
@@ -41,7 +40,7 @@ class NewPostContainer extends React.Component {
 
   handleEditorChange = (editorState) => {
     let html = stateToHTML(editorState.getCurrentContent())
-    this.state.content = html
+    this.setState({content: html})
   }
 
   render() {

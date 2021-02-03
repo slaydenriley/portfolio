@@ -2,7 +2,6 @@ import React from 'react'
 import {connect} from 'react-redux'
 import fetchSinglePost from '../../actions/fetchSinglePost'
 import ShowPost from '../../components/posts/ShowPost'
-import Comments from '../../components/posts/Comments'
 import { BlockReserveLoading } from 'react-loadingg';
 
 class SinglePostContainer extends React.Component {

@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import fetchSinglePost from '../../actions/fetchSinglePost'
-import ShowPost from '../../components/posts/ShowPost'
-import Comments from '../../components/posts/Comments'
+import ShowProject from '../../components/projects/ShowProject'
+
 import { BlockReserveLoading } from 'react-loadingg';
 
 class SingleProjectContainer extends React.Component {
@@ -17,7 +17,7 @@ class SingleProjectContainer extends React.Component {
       return <BlockReserveLoading />;
 
     } else {
-      return <ShowPost post={this.props.post.post} comments={this.props.post.post.comments} />
+      return <ShowProject post={this.props.post.post} comments={this.props.post.post.comments} />
     }
   }
 
