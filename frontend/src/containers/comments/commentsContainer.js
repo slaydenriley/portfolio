@@ -1,5 +1,6 @@
 import React from 'react'
 import Comments from '../../components/comments/Comments'
+import DeleteComment from '../../components/comments/DeleteComment'
 import {connect} from 'react-redux'
 import deleteComment from '../../actions/deleteComment'
 
@@ -15,7 +16,6 @@ class CommentsContainer extends React.Component {
     let id = event.target.id
     this.state.id = parseInt(id)
     let formData = this.state
-
     this.props.deleteComment(formData)
 
   }
