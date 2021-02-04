@@ -64,7 +64,7 @@
   color: #00010a;
 }
 
-.post-content, .new-post{
+.post-content, .new-post {
   text-align: left;
   line-height: 1.7;
   font-size: 18px;
@@ -101,13 +101,9 @@
   font-weight: bolder;
 }
 
-.single-post {
+.single-post, .comments {
   padding-left: 20%;
   padding-right: 20%;
-}
-
-.post-comment {
-  background-color: lightgreen;
 }
 
 .footer {

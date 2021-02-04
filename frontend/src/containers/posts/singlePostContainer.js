@@ -15,11 +15,11 @@ class SinglePostContainer extends React.Component {
   handleLoading = () => {
     if (this.props.post.requesting) {
       return <BlockReserveLoading />;
-
-    } else {
+    }
+    else {
       return (
         <>
-          <ShowPost post={this.props.post.post} comments={this.props.post.post.comments} />
+          <ShowPost post={this.props.post.post} />
           <CommentsContainer comments={this.props.post.post.comments} />
         </>
       )
@@ -29,11 +29,12 @@ class SinglePostContainer extends React.Component {
   render() {
     return (
       <div>
-      {this.handleLoading()}
+        {this.handleLoading()}
       </div>
     )
   }
 }
+
 const mapStateToProps = state => {
   return {
     post: state.single_post,
