@@ -13,7 +13,7 @@ class NewPostContainer extends React.Component {
     title: '',
     user_id: this.props.user_id,
     content: '',
-    category: null,
+    category: "post",
     redirectToNewPage: false
   };
 

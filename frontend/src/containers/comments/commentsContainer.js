@@ -6,7 +6,7 @@ import deleteComment from '../../actions/deleteComment'
 
 class CommentsContainer extends React.Component {
   state = {
-    user_id: this.props.user_id,
+    user_id: this.props.user.id,
     post_id: this.props.post_id,
     id: ''
   }
@@ -23,7 +23,7 @@ class CommentsContainer extends React.Component {
   render() {
     return(
       <div onSubmit={this.handleSubmit}>
-        <Comments comments={this.props.comments} />
+        <Comments comments={this.props.comments} user={this.props.user}/>
       </div>
     )
   }
@@ -31,7 +31,7 @@ class CommentsContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    user_id: state.account.user.id,
+    user: state.account.user,
     post_id: state.single_post.post.id
   }
 }

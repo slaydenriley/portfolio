@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import deleteComment from '../../actions/deleteComment'
 import DeleteComment from '../../components/comments/DeleteComment'
 
+
 class Comments extends React.Component {
 
   render() {
@@ -12,10 +13,10 @@ class Comments extends React.Component {
         {this.props.comments.map(comment =>
           <div key={comment.id} className="comment-list">
 
-            <h3><em>By: {comment.user_id}</em></h3>
+            <h3><em>By: {this.props.user.name}</em></h3>
             <p>{comment.created_at}</p>
             <em>{comment.content}</em>
-            <DeleteComment comment={comment}/>
+            <DeleteComment comment={comment} user_id={this.props.user.id}/>
 
           </div>)}
       </div>
