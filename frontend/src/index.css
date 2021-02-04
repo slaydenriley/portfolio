@@ -43,13 +43,14 @@
   margin-top: 30px;
 }
 
-.login input, .new-post input {
+.login input, .new-post input, .new-post select {
   margin-top: 10px;
   font-size: 20px;
   width: 400px;
   text-align: center;
   padding: 10px;
 }
+
 
 .submit {
   background: #00010a;

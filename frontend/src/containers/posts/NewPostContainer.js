@@ -13,6 +13,7 @@ class NewPostContainer extends React.Component {
     title: '',
     user_id: this.props.user_id,
     content: '',
+    category: '',
     redirectToNewPage: false
   };
 
@@ -31,6 +32,7 @@ class NewPostContainer extends React.Component {
     this.setState({redirectToNewPage: true})
     this.handleRedirect()
   };
+
 
   handleRedirect = () => {
     if (this.state.redirectToNewPage === true) {
