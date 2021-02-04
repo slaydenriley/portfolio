@@ -12,8 +12,8 @@ class Comments extends React.Component {
 
   render() {
     return (
-      <div className="post_comments">
-        <h1><u>Comments</u></h1>
+      <div className="comments">
+        <h1>Comments</h1>
         {this.props.comments.map(comment =>
           <div key={comment.id} className="comment-list">
             <h3><em>By: {comment.author_name}</em></h3>

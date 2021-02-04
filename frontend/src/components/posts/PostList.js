@@ -6,7 +6,7 @@ class PostList extends React.Component {
   render() {
     return (
       <div className="posts">
-        <h1><u>{this.props.title_name}</u></h1>
+        <h1>{this.props.title_name}</h1>
         {this.props.posts.map(post =>
           <div key={post.id} className="post-list">
             <Link key={post.id} to={`/posts/${post.id}`}><h3><em>{post.title}</em></h3></Link>

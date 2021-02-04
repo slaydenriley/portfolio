@@ -9,29 +9,34 @@ const NavBar = props => {
   const navtype = () => {
     return auth ?
       <div>
-        <Navbar bg="dark" className="">
+        <Navbar className="container-fluid">
           <Navbar.Brand className="font-weight-bold text-muted">
             Riley Slayden
           </Navbar.Brand>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/projects">Projects</NavLink>
-          <NavLink to="/posts">Posts</NavLink>
-          <NavLink to="/dashboard">Dashboard</NavLink>
-          <NavLink to="/logout">Logout</NavLink>
-
+          <NavLink to="/posts">Blog</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+            <div className="ml-auto">
+              <NavLink to="/dashboard">Dashboard</NavLink>
+              <NavLink to="/logout">Logout</NavLink>
+            </div>
         </Navbar>
       </div>
       :
       <div>
-        <Navbar bg="dark" className="">
+        <Navbar>
           <Navbar.Brand className="font-weight-bold text-muted">
             Riley Slayden
           </Navbar.Brand>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/projects">Projects</NavLink>
-          <NavLink to="/posts">Posts</NavLink>
-          <NavLink to="/login">Login</NavLink>
-
+          <NavLink to="/posts">Blog</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+            <div className="ml-auto">
+              <NavLink to="/signup">Create Account</NavLink>
+              <NavLink to="/login">Login</NavLink>
+            </div>
         </Navbar>
       </div>
   }

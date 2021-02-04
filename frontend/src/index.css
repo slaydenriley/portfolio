@@ -1,10 +1,22 @@
+.app {
+  padding-bottom: 50px;
+  background: #222436;
+  color: #bfbfbf;
+  position: relative;
+  min-height: 100vh;
+}
+
 .navbar a {
   margin: 5px;
-  color: white;
+  color: #bfbfbf;
+  font-weight: bold;
+}
+
+.navbar {
+  background: #00010a;
 }
 
 .navbar a:hover {
-  margin: 5px;
   color: lightblue;
   transform: scale(1.1);
   text-decoration: none;
@@ -20,37 +32,63 @@ input {
 }
 
 .textEditor {
-  border: 1px solid grey;
-  padding: 10px;
+  background-color: white;
+  color: black;
+  height: 400px;
 }
 
 .textEditorWrap {
-  width: 60%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
+
+
 
 .login input, .comment-input input, .comment-input textarea, .new-post{
   margin-top: 10px;
 }
 
-.home, .projects, .posts, .account, .login, .single-post, .dashboard, .post-editor, .new-post {
-  padding-top: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.post-content {
+.post-content, .new-post{
   text-align: left;
   line-height: 1.7;
   font-size: 18px;
-  width: 70%;
-  padding-left: 70px;
 }
 
-.post-title {
-  background-color: lightblue;
-  padding: 10px;
+.posts, .dashboard {
   text-align: center;
-  margin-bottom: 30px;
+  line-height: 1.7;
+  font-size: 18px;
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.post-title, .home, .new-post {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.comments h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  padding: 10px;
+  color: #222436;
+  background-color: #bfbfbf
+}
+
+
+.post-title h1, .home h1 {
+  font-size: 50px!important;
+  font-weight: bolder;
+}
+
+.single-post {
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .post-comment {
@@ -63,14 +101,9 @@ input {
   position: absolute;
   bottom: 0;
   color: white;
-  background-color: black;
+  background: #00010a;
   padding-top: 10px;
 
-}
-
-.app {
-  position: relative;
-  min-height: 100vh;
 }
 
 .dashboard-components {
