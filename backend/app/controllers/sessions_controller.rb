@@ -9,11 +9,12 @@ class SessionsController < ApplicationController
       login!
       render json: {
         logged_in: true,
-        user: UserSerializer.new(@user).to_serialized_json
+        user: current_user
       }
     else
       render json: {
         status: 401,
+        logged_in: false,
         errors: ['Cannot find user, please try again']
       }
     end
