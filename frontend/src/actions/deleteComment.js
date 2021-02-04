@@ -1,13 +1,13 @@
-export default function deleteComment(id, post_id) {
+export default function deleteComment(formData) {
     return (dispatch) => {
         dispatch({ type: 'START_FETCHING_POST' });
-        fetch(`http://localhost:3001/comments/${id}`, {
+        fetch(`http://localhost:3001/comments`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
             method: 'DELETE',
-            body: JSON.stringify(post_id)
+            body: JSON.stringify(formData)
         })
         .then(res => res.json())
         .then(post => dispatch({

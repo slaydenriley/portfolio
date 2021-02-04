@@ -5,19 +5,14 @@ import deleteComment from '../../actions/deleteComment'
 
 class Comments extends React.Component {
 
-  handleSubmit = (e, id, post_id) => {
-    e.preventDefault()
-    this.props.deleteComment(id, post_id)
-  }
-
   render() {
     return (
       <div className="comments">
         <h1>Comments</h1>
         {this.props.comments.map(comment =>
           <div key={comment.id} className="comment-list">
-            <h3><em>By: {comment.author_name}</em></h3>
-            <form onSubmit={e => this.handleSubmit(e, comment.id, comment.post_id)}>
+            <h3><em>By: {comment.user_id}</em></h3>
+            <form name="comment_id" id={comment.id}>
               <input type="submit" value="Delete"/>
             </form>
             <p>{comment.created_at}</p>
@@ -29,14 +24,3 @@ class Comments extends React.Component {
 }
 
 export default connect(null, {deleteComment})(Comments)
-
-/*
-{props.account.map(user =>
-  <div key={user.id}>
-    <em>Logged in: {user.name}</em>
-    <h2>Description</h2>
-    <p>{user.description}</p>
-    <h2>Email</h2>
-    <a href={"mailto:" + user.email}>{user.email}</a>
-  </div>)}
-  */

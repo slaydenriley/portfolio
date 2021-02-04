@@ -4,6 +4,7 @@ import fetchSinglePost from '../../actions/fetchSinglePost'
 import ShowPost from '../../components/posts/ShowPost'
 import { BlockReserveLoading } from 'react-loadingg';
 import CommentsContainer from '../../containers/comments/commentsContainer'
+import AddCommentContainer from '../../containers/comments/addCommentContainer'
 
 class SinglePostContainer extends React.Component {
 
@@ -21,6 +22,7 @@ class SinglePostContainer extends React.Component {
         <>
           <ShowPost post={this.props.post.post} />
           <CommentsContainer comments={this.props.post.post.comments} />
+          <AddCommentContainer />
         </>
       )
     }
