@@ -22,10 +22,6 @@
   text-decoration: none;
 }
 
-input {
-  font-size: 25px;
-  padding: 10px;
-}
 
 .new-post input {
   width: 30%;
@@ -42,10 +38,29 @@ input {
   padding-right: 20%;
 }
 
+.login {
+  text-align: center;
+  margin-top: 30px;
+}
 
-
-.login input, .comment-input input, .comment-input textarea, .new-post{
+.login input, .new-post input {
   margin-top: 10px;
+  font-size: 20px;
+  width: 400px;
+  text-align: center;
+  padding: 10px;
+}
+
+.submit {
+  background: #00010a;
+  color: #bfbfbf;
+  border: none;
+}
+
+.submit:hover {
+  background: lightblue;
+  color: #00010a;
+  border: none;
 }
 
 .post-content, .new-post{
@@ -80,7 +95,6 @@ input {
   background-color: #bfbfbf
 }
 
-
 .post-title h1, .home h1 {
   font-size: 50px!important;
   font-weight: bolder;
@@ -108,4 +122,19 @@ input {
 
 .dashboard-components {
   width: 50%;
+}
+
+.home {
+  display: flex;
+  font-size: 25px;
+}
+
+.home-left {
+  flex: 1
+}
+
+.home-right {
+  flex: 2;
+  padding-right: 100px;
+  padding-left: 100px;
 }
