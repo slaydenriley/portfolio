@@ -26,16 +26,14 @@ riley = User.create(
 
 ## Create Posts
 post = riley.posts.build(
-  title: "This is my first blog post!",
+  title: "This is a blog post example!",
   content: "Hey, this is the content of this first blog post. Enjoy!",
-  post: false,
-  project: true,
+  category: "post"
 )
 
-second_post = riley.posts.build(
-  title: "This is my SECOND blog post!",
-  post: true,
-  project: false,
+project = riley.posts.build(
+  title: "This is a nice project example!",
+  category: "project",
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel ligula vel mauris ornare convallis.
   Quisque eget ipsum sit amet orci gravida viverra. Curabitur dapibus sed lacus nec feugiat.
   Curabitur porttitor, risus eu pulvinar interdum, est nulla porttitor sapien,
@@ -72,13 +70,13 @@ second_post = riley.posts.build(
 )
 
 
-comment = post.comments.build(
+post_comment = post.comments.build(
   author_name: "Morgan Hubbard",
   author_email: "mbhubbard@gmail.com",
   content: "First comment on a first blog post"
 )
 
-second_comment = second_post.comments.build(
+project_comment = project.comments.build(
   author_name: "Cade Slayden",
   author_email: "cade@gmail.com",
   content: "Awesome blog post dude!!!"
@@ -86,5 +84,6 @@ second_comment = second_post.comments.build(
 
 riley.save
 post.save
-comment.save
-second_comment.save
+project.save
+post_omment.save
+project_comment.save
