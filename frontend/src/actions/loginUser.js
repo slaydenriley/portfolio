@@ -1,5 +1,6 @@
 export default function loginUser(formData) {
     return (dispatch) => {
+        dispatch({ type: 'START_LOGIN' });
         fetch(`http://localhost:3001/login`, {
             headers: {
                 'Content-Type': 'application/json',
@@ -10,7 +11,7 @@ export default function loginUser(formData) {
             credentials: 'include'
         })
         .then(res => res.json())
-        .then(user => dispatch({type: 'LOGIN_USER', payload: user}))
+        .then(res => dispatch({type: 'LOGIN_USER', payload: res}))
     }
 }
 

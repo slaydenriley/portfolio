@@ -62,7 +62,7 @@ class NewPostContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        user_id: state.account.account.id
+        user_id: state.account.user.id
     };
 };
 

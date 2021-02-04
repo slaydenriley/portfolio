@@ -12,15 +12,11 @@ class AccountContainer extends React.Component {
   render() {
     return (
       <div>
-        <Account account={this.props.account} />
+        <Account />
       </div>
     )
   }
 }
-const mapStateToProps = state => {
-  return {
-    account: state.account
-  }
-}
 
-export default connect(mapStateToProps, {fetchAccount})(AccountContainer)
+
+export default AccountContainer

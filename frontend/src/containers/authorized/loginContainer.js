@@ -23,13 +23,30 @@ class LoginContainer extends React.Component {
     this.props.loginUser(formData)
   };
 
+  handleLogin = () => {
+    if (this.props.logged_in === false) {
+      return(
+        <div onChange={this.handleChange} onSubmit={this.handleSubmit}>
+          <Login />
+        </div>)
+    } else {
+      return <Redirect to="/dashboard" />
+    }
+  }
+
   render() {
     return (
-      <div onChange={this.handleChange} onSubmit={this.handleSubmit}>
-        <Login />
+      <div>
+        {this.handleLogin()}
       </div>
     )
   }
 }
 
-export default connect(null, {loginUser})(LoginContainer)
+const mapStateToProps = (state) => {
+  return {
+    logged_in: state.account.logged_in
+  }
+}
+
+export default connect(mapStateToProps, {loginUser})(LoginContainer)
