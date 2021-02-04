@@ -30,7 +30,7 @@ class CommentInput extends React.Component {
             <input type="text" name="author_name" placeholder="Your Name"/><br/>
             <input type="text" name="author_email" placeholder="Your Email"/><br/>
             <textarea name="content" placeholder="What do you think?"/><br/>
-            <input type="submit"/>
+            <input className="submit" type="submit"/>
           </form>
       </div>)
     }

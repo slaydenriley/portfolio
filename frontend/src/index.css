@@ -1,5 +1,5 @@
 .app {
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   background: #222436;
   color: #bfbfbf;
   position: relative;
@@ -54,13 +54,13 @@
 .submit {
   background: #00010a;
   color: #bfbfbf;
-  border: none;
+  border: 2px solid #bfbfbf;
+  font-weight: bolder;
 }
 
 .submit:hover {
   background: lightblue;
   color: #00010a;
-  border: none;
 }
 
 .post-content, .new-post{
@@ -130,7 +130,33 @@
 }
 
 .home-left {
-  flex: 1
+  flex: 1;
+  padding-left: 100px;
+  margin-top: 20px;
+}
+
+.comment-input {
+  text-align: center;
+}
+
+.comment-input input, .comment-input textarea {
+  margin-top: 10px;
+  font-size: 20px;
+  width: 600px;
+  text-align: center;
+  padding: 10px;
+}
+
+.social {
+  margin-top: 30px;
+  color: white;
+  font-size: 40px;
+  line-height: 40px;
+  font-style: italic;
+}
+
+.home-left img {
+  width: 100%;
 }
 
 .home-right {

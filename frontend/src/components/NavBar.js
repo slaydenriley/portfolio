@@ -16,7 +16,7 @@ const NavBar = props => {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/posts">Blog</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/resume">Resumé</NavLink>
             <div className="ml-auto">
               <NavLink to="/dashboard">Dashboard</NavLink>
               <NavLink to="/logout">Logout</NavLink>
@@ -32,7 +32,7 @@ const NavBar = props => {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/projects">Projects</NavLink>
           <NavLink to="/posts">Blog</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/resume">Resumé</NavLink>
             <div className="ml-auto">
               <NavLink to="/signup">Create Account</NavLink>
               <NavLink to="/login">Login</NavLink>

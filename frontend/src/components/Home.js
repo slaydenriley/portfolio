@@ -1,10 +1,14 @@
 import React from 'react';
 
-const Home = () => {
+const Home = (props) => {
   return (
     <div className="home">
       <div className="home-left">
-
+        <img src="https://d31u1j2vbx6ya5.cloudfront.net/gei-assets/uploads/2019/08/pro-headshots-photography-tips.jpg" alt="Headshot"/>
+        <div className="social">
+          <p>Riley Slayden</p>
+          <p>Missoula, MT</p>
+        </div>
       </div>
 
       <div className="home-right">
