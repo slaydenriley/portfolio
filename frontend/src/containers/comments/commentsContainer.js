@@ -12,10 +12,11 @@ class CommentsContainer extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.state.comment_id = event.target.id
+    let id = event.target.id
+    this.state.id = parseInt(id)
     let formData = this.state
 
-   this.props.deleteComment(formData)
+    this.props.deleteComment(formData)
 
   }
 

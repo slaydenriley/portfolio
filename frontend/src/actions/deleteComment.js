@@ -7,6 +7,7 @@ export default function deleteComment(formData) {
                 'Accept': 'application/json'
             },
             method: 'DELETE',
+            credentials: 'include',
             body: JSON.stringify(formData)
         })
         .then(res => res.json())
