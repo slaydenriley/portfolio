@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   get '/logged_in', to: 'sessions#is_logged_in?'
 
   post '/posts/:id/comments', to: 'comments#create'
-  delete '/comments/:id', to: 'comments#destroy'
+  delete '/comments', to: 'comments#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

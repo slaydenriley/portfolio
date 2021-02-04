@@ -14,16 +14,24 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    comment = Comment.find_by(id: params[:id])
-    post = Post.find_by(id: comment.post_id)
-    if comment.destroy
-      render json: PostSerializer.new(post).to_serialized_json
+    comment = Comment.find_by(id: comment_params[:id])
+    binding.pry
+    post = Post.find_by(id: comment_params[:post_id])
+    if comment.user_id == current_user.id
+      if comment.destroy
+        render json: PostSerializer.new(post).to_serialized_json
+      else
+        payload = {
+          error: "Something went wrong. Please try again.",
+          status: 400
+        }
+        render :json => payload, :status => :bad_request
+      end
     else
       payload = {
-        error: "Something went wrong. Please try again.",
+        error: "You don't own this comment!",
         status: 400
       }
-      render :json => payload, :status => :bad_request
     end
   end
 
