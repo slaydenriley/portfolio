@@ -4,7 +4,7 @@ class CommentSerializer
   end
 
   def to_serialized_json
-    options = {:only => [:id, :author_name, :author_email, :content, :post_id]}
+    options = {:only => [:id, :content, :post_id, :user_id, :created_at, :updated_at]}
 
     @comment.to_json(options)
   end
