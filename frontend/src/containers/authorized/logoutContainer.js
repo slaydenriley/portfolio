@@ -5,8 +5,8 @@ import {Redirect} from 'react-router-dom'
 
 class LogoutContainer extends React.Component {
 
-  componentWillMount() {
-    this.props.dispatch(logout());
+  componentDidMount() {
+    this.props.logout();
   }
 
   render() {
@@ -16,4 +16,4 @@ class LogoutContainer extends React.Component {
   }
 }
 
-export default connect()(LogoutContainer)
+export default connect(null, {logout})(LogoutContainer)

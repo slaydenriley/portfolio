@@ -6,8 +6,9 @@ const Home = (props) => {
       <div className="home-left">
         <img src="https://d31u1j2vbx6ya5.cloudfront.net/gei-assets/uploads/2019/08/pro-headshots-photography-tips.jpg" alt="Headshot"/>
         <div className="social">
-          <p>Riley Slayden</p>
+          <h2>Riley Slayden</h2>
           <p>Missoula, MT</p>
+          <h3>Gitub | LinkedIn</h3>
         </div>
       </div>
 
