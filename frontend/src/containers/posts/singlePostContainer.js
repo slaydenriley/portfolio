@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import fetchSinglePost from '../../actions/fetchSinglePost'
 import ShowPost from '../../components/posts/ShowPost'
 import { BlockReserveLoading } from 'react-loadingg';
+import CommentsContainer from '../../containers/comments/commentsContainer'
 
 class SinglePostContainer extends React.Component {
 
@@ -16,7 +17,12 @@ class SinglePostContainer extends React.Component {
       return <BlockReserveLoading />;
 
     } else {
-      return <ShowPost post={this.props.post.post} comments={this.props.post.post.comments} />
+      return (
+        <>
+          <ShowPost post={this.props.post.post} comments={this.props.post.post.comments} />
+          <CommentsContainer comments={this.props.post.post.comments} />
+        </>
+      )
     }
   }
 
