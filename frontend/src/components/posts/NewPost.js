@@ -6,7 +6,7 @@ const NewPost = (props) => {
       <h2>Create New Post</h2>
         <form className="new-post">
           <input type="text" name="title" placeholder="Post Title"/><br/>
-          <select>
+          <select name="category">
             <option value="post">Post</option>
             <option value="project">Project</option>
           </select><br/>

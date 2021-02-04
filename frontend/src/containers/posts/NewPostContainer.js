@@ -13,7 +13,7 @@ class NewPostContainer extends React.Component {
     title: '',
     user_id: this.props.user_id,
     content: '',
-    category: '',
+    category: null,
     redirectToNewPage: false
   };
 
@@ -27,8 +27,6 @@ class NewPostContainer extends React.Component {
     event.preventDefault()
     const formData = this.state
     this.props.addNewPost(formData)
-
-    // Need to find a way to do this AFTER post is successful
     this.setState({redirectToNewPage: true})
     this.handleRedirect()
   };
