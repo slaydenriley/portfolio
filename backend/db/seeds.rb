@@ -85,5 +85,5 @@ project_comment = project.comments.build(
 riley.save
 post.save
 project.save
-post_omment.save
+post_comment.save
 project_comment.save
