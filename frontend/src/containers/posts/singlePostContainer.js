@@ -22,7 +22,6 @@ class SinglePostContainer extends React.Component {
         <>
           <ShowPost post={this.props.post.post} />
           <CommentsContainer comments={this.props.post.post.comments} />
-          <AddCommentContainer />
         </>
       )
     }

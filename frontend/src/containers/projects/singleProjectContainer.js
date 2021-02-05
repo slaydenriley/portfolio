@@ -20,9 +20,8 @@ class SingleProjectContainer extends React.Component {
     } else {
       return(
         <>
-          <ShowProject post={this.props.post.post} />
-          <CommentsContainer comments={this.props.post.post.comments} />
-          <AddCommentContainer />
+        <ShowProject post={this.props.post.post} />
+        <CommentsContainer comments={this.props.post.post.comments} />
         </>)
     }
   }
