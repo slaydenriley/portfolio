@@ -3,6 +3,7 @@ import Comments from '../../components/comments/Comments'
 import DeleteComment from '../../components/comments/DeleteComment'
 import {connect} from 'react-redux'
 import deleteComment from '../../actions/deleteComment'
+import AddCommentContainer from './addCommentContainer'
 
 class CommentsContainer extends React.Component {
   state = {
@@ -16,21 +17,37 @@ class CommentsContainer extends React.Component {
     this.state.id = parseInt(id)
     let formData = this.state
     this.props.deleteComment(formData)
-
   }
+
+  handleView = () => {
+    if (this.props.logged_in) {
+      return(
+        <div onSubmit={this.handleSubmit}>
+          <Comments comments={this.props.comments} />
+          <AddCommentContainer />
+        </div>
+      )
+    }
+    else
+      return(
+        <div onSubmit={this.handleSubmit}>
+          <Comments comments={this.props.comments} />
+        </div>
+      )
+    }
 
   render() {
     return(
-      <div onSubmit={this.handleSubmit}>
-        <Comments comments={this.props.comments} />
-      </div>
+      <div>{this.handleView()}</div>
     )
   }
+
 }
 
 const mapStateToProps = (state) => {
   return {
-    post_id: state.single_post.post.id
+    post_id: state.single_post.post.id,
+    logged_in: state.account.logged_in
   }
 }
 
