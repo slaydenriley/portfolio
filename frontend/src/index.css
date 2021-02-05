@@ -67,7 +67,7 @@
 .post-content, .new-post {
   text-align: left;
   line-height: 1.7;
-  
+
 }
 
 .posts, .dashboard {
@@ -164,4 +164,8 @@
   text-align: left;
   padding-right: 100px;
   padding-left: 100px;
+}
+
+.line {
+  border: 2px solid #bfbfbf;
 }

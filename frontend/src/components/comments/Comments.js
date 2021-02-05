@@ -13,12 +13,12 @@ class Comments extends React.Component {
         {this.props.comments.map(comment =>
           <div key={comment.id} className="comment-list">
 
-            <h3><em>By: {comment.user.name}</em></h3>
-            <p>{comment.created_at}</p>
-            <em>{comment.content}</em>
+            <h3><em>{comment.user.name}</em></h3>
+            <em>...on {comment.created_at}</em>
+            <p>{comment.content}</p>
 
             <DeleteComment comment={comment} user_id={this.props.user_id}/>
-
+            <hr className="line"/>
           </div>)}
       </div>
     );
