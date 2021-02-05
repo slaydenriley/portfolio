@@ -3,6 +3,7 @@ class Comment < ApplicationRecord
   belongs_to :user
 
   def created_at
-    attributes['created_at'].strftime('%b %e, %l:%M %p')
+    time = attributes['created_at']
+    time.strftime('%A, %B %u')
   end
 end
