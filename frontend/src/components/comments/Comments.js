@@ -17,6 +17,7 @@ class Comments extends React.Component {
             <p>{comment.created_at}</p>
             <em>{comment.content}</em>
 
+            <DeleteComment comment={comment} user_id={this.props.user_id}/>
 
           </div>)}
       </div>

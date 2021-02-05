@@ -1,9 +1,10 @@
 import React from 'react'
 import Comments from '../../components/comments/Comments'
-import DeleteComment from '../../components/comments/DeleteComment'
+import DeleteCommentContainer from './deleteCommentContainer'
 import {connect} from 'react-redux'
 import deleteComment from '../../actions/deleteComment'
 import AddCommentContainer from './addCommentContainer'
+import {Link} from 'react-router-dom'
 
 class CommentsContainer extends React.Component {
   state = {
@@ -23,7 +24,7 @@ class CommentsContainer extends React.Component {
     if (this.props.logged_in) {
       return(
         <div onSubmit={this.handleSubmit}>
-          <Comments comments={this.props.comments} />
+          <DeleteCommentContainer comments={this.props.comments}/>
           <AddCommentContainer />
         </div>
       )
@@ -32,6 +33,7 @@ class CommentsContainer extends React.Component {
       return(
         <div onSubmit={this.handleSubmit}>
           <Comments comments={this.props.comments} />
+          <h3 className="comments">To add a new comment, please <Link to='/login'>login</Link> or <Link to='/signup'>create an account.</Link></h3>
         </div>
       )
     }
@@ -47,7 +49,8 @@ class CommentsContainer extends React.Component {
 const mapStateToProps = (state) => {
   return {
     post_id: state.single_post.post.id,
-    logged_in: state.account.logged_in
+    logged_in: state.account.logged_in,
+
   }
 }
 
