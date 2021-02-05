@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     if user.save
       session[:user_id] = user.id
       payload = {
-        user: UserSerializer.new(user).to_serialized_json,
+        user: current_user,
         logged_in: true
       }
       render :json => payload
