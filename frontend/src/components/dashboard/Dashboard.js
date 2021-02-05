@@ -8,9 +8,11 @@ class Dashboard extends React.Component {
       <div className="dashboard">
         <h1>Dashboard</h1>
           <div className="dashboard-components">
-            <NavLink to="/dashboard/posts/new">New Post</NavLink>
-            <NavLink to="/dashboard/posts/edit">Edit Posts</NavLink>
-            <NavLink to="/dashboard/account/edit">Edit Account</NavLink>
+            <h2>
+            <NavLink to="/dashboard/posts/new">New Post</NavLink><br/>
+            <NavLink to="/dashboard/posts/edit">Edit Posts</NavLink><br/>
+            <NavLink to="/dashboard/account/edit">Edit Account</NavLink><br/>
+            </h2>
           </div>
         </div>)
   }

@@ -30,7 +30,7 @@ class LoginContainer extends React.Component {
           <Login />
         </div>)
     } else {
-      return <Redirect to="/dashboard" />
+      return <Redirect to="/" />
     }
   }
 

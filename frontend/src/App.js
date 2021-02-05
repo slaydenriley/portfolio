@@ -33,7 +33,7 @@ class App extends React.Component {
       <Router>
         <div className="app">
           <div className="app-body">
-            <NavBar logged_in={this.props.logged_in}/>
+            <NavBar logged_in={this.props.logged_in} admin={this.props.admin}/>
             <Route exact path="/" component={Home} />
 
             <Route exact path="/login" component={LoginContainer} />
@@ -62,7 +62,8 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    logged_in: state.account.logged_in
+    logged_in: state.account.logged_in,
+    admin: state.account.admin
   }
 }
 

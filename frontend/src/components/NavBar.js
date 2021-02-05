@@ -4,41 +4,69 @@ import {Navbar} from 'react-bootstrap'
 
 const NavBar = props => {
 
-  const auth = props.logged_in;
+  const logged_in = props.logged_in;
+  const admin = props.admin
 
   const navtype = () => {
-    return auth ?
-      <div>
-        <Navbar className="container-fluid">
-          <Navbar.Brand className="font-weight-bold text-muted">
-            Riley Slayden
-          </Navbar.Brand>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/projects">Projects</NavLink>
-          <NavLink to="/posts">Blog</NavLink>
-          <NavLink to="/resume">Resumé</NavLink>
-            <div className="ml-auto">
-              <NavLink to="/dashboard">Dashboard</NavLink>
-              <NavLink to="/logout">Logout</NavLink>
-            </div>
-        </Navbar>
-      </div>
-      :
-      <div>
-        <Navbar>
-          <Navbar.Brand className="font-weight-bold text-muted">
-            Riley Slayden
-          </Navbar.Brand>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/projects">Projects</NavLink>
-          <NavLink to="/posts">Blog</NavLink>
-          <NavLink to="/resume">Resumé</NavLink>
-            <div className="ml-auto">
-              <NavLink to="/signup">Create Account</NavLink>
-              <NavLink to="/login">Login</NavLink>
-            </div>
-        </Navbar>
-      </div>
+    if (logged_in === true) {
+      if (admin === true) {
+        return (
+          <div>
+            <Navbar className="container-fluid">
+              <Navbar.Brand className="font-weight-bold text-muted">
+                Riley Slayden
+                </Navbar.Brand>
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/projects">Projects</NavLink>
+                <NavLink to="/posts">Blog</NavLink>
+                <NavLink to="/resume">Resumé</NavLink>
+                <div className="ml-auto">
+                  <NavLink to="/dashboard">Dashboard</NavLink>
+                  <NavLink to="/logout">Logout</NavLink>
+                </div>
+            </Navbar>
+          </div>
+        )
+      }
+      else {
+        return (
+          <div>
+            <Navbar className="container-fluid">
+              <Navbar.Brand className="font-weight-bold text-muted">
+                Riley Slayden
+                </Navbar.Brand>
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/projects">Projects</NavLink>
+                <NavLink to="/posts">Blog</NavLink>
+                <NavLink to="/resume">Resumé</NavLink>
+                <div className="ml-auto">
+
+                  <NavLink to="/logout">Logout</NavLink>
+                </div>
+            </Navbar>
+          </div>
+        )
+      }
+    }
+    else {
+      return (
+        <div>
+          <Navbar>
+            <Navbar.Brand className="font-weight-bold text-muted">
+              Riley Slayden
+            </Navbar.Brand>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/projects">Projects</NavLink>
+            <NavLink to="/posts">Blog</NavLink>
+            <NavLink to="/resume">Resumé</NavLink>
+              <div className="ml-auto">
+                <NavLink to="/signup">Create Account</NavLink>
+                <NavLink to="/login">Login</NavLink>
+              </div>
+          </Navbar>
+        </div>
+      )
+    }
   }
 
   return (
@@ -48,6 +76,8 @@ const NavBar = props => {
 
   );
 };
+
+
 
 export default NavBar;
 

@@ -1,4 +1,4 @@
-export default function accountReducer(state = {logged_in: false, errors: null, requesting: false }, action) {
+export default function accountReducer(state = {logged_in: false, errors: null, requesting: false, admin: false }, action) {
   switch(action.type) {
     case 'FETCH_ACCOUNT':
       return action.payload
@@ -13,7 +13,8 @@ export default function accountReducer(state = {logged_in: false, errors: null, 
         user: action.payload.user,
         logged_in: action.payload.logged_in,
         errors: action.payload.errors,
-        requesting: false
+        requesting: false,
+        admin: action.payload.admin
       }
 
     case "START_SIGNUP":
@@ -26,7 +27,8 @@ export default function accountReducer(state = {logged_in: false, errors: null, 
         user: action.payload.user,
         logged_in: action.payload.logged_in,
         errors: action.payload.errors,
-        requesting: false
+        requesting: false,
+        admin: action.payload.admin
       }
 
     case "LOGOUT_USER":
