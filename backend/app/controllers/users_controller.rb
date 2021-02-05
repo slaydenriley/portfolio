@@ -5,7 +5,8 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       payload = {
         user: current_user,
-        logged_in: true
+        logged_in: true,
+        admin: current_user.admin
       }
       render :json => payload
     else

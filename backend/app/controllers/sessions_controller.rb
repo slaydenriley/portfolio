@@ -7,12 +7,14 @@ class SessionsController < ApplicationController
       login!
       render json: {
         logged_in: true,
-        user: current_user
+        user: current_user,
+        admin: current_user.admin
       }
     else
       render json: {
         status: 401,
         logged_in: false,
+        admin: false,
         errors: ['Cannot find user, please try again']
       }
     end
@@ -22,7 +24,8 @@ class SessionsController < ApplicationController
     if logged_in? && current_user
       render json: {
         logged_in: true,
-        user: current_user
+        user: current_user,
+        admin: current_user.admin
       }
     else
       render json: {
