@@ -6,6 +6,10 @@
   min-height: 100vh;
 }
 
+body {
+  background-color: #00010a!important;
+}
+
 .navbar a {
   margin: 5px;
   color: #bfbfbf;

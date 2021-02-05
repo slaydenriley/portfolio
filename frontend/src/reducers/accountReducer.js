@@ -40,7 +40,8 @@ export default function accountReducer(state = {logged_in: false, errors: null, 
     case "LOGIN_STATUS":
       return {
         user: action.payload.user,
-        logged_in: action.payload.logged_in
+        logged_in: action.payload.logged_in,
+        admin: action.payload.admin
       }
 
     default:
