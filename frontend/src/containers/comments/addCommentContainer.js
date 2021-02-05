@@ -27,7 +27,7 @@ class AddCommentContainer extends React.Component {
   render() {
     return(
       <div onChange={this.handleChange} onSubmit={this.handleSubmit}>
-        <CommentInput />
+        <CommentInput name={this.props.user_name}/>
       </div>
     )
   }
@@ -36,7 +36,8 @@ class AddCommentContainer extends React.Component {
 const mapStateToProps = state => {
   return {
     user_id: state.account.user.id,
-    post_id: state.single_post.post.id
+    post_id: state.single_post.post.id,
+    user_name: state.account.user.name
   }
 }
 

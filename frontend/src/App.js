@@ -28,6 +28,32 @@ class App extends React.Component {
     this.props.loginStatus()
   }
 
+  handleView = () => {
+    if (this.props.logged_in) {
+      if (this.props.admin) {
+        return(
+          <>
+            <Route exact path="/dashboard" component={DashboardContainer} />
+            <Route exact path="/dashboard/posts/new" component={NewPostContainer} />
+            <Route exact path="/dashboard/posts/edit" component={EditPostContainer} />
+            <Route exact path="/logout" component={LogoutContainer} />
+          </>
+        )
+      }
+      else {
+        return <Route exact path="/logout" component={LogoutContainer} />
+      }
+    }
+    else {
+      return (
+        <>
+          <Route exact path="/signup" component={SignupContainer} />
+          <Route exact path="/login" component={LoginContainer} />
+        </>
+      )
+    }
+  }
+
   render() {
     return (
       <Router>
@@ -35,23 +61,11 @@ class App extends React.Component {
           <div className="app-body">
             <NavBar logged_in={this.props.logged_in} admin={this.props.admin}/>
             <Route exact path="/" component={Home} />
-
-            <Route exact path="/login" component={LoginContainer} />
-            <Route exact path="/logout" component={LogoutContainer} />
-
             <Route exact path="/posts" component={PostsContainer} />
             <Route path="/posts/:id" component={SinglePostContainer} />
-
             <Route exact path="/projects" component={ProjectsContainer} />
             <Route path="/projects/:id" component={SingleProjectContainer} />
-
-            <Route exact path="/dashboard" component={DashboardContainer} />
-
-            <Route exact path="/dashboard/posts/new" component={NewPostContainer} />
-            <Route exact path="/dashboard/posts/edit" component={EditPostContainer} />
-
-            <Route exact path="/signup" component={SignupContainer} />
-
+            {this.handleView()}
             <Footer />
           </div>
         </div>
