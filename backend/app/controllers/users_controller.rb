@@ -2,8 +2,12 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      render json: UserSerializer.new(user).to_serialized_json
       session[:user_id] = user.id
+      payload = {
+        user: UserSerializer.new(user).to_serialized_json,
+        logged_in: true
+      }
+      render :json => payload
     else
       payload = {
         error: "Something went wrong. Please try again.",
