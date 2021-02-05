@@ -16,6 +16,19 @@ export default function accountReducer(state = {logged_in: false, errors: null, 
         requesting: false
       }
 
+    case "START_SIGNUP":
+      return {
+        requesting: true
+      }
+
+    case "SIGNUP_USER":
+      return {
+        user: action.payload.user,
+        logged_in: action.payload.logged_in,
+        errors: action.payload.errors,
+        requesting: false
+      }
+
     case "LOGOUT_USER":
       return {
         account: [],

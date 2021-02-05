@@ -38,12 +38,12 @@
   padding-right: 20%;
 }
 
-.login {
+.login, .signup-form {
   text-align: center;
   margin-top: 30px;
 }
 
-.login input, .new-post input, .new-post select {
+.login input, .new-post input, .new-post select, .signup-form input {
   margin-top: 10px;
   font-size: 20px;
   width: 400px;

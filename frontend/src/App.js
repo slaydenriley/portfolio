@@ -14,6 +14,7 @@ import SingleProjectContainer from './containers/projects/singleProjectContainer
 
 
 import LoginContainer from './containers/authorized/loginContainer';
+import SignupContainer from './containers/authorized/signupContainer'
 import DashboardContainer from './containers/dashboard/dashboardContainer';
 import LogoutContainer from './containers/authorized/logoutContainer';
 import NewPostContainer from './containers/posts/NewPostContainer';
@@ -48,6 +49,8 @@ class App extends React.Component {
 
             <Route exact path="/dashboard/posts/new" component={NewPostContainer} />
             <Route exact path="/dashboard/posts/edit" component={EditPostContainer} />
+
+            <Route exact path="/signup" component={SignupContainer} />
 
             <Footer />
           </div>
