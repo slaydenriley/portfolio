@@ -12,6 +12,8 @@ import SinglePostContainer from './containers/posts/singlePostContainer';
 import ProjectsContainer from './containers/projects/projectsContainer';
 import SingleProjectContainer from './containers/projects/singleProjectContainer';
 
+import Resume from './components/Resume'
+
 
 import LoginContainer from './containers/authorized/loginContainer';
 import SignupContainer from './containers/authorized/signupContainer'
@@ -66,6 +68,7 @@ class App extends React.Component {
             <Route path="/posts/:id" component={SinglePostContainer} />
             <Route exact path="/projects" component={ProjectsContainer} />
             <Route path="/projects/:id" component={SingleProjectContainer} />
+            <Route path="/resume" component={Resume} />
             {this.handleView()}
             <Footer />
           </div>

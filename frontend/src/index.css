@@ -70,6 +70,8 @@ body {
 .submit:hover {
   background: lightblue;
   color: #00010a;
+  transform: scale(1.07);
+  transition: 1s;
 }
 
 .post-content, .new-post {
@@ -88,11 +90,28 @@ body {
   margin-top: 30px;
 }
 
-.post-title, .home, .new-post {
+.post-title, .home, .new-post{
   text-align: center;
   margin-bottom: 10px;
   margin-top: 30px;
   padding: 10px;
+}
+
+.resume {
+  text-align: center;
+  margin-top: 30px;
+  padding-right: 200px;
+  padding-left: 200px;
+}
+.resume img {
+  padding-top: 20px;
+  width: 80%;
+}
+
+.resume img:hover {
+  filter: drop-shadow(0 0 0.75rem lightblue);
+  transform: scale(1.02);
+  transition: 0.5s;
 }
 
 .comments h1 {
