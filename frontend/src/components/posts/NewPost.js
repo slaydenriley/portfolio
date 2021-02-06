@@ -5,8 +5,8 @@ const NewPost = (props) => {
     <div>
       <h2>Create New Post</h2>
         <form className="new-post">
-          <input type="text" name="title" placeholder="Post Title"/><br/>
-          <select name="category">
+          <input type="text" name="title" placeholder="Post Title" required/><br/>
+          <select name="category" required>
             <option value="post">Post</option>
             <option value="project">Project</option>
           </select><br/>
