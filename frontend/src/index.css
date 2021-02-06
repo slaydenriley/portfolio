@@ -125,10 +125,6 @@ body {
 
 }
 
-.dashboard-components {
-  width: 50%;
-}
-
 .home {
   display: flex;
   font-size: 25px;
@@ -164,7 +160,7 @@ body {
 }
 
 .home-left img {
-  width: 100%;
+  width: 80%;
 }
 
 .home-right {
@@ -185,9 +181,15 @@ body {
 .projects {
   padding: 30px 200px;
   text-align: center;
+  margin-bottom: 400px;
 }
 
-.home-card {
+.projects h1 {
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.home-card, .dashboard-components {
   text-align: center;
   width: 200px;
   background-color: #00010a;
@@ -203,7 +205,7 @@ body {
   font-size: 30px;
 }
 
-.home-card:hover {
+.home-card:hover, .dashboard-components:hover {
   text-decoration: none;
   font-style: italic;
   color: lightblue;
@@ -213,14 +215,17 @@ body {
   filter: drop-shadow(0 0 0.75rem lightblue);
 }
 
+.dashboard-content {
+  padding-top: 40px;
+}
+
+
 .single-project-card {
   text-align: center;
-  width: 200px;
+  width: 300px;
+  margin:10px;
   background-color: #00010a;
   color: #bfbfbf;
-  line-height: 200px;
-  margin: 10px;
-  display: flex;
   float: left;
   align-items: center;
   border: 2px solid #bfbfbf;

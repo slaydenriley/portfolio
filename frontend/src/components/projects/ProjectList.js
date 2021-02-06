@@ -7,6 +7,7 @@ class ProjectList extends React.Component {
     return (
       <div className="projects">
       <h1>{this.props.title_name}</h1>
+      <hr className="line"/>
         <div className="all-project-cards">
           {this.props.posts.map(post =>
             <Link key={post.id} className="single-project-card" to={`/projects/${post.id}`}>
