@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = (props) => {
   return (
@@ -8,12 +9,14 @@ const Home = (props) => {
         <div className="social">
           <h2>Riley Slayden</h2>
           <p>Missoula, MT</p>
+          <hr className="line"/>
           <h3>Gitub | LinkedIn</h3>
         </div>
       </div>
 
       <div className="home-right">
         <h1>Biography</h1>
+        <hr className="line"/>
         <p>
           Hello, my name is Riley Slayden! I am an (almost) graduate of
           Flatiron School's software engineering course. The technologies I use include
@@ -22,8 +25,12 @@ const Home = (props) => {
           Aside from coding, I am a huge outdoor enthusiast. Being raised in Montana, I was exposed
           to skiing, fly-fishing, hiking, camping, to mention a few.
         </p>
-        <br/>
-        <p></p>
+        <hr className="line"/>
+        <div class="home-cards">
+          <Link className="home-card" to="/projects">Projects</Link>
+          <Link className="home-card" to="/posts">Blog</Link>
+          <Link className="home-card" to="/resume">Resume</Link>
+        </div>
       </div>
     </div>
   );

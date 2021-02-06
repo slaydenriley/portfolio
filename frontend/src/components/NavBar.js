@@ -16,7 +16,7 @@ const NavBar = props => {
               <Navbar.Brand className="font-weight-bold text-muted">
                 Riley Slayden
                 </Navbar.Brand>
-                <NavLink to="/">Home</NavLink>
+                <NavLink exact={true} to="/">Home</NavLink>
                 <NavLink to="/projects">Projects</NavLink>
                 <NavLink to="/posts">Blog</NavLink>
                 <NavLink to="/resume">Resumé</NavLink>
@@ -35,7 +35,7 @@ const NavBar = props => {
               <Navbar.Brand className="font-weight-bold text-muted">
                 Riley Slayden
                 </Navbar.Brand>
-                <NavLink to="/">Home</NavLink>
+                <NavLink exact={true} to="/">Home</NavLink>
                 <NavLink to="/projects">Projects</NavLink>
                 <NavLink to="/posts">Blog</NavLink>
                 <NavLink to="/resume">Resumé</NavLink>
@@ -55,7 +55,7 @@ const NavBar = props => {
             <Navbar.Brand className="font-weight-bold text-muted">
               Riley Slayden
             </Navbar.Brand>
-            <NavLink to="/">Home</NavLink>
+            <NavLink exact={true} to="/">Home</NavLink>
             <NavLink to="/projects">Projects</NavLink>
             <NavLink to="/posts">Blog</NavLink>
             <NavLink to="/resume">Resumé</NavLink>
