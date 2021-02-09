@@ -10,6 +10,24 @@ body {
   background-color: #00010a!important;
 }
 
+.ql-editor, .ql-toolbar {
+  background: white;
+  color: black;
+}
+
+.ql-editor {
+  min-height: 300px;
+}
+
+
+.rich-text-editor {
+  margin: auto;
+  width: 70%;
+  border: 3px solid white;
+  padding: 10px;
+}
+
+
 .navbar a {
   margin: 5px;
   color: #bfbfbf;

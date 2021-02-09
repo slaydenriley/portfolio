@@ -1,12 +1,14 @@
 import React from 'react'
 import NewPost from '../../components/posts/NewPost'
-import { Editor } from "react-draft-wysiwyg";
+
 import { Redirect } from 'react-router-dom'
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import {stateToHTML} from 'draft-js-export-html';
+
 
 import {connect} from 'react-redux'
 import addNewPost from '../../actions/addNewPost.js'
+
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 class NewPostContainer extends React.Component {
   state = {
@@ -38,9 +40,10 @@ class NewPostContainer extends React.Component {
     }
   }
 
-  handleEditorChange = (editorState) => {
-    let html = stateToHTML(editorState.getCurrentContent())
-    this.setState({content: html})
+  handleEditorChange = (value) => {
+    //let html = stateToHTML(editorState.getCurrentContent())
+    this.setState({content: value})
+    console.log(this.state)
   }
 
   render() {
@@ -48,12 +51,12 @@ class NewPostContainer extends React.Component {
       <div className="new-post">
         <div onSubmit={this.handleSubmit.bind(this)} onChange={this.handleChange.bind(this)}>
           <NewPost />
-          <Editor
-            toolbarClassName="toolbarClassName"
-            wrapperClassName="textEditorWrap"
-            editorClassName="textEditor"
-            onEditorStateChange={this.handleEditorChange}
+          <div className="rich-text-editor">
+            <ReactQuill
+              value={this.state.content}
+              onChange={this.handleEditorChange}
             />
+          </div>
         </div>
       </div>
     )

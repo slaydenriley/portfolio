@@ -17,7 +17,6 @@ class EditSinglePostContainer extends React.Component {
 
   handleLoading = () => {
     if (this.props.post.requesting) {
-      console.log("loading")
       return <BlockReserveLoading />;
     }
     else {
@@ -28,9 +27,10 @@ class EditSinglePostContainer extends React.Component {
       )
     }
   }
+
   render() {
     return (
-        <div >
+        <div>
           {this.handleLoading()}
         </div>
     )
