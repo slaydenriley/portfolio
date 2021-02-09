@@ -12,17 +12,13 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 class EditSinglePostContainer extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      title: this.props.post.post.title,
-      user_id: this.props.post.post.user_id,
-      content: this.props.post.post.content,
-      category: this.props.post.post.category,
-      id: this.props.post.post.id,
-      redirectToNewPage: false
-    }
-    this.handleChange = this.handleChange.bind(this)
+  state = {
+    title: this.props.post.post.title,
+    user_id: this.props.post.post.user_id,
+    content: this.props.post.post.content,
+    category: this.props.post.post.category,
+    id: this.props.post.post.id,
+    redirectToNewPage: false
   }
 
   componentDidMount() {
@@ -30,15 +26,14 @@ class EditSinglePostContainer extends React.Component {
     this.props.fetchSinglePost(id)
   }
 
-  handleEditorChange = (value) => {
-    this.state.content = value
+  handleEditorChange(value) {
+    this.setState({content: value})
   }
 
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     })
-    console.log(this.state)
   }
 
   handleSubmit = (event) => {
@@ -61,8 +56,8 @@ class EditSinglePostContainer extends React.Component {
 
             <div className="rich-text-editor">
               <ReactQuill
-                value={this.props.post.post.content}
-                onChange={this.handleEditorChange}
+                defaultValue={this.props.post.post.content}
+                onChange={this.handleEditorChange.bind(this)}
               />
             </div>
           </form>

@@ -18,8 +18,9 @@ body {
 .ql-editor {
   min-height: 300px;
 }
-
-
+.edit-post-list {
+  text-align: left;
+}
 .rich-text-editor {
   margin: auto;
   width: 70%;
@@ -27,7 +28,9 @@ body {
   padding: 10px;
 }
 
-
+.edit-post-button, .delete-post-button {
+  margin-right: 10px;
+}
 .navbar a {
   margin: 5px;
   color: #bfbfbf;

@@ -25,6 +25,25 @@ export default function singlePostReducer(state = { post: [], requesting: true, 
         redirectToNewPage: true
       }
 
+    case 'DELETE_POST':
+      return {
+        requesting: false,
+        redirectToNewPage: true
+      }
+
+    case 'START_EDIT_POST':
+      return {
+        requesting: true,
+        redirectToNewPage: false
+      }
+
+    case 'EDIT_POST':
+      return {
+        requesting: false,
+        redirectToNewPage: true,
+        post: action.payload
+      }
+
     default:
       return state
   }
