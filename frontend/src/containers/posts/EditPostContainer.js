@@ -1,57 +1,40 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import fetchPosts from '../../actions/fetchPosts'
+import editPost from '../../actions/editPost'
 import fetchSinglePost from '../../actions/fetchSinglePost'
-import EditPostList from '../../components/posts/EditPostList'
 import {stateToHTML} from 'draft-js-export-html';
 import PostEditor from '../../components/posts/PostEditor'
 import { Editor } from "react-draft-wysiwyg";
+import {Link} from 'react-router-dom'
 
 class EditPostContainer extends React.Component {
-  state = {
-    content: this.props.singlePost.post.content
-  }
 
   componentDidMount() {
     this.props.fetchPosts()
   }
 
-  handleClick = (event) => {
-    event.preventDefault();
-    this.props.fetchSinglePost(event.target.value)
-  }
-
-  handleEditorChange = (editorState) => {
-    let html = stateToHTML(editorState.getCurrentContent())
-    this.setState({content: html})
-    console.log(this.state)
-  }
-
   render() {
     return (
-      <div>
-      <div onClick={this.handleClick}>
-        <EditPostList posts={this.props.posts}/>
-        <PostEditor post={this.props.singlePost}/>
-      </div>
-        <Editor
-          toolbarClassName="toolbarClassName"
-          wrapperClassName="textEditorWrap"
-          editorClassName="textEditor"
-          onEditorStateChange={this.handleEditorChange}
-          />
-      </div>
+      <>
+        <div className="posts">
+          <h1>Please select a post to edit...</h1>
+          {this.props.posts.map(post =>
+            <div onClick={this.handleClick} key={post.id} className="post-list">
+              <Link to={`/dashboard/posts/edit/${post.id}`}>{post.title}</Link>
+            </div>)}
+        </div>
+      </>
     )
   }
 }
 
 const mapStateToProps = state => {
   return {
-    posts: state.posts,
-    singlePost: state.single_post
+    posts: state.posts
   }
 }
 
 
 
-export default connect(mapStateToProps, {fetchPosts, fetchSinglePost})(EditPostContainer)
+export default connect(mapStateToProps, {fetchPosts, editPost})(EditPostContainer)

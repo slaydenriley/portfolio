@@ -21,6 +21,7 @@ import DashboardContainer from './containers/dashboard/dashboardContainer';
 import LogoutContainer from './containers/authorized/logoutContainer';
 import NewPostContainer from './containers/posts/NewPostContainer';
 import EditPostContainer from './containers/posts/EditPostContainer';
+import EditSinglePostContainer from './containers/posts/EditSinglePostContainer'
 import loginStatus from './actions/loginStatus'
 import Footer from "./components/Footer";
 
@@ -39,6 +40,7 @@ class App extends React.Component {
             <Route exact path="/dashboard/posts/new" component={NewPostContainer} />
             <Route exact path="/dashboard/posts/edit" component={EditPostContainer} />
             <Route exact path="/logout" component={LogoutContainer} />
+            <Route path="/dashboard/posts/edit/:id" component={EditSinglePostContainer} />
           </>
         )
       }
