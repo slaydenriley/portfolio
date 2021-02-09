@@ -10,6 +10,22 @@ body {
   background-color: #00010a!important;
 }
 
+.post-content img {
+  align-items: center;
+  width: 100%;
+  filter: drop-shadow(0 0 0.75rem lightblue);
+  padding: 10px;
+}
+
+.post-content {
+  background: white;
+  padding: 50px;
+  color: black;
+}
+
+.comments {
+  font-size: 18px;
+}
 .ql-editor, .ql-toolbar {
   background: white;
   color: black;
@@ -98,7 +114,7 @@ body {
 .post-content, .new-post {
   text-align: left;
   line-height: 1.7;
-
+  font-size: 18px;
 }
 
 .posts, .dashboard {
@@ -150,8 +166,8 @@ body {
 }
 
 .single-post, .comments {
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .footer {

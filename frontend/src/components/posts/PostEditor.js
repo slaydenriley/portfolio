@@ -11,7 +11,6 @@ const PostEditor = (props) => {
               <option value="post">Post</option>
               <option value="project">Project</option>
             </select><br/>
-            <em>Previous category: {props.post.category}</em><br/>
             <input className="submit" type="submit" value="Updated Post"/><br/><br/>
         </div>
       )
