@@ -7,12 +7,36 @@ import {stateToHTML} from 'draft-js-export-html';
 import PostEditor from '../../components/posts/PostEditor'
 import { Editor } from "react-draft-wysiwyg";
 import { BlockReserveLoading } from 'react-loadingg';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 class EditSinglePostContainer extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      title: this.props.post.post.title,
+      user_id: this.props.post.post.user_id,
+      content: this.props.post.post.content,
+      category: this.props.post.post.category,
+      id: this.props.post.post.id,
+      redirectToNewPage: false
+    }
+    this.handleChange = this.handleChange.bind(this)
+  }
 
   componentDidMount() {
     let id = this.props.match.params.id
     this.props.fetchSinglePost(id)
+  }
+
+  handleChange = (value) => {
+    this.state.content = value
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    let formData = this.state
+    this.props.editPost(formData)
   }
 
   handleLoading = () => {
@@ -21,9 +45,17 @@ class EditSinglePostContainer extends React.Component {
     }
     else {
       return (
-        <>
-          <PostEditor post={this.props.post.post}/>
-        </>
+        <div className="new-post" onSubmit={this.handleSubmit} onChange={this.handleChange}>
+          <form>
+            <PostEditor post={this.props.post.post}/>
+            <div className="rich-text-editor">
+              <ReactQuill
+                value={this.props.post.post.content}
+                onChange={this.handleChange}
+              />
+            </div>
+          </form>
+        </div>
       )
     }
   }
@@ -43,4 +75,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {fetchSinglePost})(EditSinglePostContainer)
+export default connect(mapStateToProps, {fetchSinglePost, editPost})(EditSinglePostContainer)

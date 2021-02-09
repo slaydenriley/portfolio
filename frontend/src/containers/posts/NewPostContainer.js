@@ -41,9 +41,7 @@ class NewPostContainer extends React.Component {
   }
 
   handleEditorChange = (value) => {
-    //let html = stateToHTML(editorState.getCurrentContent())
     this.setState({content: value})
-    console.log(this.state)
   }
 
   render() {
