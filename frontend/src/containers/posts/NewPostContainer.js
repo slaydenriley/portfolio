@@ -29,16 +29,7 @@ class NewPostContainer extends React.Component {
     event.preventDefault()
     const formData = this.state
     this.props.addNewPost(formData)
-    this.setState({redirectToNewPage: true})
-    this.handleRedirect()
   };
-
-
-  handleRedirect = () => {
-    if (this.state.redirectToNewPage === true) {
-      <Redirect to="/posts"/>
-    }
-  }
 
   handleEditorChange = (value) => {
     this.setState({content: value})

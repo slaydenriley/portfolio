@@ -7,6 +7,7 @@ import {stateToHTML} from 'draft-js-export-html';
 import PostEditor from '../../components/posts/PostEditor'
 import { Editor } from "react-draft-wysiwyg";
 import { BlockReserveLoading } from 'react-loadingg';
+import { Redirect} from 'react-router-dom'
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -29,8 +30,15 @@ class EditSinglePostContainer extends React.Component {
     this.props.fetchSinglePost(id)
   }
 
-  handleChange = (value) => {
+  handleEditorChange = (value) => {
     this.state.content = value
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+    console.log(this.state)
   }
 
   handleSubmit = (event) => {
@@ -45,13 +53,16 @@ class EditSinglePostContainer extends React.Component {
     }
     else {
       return (
-        <div className="new-post" onSubmit={this.handleSubmit} onChange={this.handleChange}>
+        <div className="new-post" onSubmit={this.handleSubmit}>
           <form>
-            <PostEditor post={this.props.post.post}/>
+            <div onChange={this.handleChange}>
+              <PostEditor post={this.props.post.post}/>
+            </div>
+
             <div className="rich-text-editor">
               <ReactQuill
                 value={this.props.post.post.content}
-                onChange={this.handleChange}
+                onChange={this.handleEditorChange}
               />
             </div>
           </form>
