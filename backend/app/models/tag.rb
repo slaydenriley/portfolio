@@ -1,7 +1,5 @@
-class Post < ApplicationRecord
-  belongs_to :user
-  has_many :comments
-  has_many :tags
+class Tag < ApplicationRecord
+  belongs_to :post
 
   def created_at
     time = attributes['created_at']
