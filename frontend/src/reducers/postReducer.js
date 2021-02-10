@@ -1,4 +1,4 @@
-export default function postReducer(state = { posts: [], requesting: false}, action) {
+export default function postReducer(state = { posts: [], requesting: true}, action) {
   switch(action.type) {
     case 'FETCH_POSTS':
       return {

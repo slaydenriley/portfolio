@@ -8,10 +8,6 @@ class PostsContainer extends React.Component {
     this.props.fetchPosts()
   }
 
-  componentDidUpdate() {
-    this.props.fetchPosts()
-  }
-
   render() {
     return (
       <div>

@@ -23,12 +23,14 @@ import NewPostContainer from './containers/posts/NewPostContainer';
 import EditPostContainer from './containers/posts/EditPostContainer';
 import EditSinglePostContainer from './containers/posts/EditSinglePostContainer'
 import loginStatus from './actions/loginStatus'
+import fetchPosts from './actions/fetchPosts'
 import Footer from "./components/Footer";
 
 class App extends React.Component {
 
   componentWillMount() {
     this.props.loginStatus()
+    this.props.fetchPosts()
   }
 
   handleView = () => {
@@ -87,4 +89,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {loginStatus})(App);
+export default connect(mapStateToProps, {loginStatus, fetchPosts})(App);

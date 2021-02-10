@@ -18,10 +18,6 @@ class ProjectsContainer extends React.Component {
     })
   }
 
-  componentDidUpdate() {
-    this.props.fetchPosts()
-  }
-
   handleClick = (event) => {
     if (event.target.value === "all") {
       this.setState({
@@ -37,7 +33,7 @@ class ProjectsContainer extends React.Component {
 
   render() {
     return (
-      <div className="projects">
+      <div className="posts">
         <h1>Projects</h1>
         <em>These are my portfolio projects from my time at Flatiron School.</em>
         <div onClick={this.handleClick}>
