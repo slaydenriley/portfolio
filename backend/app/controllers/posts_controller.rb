@@ -58,7 +58,9 @@ class PostsController < ApplicationController
       :content,
       :user_id,
       :category,
-      :id
+      :id,
+      :image_link,
+      :tag
     )
   end
 
