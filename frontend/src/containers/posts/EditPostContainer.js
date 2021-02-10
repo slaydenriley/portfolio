@@ -1,12 +1,14 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import fetchPosts from '../../actions/fetchPosts'
+
+
 import deletePost from '../../actions/deletePost'
 import PostEditor from '../../components/posts/PostEditor'
-import { Editor } from "react-draft-wysiwyg";
 import {Link, Redirect} from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import { BlockReserveLoading } from 'react-loadingg';
+import EditSinglePostContainer from './EditSinglePostContainer'
 
 class EditPostContainer extends React.Component {
 
@@ -19,6 +21,7 @@ class EditPostContainer extends React.Component {
     this.props.deletePost(post)
   }
 
+
   handleLoading = () => {
     if (this.props.posts.requesting) {
       return <BlockReserveLoading />
@@ -30,12 +33,14 @@ class EditPostContainer extends React.Component {
           <hr className="line"/>
           {this.props.posts.posts.map(post =>
             <div key={post.id} className="edit-post-list">
-              <h2><em>{post.title}</em></h2>
+              <h2><em>{post.title} ({post.category})</em></h2>
+
               <Link to={`/dashboard/posts/edit/${post.id}`}>
                 <button id={post.id} className="submit edit-post-button">
                   Edit Post
                 </button>
               </Link>
+
               <button id={post.id} className="submit delete-post-button" onClick={this.handleDeleteClick}>Delete Post</button>
               <em><u>Published on:</u> {post.created_at}</em>
               <hr className="line"/>

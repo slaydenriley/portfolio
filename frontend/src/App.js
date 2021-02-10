@@ -40,7 +40,7 @@ class App extends React.Component {
             <Route exact path="/dashboard/posts/new" component={NewPostContainer} />
             <Route exact path="/dashboard/posts/edit" component={EditPostContainer} />
             <Route exact path="/logout" component={LogoutContainer} />
-            <Route path="/dashboard/posts/edit/:id" component={EditSinglePostContainer} />
+            <Route exact path="/dashboard/posts/edit/:id" component={EditSinglePostContainer} />
           </>
         )
       }

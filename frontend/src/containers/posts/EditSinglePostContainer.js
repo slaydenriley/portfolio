@@ -19,7 +19,7 @@ class EditSinglePostContainer extends React.Component {
       user_id: this.props.post.post.user_id,
       content: this.props.post.post.content,
       category: this.props.post.post.category,
-      id: this.props.post.post.id,
+      id: this.props.match.params.id,
       redirectToNewPage: false
     }
   }
@@ -29,8 +29,20 @@ class EditSinglePostContainer extends React.Component {
     this.props.fetchSinglePost(id)
   }
 
+  componentWillReceiveProps(props) {
+    this.setState({
+      title: props.post.post.title,
+      user_id: props.post.post.user_id,
+      content: props.post.post.content,
+      category: props.post.post.category,
+      id: props.post.post.id,
+      redirectToNewPage: false
+    })
+  }
+
   handleEditorChange(value) {
     this.setState({content: value})
+    console.log(this.state)
   }
 
   handleChange = (event) => {
@@ -43,23 +55,26 @@ class EditSinglePostContainer extends React.Component {
     event.preventDefault()
     let formData = this.state
     this.props.editPost(formData)
+    this.props.history.push(`/${this.state.category}s/${this.state.id}`)
   }
 
   handleLoading = () => {
     if (this.props.post.requesting) {
       return <BlockReserveLoading />;
+      console.log("we are requesting")
     }
     else {
+      console.log("we are not requesting")
       return (
         <div className="new-post" onSubmit={this.handleSubmit}>
           <form>
             <div onChange={this.handleChange}>
-              <PostEditor post={this.state}/>
+              <PostEditor post={this.props.post.post}/>
             </div>
 
             <div className="rich-text-editor">
               <ReactQuill
-                value={this.state.content}
+                defaultValue={this.props.post.post.content}
                 onChange={this.handleEditorChange.bind(this)}
               />
             </div>
