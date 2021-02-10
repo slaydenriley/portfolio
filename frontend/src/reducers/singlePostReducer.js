@@ -25,12 +25,6 @@ export default function singlePostReducer(state = { post: [], requesting: true, 
         redirectToNewPage: true
       }
 
-    case 'DELETE_POST':
-      return {
-        requesting: false,
-        redirectToNewPage: true
-      }
-
     case 'START_EDIT_POST':
       return {
         requesting: true,

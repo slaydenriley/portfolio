@@ -1,7 +1,21 @@
-export default function postReducer(state = [], action) {
+export default function postReducer(state = { posts: [], requesting: false}, action) {
   switch(action.type) {
     case 'FETCH_POSTS':
-      return action.payload
+      return {
+        posts: action.payload,
+        requesting: false
+      }
+
+    case 'START_DELETING_POST':
+      return {
+        requesting: true
+      }
+
+    case 'DELETE_POST':
+      return {
+        requesting: false,
+        posts: action.payload
+      }
 
     default:
       return state

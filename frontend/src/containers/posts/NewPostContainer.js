@@ -29,6 +29,7 @@ class NewPostContainer extends React.Component {
     event.preventDefault()
     const formData = this.state
     this.props.addNewPost(formData)
+    this.props.history.push(`/posts`)
   };
 
   handleEditorChange = (value) => {

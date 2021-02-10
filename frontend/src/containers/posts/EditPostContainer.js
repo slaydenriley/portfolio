@@ -5,6 +5,8 @@ import deletePost from '../../actions/deletePost'
 import PostEditor from '../../components/posts/PostEditor'
 import { Editor } from "react-draft-wysiwyg";
 import {Link, Redirect} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import { BlockReserveLoading } from 'react-loadingg';
 
 class EditPostContainer extends React.Component {
 
@@ -17,13 +19,16 @@ class EditPostContainer extends React.Component {
     this.props.deletePost(post)
   }
 
-  render() {
-    return (
-      <>
+  handleLoading = () => {
+    if (this.props.posts.requesting) {
+      return <BlockReserveLoading />
+    }
+    else {
+      return (
         <div className="posts">
           <h1>Please select a post to edit...</h1>
           <hr className="line"/>
-          {this.props.posts.map(post =>
+          {this.props.posts.posts.map(post =>
             <div key={post.id} className="edit-post-list">
               <h2><em>{post.title}</em></h2>
               <Link to={`/dashboard/posts/edit/${post.id}`}>
@@ -36,6 +41,14 @@ class EditPostContainer extends React.Component {
               <hr className="line"/>
             </div>)}
         </div>
+      )
+    }
+  }
+
+  render() {
+    return (
+      <>
+        {this.handleLoading()}
       </>
     )
   }
