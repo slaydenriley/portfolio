@@ -23,6 +23,12 @@ body {
   color: black;
 }
 
+.filter-buttons button {
+  font-size: 25px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
 .comments {
   font-size: 18px;
 }
@@ -108,7 +114,7 @@ body {
   background: lightblue;
   color: #00010a;
   transform: scale(1.07);
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .post-content, .new-post {
@@ -215,8 +221,8 @@ body {
   border: 2px solid #bfbfbf;
 }
 
-.projects, .posts, .dashboard, .resume {
-  padding: 30px 200px;
+.projects, .dashboard, .posts, .resume {
+  padding: 30px 10%;
   margin-bottom: 400px;
 }
 
@@ -289,4 +295,63 @@ body {
 .home-cards {
   text-align: center;
   padding-top: 20px;
+}
+
+
+.post-list {
+  max-width: 300px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: black;
+  margin-right: 30px;
+  float: left;
+}
+
+.posts {
+  padding-bottom: 20%;
+}
+.post-list p {
+  font-size: 16px;
+}
+
+.post-list:hover {
+  transform: scale(1.05);
+  transition-duration: 1s;
+  filter: drop-shadow(0 0 0.75rem lightblue);
+}
+
+.post-list a {
+  color: #bfbfbf;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.post-list a:hover {
+  text-decoration: none;
+  color: #bfbfbf;
+}
+
+.post-list img {
+  width: 100%;
+  max-width: 300px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.single-post img {
+  max-width: 800px;
+  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.created_at {
+  font-size: 18px;
+  color: lightblue;
 }

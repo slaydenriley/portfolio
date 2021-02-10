@@ -3,11 +3,16 @@ import React from 'react';
 const ShowPost = props => {
   return (
     <div className="single-post">
-      <div className="post-title"><h1>{props.post.title}</h1></div>
-      <hr className="line"/>
+      <div className="center">
+        <h1 className="post-title">{props.post.title}</h1>
+        <em className="created_at">Published on: {props.post.created_at}</em>
+        <hr className="line"/>
+        <img src={props.post.image_link}/>
+      </div>
+
       <div className="post-content" dangerouslySetInnerHTML={{ __html: props.post.content}} />
 
-    </div>
+      </div>
   )
 };
 

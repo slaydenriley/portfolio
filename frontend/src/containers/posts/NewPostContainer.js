@@ -16,13 +16,16 @@ class NewPostContainer extends React.Component {
     user_id: this.props.user_id,
     content: '',
     category: "post",
-    redirectToNewPage: false
+    redirectToNewPage: false,
+    image_link: '',
+    tag: ''
   };
 
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     })
+    console.log(this.state)
   };
 
   handleSubmit = (event) => {

@@ -12,7 +12,11 @@ class PostList extends React.Component {
         <div>
         {this.props.posts.map(post =>
           <div key={post.id} className="post-list">
-            <Link key={post.id} to={`/posts/${post.id}`}><h3><em>{post.title}</em></h3></Link>
+            <Link key={post.id} to={`/posts/${post.id}`}>
+              <em>{post.title}</em><br/>
+              <img src={`${post.image_link}`}/><br/>
+              <p><em>Posted on: {post.created_at}</em></p>
+            </Link>
           </div>)}
         </div>
       </div>

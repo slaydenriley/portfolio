@@ -20,7 +20,9 @@ class EditSinglePostContainer extends React.Component {
       content: this.props.post.post.content,
       category: this.props.post.post.category,
       id: this.props.match.params.id,
-      redirectToNewPage: false
+      image_link: this.props.post.post.image_link,
+      redirectToNewPage: false,
+      tag: this.props.post.post.tag
     }
   }
 
@@ -36,7 +38,9 @@ class EditSinglePostContainer extends React.Component {
       content: props.post.post.content,
       category: props.post.post.category,
       id: props.post.post.id,
-      redirectToNewPage: false
+      image_link: props.post.post.image_link,
+      redirectToNewPage: false,
+      tag: this.props.post.post.tag
     })
   }
 
