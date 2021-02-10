@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {Navbar} from 'react-bootstrap'
 
@@ -19,7 +18,7 @@ const NavBar = props => {
                 <NavLink exact={true} to="/">Home</NavLink>
                 <NavLink to="/projects">Projects</NavLink>
                 <NavLink to="/posts">Blog</NavLink>
-                <NavLink to="/resume">Resumé</NavLink>
+                <NavLink to="/resume">Resume</NavLink>
                 <div className="ml-auto">
                   <NavLink to="/dashboard">Dashboard</NavLink>
                   <NavLink to="/logout">Logout</NavLink>

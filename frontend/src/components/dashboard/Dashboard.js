@@ -6,7 +6,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className="dashboard">
-        <h1>Dashboard</h1>
+        <h1>Admin Dashboard</h1>
         <hr className="line"/>
           <div className="dashboard-content">
             <NavLink className="dashboard-components" to="/dashboard/posts/new">New Post</NavLink>

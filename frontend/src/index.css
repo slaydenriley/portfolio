@@ -117,15 +117,6 @@ body {
   font-size: 18px;
 }
 
-.posts, .dashboard {
-  text-align: center;
-  line-height: 1.7;
-  font-size: 18px;
-  padding-left: 20%;
-  padding-right: 20%;
-  margin-bottom: 10px;
-  margin-top: 30px;
-}
 
 .post-title, .home, .new-post{
   text-align: center;
@@ -134,12 +125,6 @@ body {
   padding: 10px;
 }
 
-.resume {
-  text-align: center;
-  margin-top: 30px;
-  padding-right: 200px;
-  padding-left: 200px;
-}
 .resume img {
   padding-top: 20px;
   width: 80%;
@@ -230,18 +215,12 @@ body {
   border: 2px solid #bfbfbf;
 }
 
-.all-project-cards {
-  padding-top: 50px;
-}
-
-.projects {
+.projects, .posts, .dashboard, .resume {
   padding: 30px 200px;
-  text-align: center;
   margin-bottom: 400px;
 }
 
-.projects h1 {
-  font-size: 50px;
+.projects h1, .posts h1, .resume h1, .dashboard h1 {
   font-weight: bolder;
 }
 
@@ -276,9 +255,6 @@ body {
   filter: drop-shadow(0 0 0.75rem lightblue);
 }
 
-.dashboard-content {
-  padding-top: 40px;
-}
 
 
 .single-project-card {

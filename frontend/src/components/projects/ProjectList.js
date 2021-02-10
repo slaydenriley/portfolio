@@ -6,7 +6,8 @@ class ProjectList extends React.Component {
   render() {
     return (
       <div className="projects">
-      <h1>{this.props.title_name}</h1>
+      <h1>Projects</h1>
+      <em>These are my portfolio projects from my time at Flatiron School.</em>
       <hr className="line"/>
         <div className="all-project-cards">
           {this.props.posts.map(post =>

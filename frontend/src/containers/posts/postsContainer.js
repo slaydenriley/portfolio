@@ -15,7 +15,7 @@ class PostsContainer extends React.Component {
   render() {
     return (
       <div>
-        <PostList posts={this.props.posts.filter(post => post.category === "post")} title_name="Blog Posts" />
+        <PostList posts={this.props.posts.filter(post => post.category === "post")} />
       </div>
     )
   }
