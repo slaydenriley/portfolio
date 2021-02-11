@@ -9,11 +9,11 @@ class Dashboard extends React.Component {
         <h1>Admin Dashboard</h1>
         <hr className="line"/>
           <div className="dashboard-content">
-            <Link className="dashboard-components" to="/dashboard/posts/new">New Post</Link>
-            <Link className="dashboard-components" to="/dashboard/posts/edit">Manage Posts</Link>
-            <Link className="dashboard-components" to="/dashboard/account/edit">Edit Account</Link>
-            <Link className="dashboard-components" to="/dashboard/users/edit">Manage Users</Link>
-            <Link className="dashboard-components" to="/dashboard/tags/edit">Manage Tags</Link>
+            <h1><Link className="dashboard-components" to="/dashboard/posts/new">New Post</Link></h1>
+            <h1><Link className="dashboard-components" to="/dashboard/posts/edit">Manage Posts & Projects</Link></h1>
+            <h1><Link className="dashboard-components" to="/dashboard/account/edit">Edit Account</Link></h1>
+            <h1><Link className="dashboard-components" to="/dashboard/users/edit">Manage Users</Link></h1>
+            <h1><Link className="dashboard-components" to="/dashboard/tags/edit">Manage Tags</Link></h1>
           </div>
         </div>)
   }

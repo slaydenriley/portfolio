@@ -56,9 +56,7 @@ class NewPostContainer extends React.Component {
         <div onSubmit={this.handleSubmit.bind(this)} onChange={this.handleChange.bind(this)}>
           <NewPost tags={this.props.tags.tags}/>
         </div>
-
         <TagContainer />
-
           <div className="rich-text-editor">
             <ReactQuill
               value={this.state.content}

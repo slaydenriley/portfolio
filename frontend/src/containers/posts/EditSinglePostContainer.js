@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import fetchPosts from '../../actions/fetchPosts'
 import editPost from '../../actions/editPost'
 import fetchSinglePost from '../../actions/fetchSinglePost'
+import fetchTags from '../../actions/fetchTags'
 import {stateToHTML} from 'draft-js-export-html';
 import PostEditor from '../../components/posts/PostEditor'
 import { Editor } from "react-draft-wysiwyg";
@@ -22,13 +23,14 @@ class EditSinglePostContainer extends React.Component {
       id: this.props.match.params.id,
       image_link: this.props.post.post.image_link,
       redirectToNewPage: false,
-      tag: this.props.post.post.tag
+      tags: this.props.post.post.tags
     }
   }
 
   componentDidMount() {
     let id = this.props.match.params.id
     this.props.fetchSinglePost(id)
+    this.props.fetchTags()
   }
 
   componentWillReceiveProps(props) {
@@ -40,7 +42,7 @@ class EditSinglePostContainer extends React.Component {
       id: props.post.post.id,
       image_link: props.post.post.image_link,
       redirectToNewPage: false,
-      tag: this.props.post.post.tag
+      tags: this.props.post.post.tags
     })
   }
 
@@ -49,11 +51,23 @@ class EditSinglePostContainer extends React.Component {
     console.log(this.state)
   }
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-  }
+  handleChange = event => {
+    let index
+    if (event.target.type === "checkbox" && event.target.checked === true) {
+      console.log("checked")
+      this.state.tags.push(event.target.value)
+    } else if (event.target.type === "checkbox" && event.target.checked === false) {
+      console.log("unchecked")
+        index = this.state.tags.indexOf(+event.target.value)
+        this.state.tags.splice(index, 1)
+    } else {
+        console.log("neither")
+        this.setState({
+          [event.target.name]: event.target.value
+        })
+      }
+      console.log(this.state)
+  };
 
   handleSubmit = (event) => {
     event.preventDefault()
@@ -73,7 +87,7 @@ class EditSinglePostContainer extends React.Component {
         <div className="new-post" onSubmit={this.handleSubmit}>
           <form>
             <div onChange={this.handleChange}>
-              <PostEditor post={this.props.post.post}/>
+              <PostEditor post={this.props.post.post} tags={this.props.tags.tags}/>
             </div>
 
             <div className="rich-text-editor">
@@ -99,8 +113,9 @@ class EditSinglePostContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    post: state.single_post
+    post: state.single_post,
+    tags: state.tags
   }
 }
 
-export default connect(mapStateToProps, {fetchSinglePost, editPost})(EditSinglePostContainer)
+export default connect(mapStateToProps, {fetchSinglePost, editPost, fetchTags})(EditSinglePostContainer)

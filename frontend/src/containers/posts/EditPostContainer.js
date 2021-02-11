@@ -18,7 +18,9 @@ class EditPostContainer extends React.Component {
 
   handleDeleteClick = (event) => {
     let post = {post: {id: event.target.id}}
-    this.props.deletePost(post)
+    if (window.confirm("Are you sure you want to delete this post?")) {
+      this.props.deletePost(post)
+    }
   }
 
 
@@ -29,7 +31,7 @@ class EditPostContainer extends React.Component {
     else {
       return (
         <div className="posts">
-          <h1>Please select a post to edit...</h1>
+          <h1>Post & Project Manager</h1>
           <hr className="line"/>
           {this.props.posts.posts.map(post =>
             <div key={post.id} className="edit-post-list">
@@ -41,7 +43,7 @@ class EditPostContainer extends React.Component {
                 </button>
               </Link>
 
-              <button id={post.id} className="submit delete-post-button" onClick={this.handleDeleteClick}>Delete Post</button>
+              <button id={post.id} className="delete-post-button" onClick={this.handleDeleteClick}>Delete Post</button>
               <em><u>Published on:</u> {post.created_at}</em>
               <hr className="line"/>
             </div>)}

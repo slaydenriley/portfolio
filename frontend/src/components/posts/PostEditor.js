@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 const PostEditor = (props) => {
 
+  console.log(props.post.tags.map(tag => tag.name === "Rails"))
+
       return (
         <div>
           <h1>Edit {props.post.title}</h1>
@@ -12,15 +14,22 @@ const PostEditor = (props) => {
               <option value="post">Post</option>
               <option value="project">Project</option>
             </select><br/>
-            <select defaultValue={props.post.tag} name="tag" required>
-              <option value="null">None</option>
-              <option value="ruby">Ruby</option>
-              <option value="rails">Rails</option>
-              <option value="sinatra">Sinatra</option>
-              <option value="javascript">Javascript</option>
-              <option value="react-redux">React/Redux</option>
-            </select><br/>
             <input className="submit" type="submit" value="Updated Post"/><br/><br/>
+
+            <div className="post-filters">
+              <em>Previous tags: {props.post.tags.map(tag => tag.name + " | ")}<br/> </em><br/>
+                {props.tags.map(tag =>
+                    <label className="tag-submit checkboxes">
+                      <input
+                        className="checkbox"
+                        type="checkbox"
+                        name="tags"
+                        value={tag.id}
+                        /><br/>
+                      {tag.name.toUpperCase()}
+                    </label>
+                )}<br/><br/>
+            </div>
         </div>
       )
     }

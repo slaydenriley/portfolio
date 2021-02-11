@@ -16,16 +16,34 @@ body {
 }
 
 .tag-submit {
+  width: 200px;
+  margin-right: 20px;
 }
 
+.post-filters {
+  width: 50%;
+  text-align: center;
+  margin: auto
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: masonry;
+}
 .row-1 {
   flex: 1;
-  width: 33%;
+  width: 50%;
+  float: right;
 }
 
 .row-2 {
   flex: 2;
-  width: 33%;
+  width: 50%;
 }
 
 .app-body {
@@ -85,10 +103,27 @@ body {
 .edit-post-button, .delete-post-button {
   margin-right: 10px;
 }
+
+.delete-post-button {
+  background-color: darkred;
+  color: #bfbfbf;
+  border: 1px solid white;
+  font-weight: bolder;
+}
 .navbar a {
   margin: 5px;
   color: #bfbfbf;
   font-weight: bold;
+}
+
+.dashboard-content a {
+  text-decoration: none;
+  color: #bfbfbf;
+}
+
+.dashboard-content a:hover {
+  text-decoration: none;
+  color: lightblue;
 }
 
 .navbar {
@@ -328,14 +363,41 @@ body {
   padding-top: 20px;
 }
 
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    width:30px;
+    height:30px;
+    background:red;
+    border-radius:5px;
+    border:2px solid #555;
+    cursor: pointer;
+}
 
-.post-list, .dashboard-components {
-  max-width: 300px;
+input[type='checkbox']:checked {
+    background: green;
+}
+.post-list {
+  width: 300px;
   margin-bottom: 20px;
   padding: 20px;
   background: black;
   margin-right: 30px;
   float: left;
+  height: 350px;
+  overflow: hidden;
+}
+
+.dashboard-components {
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: black;
+  margin-right: 30px;
+  float: left;
+  overflow: hidden;
+  height: 200px;
+  display: flex;
+  align-items: center;
 }
 
 .posts {

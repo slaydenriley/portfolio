@@ -1,44 +1,47 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Link, Redirect} from 'react-router-dom'
+import fetchTags from '../../actions/fetchTags'
+import deleteTag from '../../actions/deleteTag'
 import { useHistory } from 'react-router-dom'
 import { BlockReserveLoading } from 'react-loadingg';
+import TagContainer from './tagContainer'
 
-class EditPostContainer extends React.Component {
+class EditTagContainer extends React.Component {
 
   componentDidMount() {
     this.props.fetchTags()
   }
 
   handleDeleteClick = (event) => {
-    let post = {post: {id: event.target.id}}
-    this.props.deletePost(post)
+    let tag = {tag: {id: event.target.id}}
+    this.props.deleteTag(tag)
   }
 
 
   handleLoading = () => {
-    if (this.props.posts.requesting) {
+    if (this.props.tags.requesting) {
       return <BlockReserveLoading />
     }
     else {
       return (
         <div className="posts">
-          <h1>Please select a post to edit...</h1>
+          <h1>Tag Manager</h1>
           <hr className="line"/>
-          {this.props.posts.posts.map(post =>
-            <div key={post.id} className="edit-post-list">
-              <h2><em>{post.title} ({post.category})</em></h2>
+          <div className="tags">
+          <div className="row-1">
+            {this.props.tags.tags.map(tag =>
+              <div key={tag.id} className="edit-post-list">
+                <h2><em>{tag.name}</em></h2>
+                <button id={tag.id} className="submit delete-post-button" onClick={this.handleDeleteClick}>Delete Tag</button>
+                <hr className="line"/>
+              </div>)}
+          </div>
 
-              <Link to={`/dashboard/posts/edit/${post.id}`}>
-                <button id={post.id} className="submit edit-post-button">
-                  Edit Post
-                </button>
-              </Link>
-
-              <button id={post.id} className="submit delete-post-button" onClick={this.handleDeleteClick}>Delete Post</button>
-              <em><u>Published on:</u> {post.created_at}</em>
-              <hr className="line"/>
-            </div>)}
+          <div className="row-2">
+            <TagContainer />
+          </div>
+          </div>
         </div>
       )
     }
@@ -55,8 +58,8 @@ class EditPostContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    posts: state.posts
+    tags: state.tags
   }
 }
 
-export default connect(mapStateToProps, {fetchPosts, deletePost})(EditPostContainer)
+export default connect(mapStateToProps, {fetchTags, deleteTag})(EditTagContainer)
