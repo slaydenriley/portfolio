@@ -23,6 +23,7 @@ import NewPostContainer from './containers/posts/NewPostContainer';
 import EditPostContainer from './containers/posts/EditPostContainer';
 import EditTagContainer from './containers/posts/editTagContainer';
 import EditSinglePostContainer from './containers/posts/EditSinglePostContainer'
+import ManageUsersContainer from './containers/dashboard/manageUsersContainer'
 import loginStatus from './actions/loginStatus'
 import fetchPosts from './actions/fetchPosts'
 import Footer from "./components/Footer";
@@ -44,6 +45,7 @@ class App extends React.Component {
             <Route exact path="/logout" component={LogoutContainer} />
             <Route exact path="/dashboard/posts/edit/:id" component={EditSinglePostContainer} />
             <Route exact path="/dashboard/tags/edit" component={EditTagContainer} />
+            <Route exact path="/dashboard/users/edit" component={ManageUsersContainer} />
           </>
         )
       }

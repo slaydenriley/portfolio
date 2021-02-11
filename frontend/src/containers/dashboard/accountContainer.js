@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import fetchAccount from '../actions/fetchAccount'
+import fetchAccounts from '../actions/fetchAccounts'
 import Account from '../components/Account'
 
 class AccountContainer extends React.Component {
