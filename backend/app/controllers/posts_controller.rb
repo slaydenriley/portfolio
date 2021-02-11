@@ -6,7 +6,6 @@ class PostsController < ApplicationController
       tags.each do |tag|
         assign = Tag.find_by(id: tag.to_i)
         post.tags << assign
-        binding.pry
       end
       render json: PostSerializer.new(post).to_serialized_json
     else
@@ -30,8 +29,13 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find_by(id: post_params[:id])
-    post.update(post_params)
-    if post.save
+    tags = params[:tags]
+    post.tags.delete_all
+    if post.update(post_params)
+      tags.each do |tag|
+        assign = Tag.find_by(id: tag.to_i)
+        post.tags << assign
+      end
       render json: PostSerializer.new(post).to_serialized_json
     else
       payload = {

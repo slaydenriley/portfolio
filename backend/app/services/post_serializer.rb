@@ -10,7 +10,7 @@ class PostSerializer
       include:
         [comments: {
           :only => [:id, :content, :created_at, :updated_at, :post_id, :user_id],
-        include: [:user]}]
+        include: [:user]}, tags: {:only => [:id, :name]}]
     }
 
     @post.to_json(options)
