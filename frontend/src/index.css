@@ -52,6 +52,7 @@ body {
   font-size: 25px;
   padding: 10px;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .comments {
@@ -65,10 +66,12 @@ body {
 .ql-editor {
   min-height: 300px;
 }
+
 .edit-post-list {
   text-align: left;
   width: 50%;
 }
+
 .rich-text-editor {
   margin: auto;
   width: 70%;
@@ -197,7 +200,6 @@ body {
   background: #00010a;
   padding-top: 10px;
   filter: drop-shadow(0 0 0.4rem lightblue);
-
 }
 
 .home {
@@ -258,7 +260,7 @@ body {
   font-weight: bolder;
 }
 
-.home-card, .dashboard-components {
+.home-card {
   text-align: center;
   width: 200px;
   background-color: #00010a;
@@ -279,7 +281,7 @@ body {
 
 }
 
-.home-card:hover, .dashboard-components:hover {
+.home-card:hover {
   text-decoration: none;
   font-style: italic;
   color: lightblue;
@@ -288,8 +290,6 @@ body {
   border: 2px solid lightblue;
   filter: drop-shadow(0 0 0.75rem lightblue);
 }
-
-
 
 .single-project-card {
   text-align: center;
@@ -326,7 +326,7 @@ body {
 }
 
 
-.post-list {
+.post-list, .dashboard-components {
   max-width: 300px;
   margin-bottom: 20px;
   padding: 20px;
@@ -342,20 +342,20 @@ body {
   font-size: 16px;
 }
 
-.post-list:hover {
+.post-list:hover, .dashboard-components:hover  {
   transform: scale(1.05);
   transition-duration: 1s;
   filter: drop-shadow(0 0 0.75rem lightblue);
 }
 
-.post-list a {
+.post-list a, .dashboard-components a {
   color: #bfbfbf;
   text-decoration: none;
   font-size: 24px;
   font-weight: bolder;
 }
 
-.post-list a:hover {
+.post-list a:hover, .dashboard-components a:hover {
   text-decoration: none;
   color: #bfbfbf;
 }

@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import fetchTags from '../../actions/fetchTags'
 import addNewTag from '../../actions/addNewTag'
 import Tags from '../../components/posts/Tags'
+import { BlockReserveLoading } from 'react-loadingg';
 
 class TagContainer extends React.Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class TagContainer extends React.Component {
 
   handleLoading = () => {
     if (this.props.tags.requesting) {
-      console.log("requesting")
+      <BlockReserveLoading />;
     }
     else {
       return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 class Dashboard extends React.Component {
 
@@ -9,10 +9,10 @@ class Dashboard extends React.Component {
         <h1>Admin Dashboard</h1>
         <hr className="line"/>
           <div className="dashboard-content">
-            <NavLink className="dashboard-components" to="/dashboard/posts/new">New Post</NavLink>
-            <NavLink className="dashboard-components" to="/dashboard/posts/edit">Manage Posts</NavLink>
-            <NavLink className="dashboard-components" to="/dashboard/account/edit">Edit Account</NavLink>
-            <NavLink className="dashboard-components" to="/dashboard/users/edit">Manage Users</NavLink>
+            <Link className="dashboard-components" to="/dashboard/posts/new">New Post</Link>
+            <Link className="dashboard-components" to="/dashboard/posts/edit">Manage Posts</Link>
+            <Link className="dashboard-components" to="/dashboard/account/edit">Edit Account</Link>
+            <Link className="dashboard-components" to="/dashboard/users/edit">Manage Users</Link>
           </div>
         </div>)
   }

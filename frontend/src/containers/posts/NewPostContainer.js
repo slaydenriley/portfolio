@@ -23,10 +23,21 @@ class NewPostContainer extends React.Component {
   }
 
   handleChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-    console.log(this.state)
+    let index
+    if (event.target.type === "checkbox" && event.target.checked === true) {
+      console.log("checked")
+      this.state.tags.push(event.target.value)
+    } else if (event.target.type === "checkbox" && event.target.checked === false) {
+      console.log("unchecked")
+        index = this.state.tags.indexOf(+event.target.value)
+        this.state.tags.splice(index, 1)
+    } else {
+        console.log("neither")
+        this.setState({
+          [event.target.name]: event.target.value
+        })
+      }
+      console.log(this.state)
   };
 
   handleSubmit = (event) => {
@@ -44,7 +55,7 @@ class NewPostContainer extends React.Component {
     return (
       <div className="new-post">
         <div onSubmit={this.handleSubmit.bind(this)} onChange={this.handleChange.bind(this)}>
-          <NewPost />
+          <NewPost tags={this.props.tags.tags}/>
         </div>
 
         <TagContainer />

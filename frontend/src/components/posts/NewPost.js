@@ -13,6 +13,14 @@ const NewPost = (props) => {
               <option value="post">Post</option>
               <option value="project">Project</option>
             </select><br/>
+
+            {props.tags.map(tag =>
+              <label className="checkboxes">
+                {tag.name.toUpperCase()}<br/>
+                  <input type="checkbox" name="tags" value={tag.id}/>
+                  <hr className="line"/>
+              </label>
+            )}<br/>
             <input className="submit" type="submit" value="Publish"/>
           </form>
         </div>
