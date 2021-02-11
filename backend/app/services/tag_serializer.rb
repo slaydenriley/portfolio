@@ -4,7 +4,7 @@ class TagSerializer
   end
 
   def to_serialized_json
-    options = {:only => [:id, :name, :post_id]}
+    options = {:only => [:id, :name]}
 
     @tag.to_json(options)
   end

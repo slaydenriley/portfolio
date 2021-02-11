@@ -3,7 +3,7 @@ class TagsController < ApplicationController
     tags = Tag.all
     render json: TagSerializer.new(tags).to_serialized_json
   end
-  
+
   def create
     tag = Tag.new(tag_params)
     if tag.save
@@ -21,9 +21,8 @@ class TagsController < ApplicationController
 
   def tag_params
     params.require(:tag).permit(
-      :id,
-      :post_id,
-      :name
+      :name,
+      :id
     )
   end
 
