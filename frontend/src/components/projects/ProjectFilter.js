@@ -1,5 +1,4 @@
 const ProjectFilter = (props) => {
-  console.log(props)
   return(
     <div className="filter-buttons">
     <h2>Filter by technology...</h2>

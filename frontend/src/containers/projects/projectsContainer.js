@@ -39,9 +39,11 @@ class ProjectsContainer extends React.Component {
     }
     else {
       this.setState({
-        posts: this.props.posts.filter(project => project.tag === event.target.value)
+        posts: this.props.posts.filter(project =>
+          project.tags.find(tag => tag.name.includes(event.target.value)))
       })
     }
+    console.log(this.state)
   }
 
   render() {
