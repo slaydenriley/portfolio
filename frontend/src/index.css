@@ -67,6 +67,7 @@ body {
 }
 .edit-post-list {
   text-align: left;
+  width: 50%;
 }
 .rich-text-editor {
   margin: auto;

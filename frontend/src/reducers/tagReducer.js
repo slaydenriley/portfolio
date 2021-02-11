@@ -1,4 +1,4 @@
-export default function tagReducer(state = { tags: []}, action) {
+export default function tagReducer(state = { tags: [], requesting: false}, action) {
   switch(action.type) {
     case 'FETCH_TAGS':
       return {
@@ -10,6 +10,16 @@ export default function tagReducer(state = { tags: []}, action) {
         tags: action.payload
       }
 
+    case 'START_ADDING_TAG':
+      return {
+        requesting: true
+      }
+
+    case 'POST_TAG':
+      return {
+        tags: action.payload,
+        requesting: false
+      }
 
     default:
       return state

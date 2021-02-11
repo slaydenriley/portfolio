@@ -30,7 +30,7 @@ const NavBar = props => {
       else {
         return (
           <div>
-            <Navbar className="container-fluid">
+            <Navbar className="container-fluid fixed-top">
               <Navbar.Brand className="font-weight-bold text-muted">
                 Riley Slayden
                 </Navbar.Brand>
@@ -50,7 +50,7 @@ const NavBar = props => {
     else {
       return (
         <div>
-          <Navbar>
+          <Navbar className="fixed-top">
             <Navbar.Brand className="font-weight-bold text-muted">
               Riley Slayden
             </Navbar.Brand>

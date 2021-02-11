@@ -1,13 +1,9 @@
 import React from 'react'
 import NewPost from '../../components/posts/NewPost'
-
-import { Redirect } from 'react-router-dom'
-
-
+import TagContainer from './tagContainer.js'
 import {connect} from 'react-redux'
 import addNewPost from '../../actions/addNewPost.js'
 import fetchTags from '../../actions/fetchTags.js'
-
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
@@ -25,7 +21,6 @@ class NewPostContainer extends React.Component {
   componentDidMount() {
     this.props.fetchTags()
   }
-
 
   handleChange = event => {
     this.setState({
@@ -49,14 +44,17 @@ class NewPostContainer extends React.Component {
     return (
       <div className="new-post">
         <div onSubmit={this.handleSubmit.bind(this)} onChange={this.handleChange.bind(this)}>
-          <NewPost tags={this.props.tags.tags}/>
+          <NewPost />
+        </div>
+
+        <TagContainer />
+
           <div className="rich-text-editor">
             <ReactQuill
               value={this.state.content}
               onChange={this.handleEditorChange}
             />
           </div>
-        </div>
       </div>
     )
   }

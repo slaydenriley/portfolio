@@ -1,0 +1,59 @@
+import React from 'react'
+import {connect} from 'react-redux'
+import fetchTags from '../../actions/fetchTags'
+import addNewTag from '../../actions/addNewTag'
+import Tags from '../../components/posts/Tags'
+
+class TagContainer extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      tag: ''
+    }
+  }
+
+  componentDidMount() {
+    this.props.fetchTags()
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+    let tag = {tag: {name: this.state.tag}}
+    this.props.addNewTag(tag)
+  }
+
+  handleLoading = () => {
+    if (this.props.tags.requesting) {
+      console.log("requesting")
+    }
+    else {
+      return (
+        <div onChange={this.handleChange} onSubmit={this.handleSubmit}>
+          <Tags tags={this.props.tags.tags} />
+        </div>
+      )
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        {this.handleLoading()}
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    tags: state.tags
+  }
+}
+
+export default connect(mapStateToProps, {fetchTags, addNewTag})(TagContainer)
