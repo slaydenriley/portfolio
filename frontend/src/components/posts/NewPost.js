@@ -1,6 +1,9 @@
 import React from 'react';
 
+
 const NewPost = (props) => {
+
+
   return (
     <div>
     <h1>Create New Post</h1>
@@ -12,15 +15,16 @@ const NewPost = (props) => {
             <select name="category" required>
               <option value="post">Post</option>
               <option value="project">Project</option>
-            </select><br/>
+            </select><br/><br/>
 
             {props.tags.map(tag =>
-              <label className="checkboxes">
-                {tag.name.toUpperCase()}<br/>
-                  <input type="checkbox" name="tags" value={tag.id}/>
-                  <hr className="line"/>
-              </label>
+                <label className="tag-submit checkboxes">
+                  <input className="checkbox" type="checkbox" name="tags" value={tag.id}/><br/>
+                  {tag.name.toUpperCase()}
+                </label>
             )}<br/>
+
+
             <input className="submit" type="submit" value="Publish"/>
           </form>
         </div>
@@ -41,4 +45,12 @@ export default NewPost;
   <option value="javascript">Javascript</option>
   <option value="react-redux">React/Redux</option>
 </select><br/>
+
+
+{props.tags.map(tag =>
+    <label className="submit checkboxes">
+        {tag.name.toUpperCase()}<br/>
+        <input type="checkbox" name="tags" value={tag.id}/>
+      </label>
+)}
 */

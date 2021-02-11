@@ -12,6 +12,7 @@ export default function tagReducer(state = { tags: [], requesting: false}, actio
 
     case 'START_ADDING_TAG':
       return {
+        ...state,
         requesting: true
       }
 

@@ -37,7 +37,6 @@ class NewPostContainer extends React.Component {
           [event.target.name]: event.target.value
         })
       }
-      console.log(this.state)
   };
 
   handleSubmit = (event) => {

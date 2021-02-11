@@ -15,6 +15,9 @@ body {
   display: flex;
 }
 
+.tag-submit {
+}
+
 .row-1 {
   flex: 1;
   width: 33%;
@@ -133,14 +136,14 @@ body {
 }
 
 
-.submit {
+.submit, .tag-submit {
   background: #00010a;
   color: #bfbfbf;
   border: 2px solid #bfbfbf;
   font-weight: bolder;
 }
 
-.submit:hover {
+.submit:hover, .tag-submit:hover {
   background: lightblue;
   color: #00010a;
   transform: scale(1.07);
