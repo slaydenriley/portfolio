@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom'
 
 import {connect} from 'react-redux'
 import addNewPost from '../../actions/addNewPost.js'
+import fetchTags from '../../actions/fetchTags.js'
 
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -18,8 +19,13 @@ class NewPostContainer extends React.Component {
     category: "post",
     redirectToNewPage: false,
     image_link: '',
-    tag: ''
+    tags: []
   };
+
+  componentDidMount() {
+    this.props.fetchTags()
+  }
+
 
   handleChange = event => {
     this.setState({
@@ -43,7 +49,7 @@ class NewPostContainer extends React.Component {
     return (
       <div className="new-post">
         <div onSubmit={this.handleSubmit.bind(this)} onChange={this.handleChange.bind(this)}>
-          <NewPost />
+          <NewPost tags={this.props.tags.tags}/>
           <div className="rich-text-editor">
             <ReactQuill
               value={this.state.content}
@@ -58,8 +64,9 @@ class NewPostContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        user_id: state.account.user.id
+        user_id: state.account.user.id,
+        tags: state.tags
     };
 };
 
-export default connect(mapStateToProps, {addNewPost})(NewPostContainer)
+export default connect(mapStateToProps, {addNewPost, fetchTags})(NewPostContainer)

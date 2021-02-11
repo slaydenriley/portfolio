@@ -14,6 +14,7 @@ class PostList extends React.Component {
           <div key={post.id} className="post-list">
             <Link key={post.id} to={`/posts/${post.id}`}>
               <em>{post.title}</em><br/>
+              <hr className="line"/>
               <img src={`${post.image_link}`}/><br/>
               <p><em>Posted on: {post.created_at}</em></p>
             </Link>

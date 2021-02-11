@@ -11,7 +11,8 @@ class ProjectList extends React.Component {
           {this.props.posts.map(post =>
             <div key={post.id} className="post-list">
               <Link to={`/projects/${post.id}`}>
-                <h2><em>{post.title}</em></h2>
+                <em>{post.title}</em>
+                <hr className="line"/>
                 <img src={`${post.image_link}`}/><br/>
               </Link>
             </div>)}

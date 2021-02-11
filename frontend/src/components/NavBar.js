@@ -11,7 +11,7 @@ const NavBar = props => {
       if (admin === true) {
         return (
           <div>
-            <Navbar className="container-fluid">
+            <Navbar className="container-fluid fixed-top">
               <Navbar.Brand className="font-weight-bold text-muted">
                 Riley Slayden
                 </Navbar.Brand>

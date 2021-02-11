@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom"
 
 function Footer() {
   return (
-    <div className="footer">
+    <div className="footer fixed-bottom">
       <p><em>A custom React/Redux/Rails app by Riley Slayden.</em></p>
     </div>
   );
