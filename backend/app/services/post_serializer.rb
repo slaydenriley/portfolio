@@ -8,9 +8,9 @@ class PostSerializer
       :only => [
         :id, :title, :content, :user_id, :category, :image_link, :created_at, :tag],
       include:
-        [:tags, comments: {
+        [comments: {
           :only => [:id, :content, :created_at, :updated_at, :post_id, :user_id],
-        include: [:user]}]
+        include: [:user]}, tags: {:only => [:name]}]
     }
 
     @post.to_json(options)
@@ -19,8 +19,7 @@ class PostSerializer
   def to_small_json
     options = {
       :only => [
-        :id, :title, :created_at, :updated_at, :category, :image_link, :tag],
-      include: :tags
+        :id, :title, :created_at, :updated_at, :category, :image_link, :tag]
     }
     @post.to_json(options)
   end
