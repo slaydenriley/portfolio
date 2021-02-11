@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
   def create
     post = Post.new(post_params)
+    tags = params[:tags]
     if post.save
+      tags.each do |tag|
+        assign = Tag.find_by(id: tag.to_i)
+        post.tags << assign
+        binding.pry
+      end
       render json: PostSerializer.new(post).to_serialized_json
     else
       payload = {
@@ -60,7 +66,7 @@ class PostsController < ApplicationController
       :category,
       :id,
       :image_link,
-      :tag
+      tags:[]
     )
   end
 

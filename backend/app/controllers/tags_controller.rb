@@ -7,7 +7,8 @@ class TagsController < ApplicationController
   def create
     tag = Tag.new(tag_params)
     if tag.save
-      render json: TagSerializer.new(tag).to_serialized_json
+      tags = Tag.all
+      render json: TagSerializer.new(tags).to_serialized_json
     else
       payload = {
         error: "Something went wrong. Please try again.",

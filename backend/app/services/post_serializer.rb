@@ -19,7 +19,9 @@ class PostSerializer
   def to_small_json
     options = {
       :only => [
-        :id, :title, :created_at, :updated_at, :category, :image_link]
+        :id, :title, :created_at, :updated_at, :category, :image_link],
+        include:
+          [tags: {:only => [:name, :id]}]
     }
     @post.to_json(options)
   end
