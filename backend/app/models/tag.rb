@@ -1,5 +1,5 @@
 class Tag < ApplicationRecord
-  belongs_to :post
+  has_and_belongs_to_many :posts
 
   def created_at
     time = attributes['created_at']

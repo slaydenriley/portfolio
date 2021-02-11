@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :create_post_tags
   resources :posts do
     resources :comments
   end
