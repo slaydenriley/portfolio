@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import fetchUsers from '../../actions/fetchUsers'
 import updateUser from '../../actions/updateUser'
+import deleteUser from '../../actions/deleteUser'
 import ManageUsers from '../../components/dashboard/ManageUsers'
 import { BlockReserveLoading } from 'react-loadingg';
 
@@ -32,7 +33,10 @@ class ManageUsersContainer extends React.Component {
 
   handleDelete = (event) => {
     event.preventDefault()
-    console.log("clicked")
+    let id = {user: {id: event.target.value}}
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      this.props.deleteUser(id)
+    }
   }
 
   handleLoading = () => {
@@ -65,4 +69,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, {fetchUsers, updateUser})(ManageUsersContainer)
+export default connect(mapStateToProps, {fetchUsers, updateUser, deleteUser})(ManageUsersContainer)
