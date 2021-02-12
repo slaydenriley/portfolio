@@ -28,11 +28,11 @@ class UsersController < ApplicationController
     render json: UserSerializer.new(users).to_serialized_json
   end
 
-  def edit
+  def update
     user = User.find_by(id: user_params[:id])
-    user.update(user_params)
-    if user.save
-      render json: UserSerializer.new(user).to_serialized_json
+    if user.update(user_params)
+      users = User.all
+      render json: UserSerializer.new(users).to_serialized_json
     else
       payload = {
         error: "Something went wrong. Please try again.",
@@ -49,11 +49,13 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(
+      :id,
       :name,
       :email,
       :description,
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :admin
     )
   end
 end
