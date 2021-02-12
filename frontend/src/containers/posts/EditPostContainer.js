@@ -9,6 +9,7 @@ import {Link, Redirect} from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import { BlockReserveLoading } from 'react-loadingg';
 import EditSinglePostContainer from './EditSinglePostContainer'
+import EditPostList from '../../components/posts/EditPostList'
 
 class EditPostContainer extends React.Component {
 
@@ -23,7 +24,6 @@ class EditPostContainer extends React.Component {
     }
   }
 
-
   handleLoading = () => {
     if (this.props.posts.requesting) {
       return <BlockReserveLoading />
@@ -31,22 +31,8 @@ class EditPostContainer extends React.Component {
     else {
       return (
         <div className="posts">
-          <h1>Post & Project Manager</h1>
-          <hr className="line"/>
-          {this.props.posts.posts.map(post =>
-            <div key={post.id} className="edit-post-list">
-              <h2><em>{post.title} ({post.category})</em></h2>
+          <EditPostList posts={this.props.posts} delete={this.handleDeleteClick}/>
 
-              <Link to={`/dashboard/posts/edit/${post.id}`}>
-                <button id={post.id} className="submit edit-post-button">
-                  Edit Post
-                </button>
-              </Link>
-
-              <button id={post.id} className="delete-post-button" onClick={this.handleDeleteClick}>Delete Post</button>
-              <em><u>Published on:</u> {post.created_at}</em>
-              <hr className="line"/>
-            </div>)}
         </div>
       )
     }

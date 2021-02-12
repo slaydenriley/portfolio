@@ -29,16 +29,16 @@ class EditTagContainer extends React.Component {
           <h1>Tag Manager</h1>
           <hr className="line"/>
           <div className="tags">
-          <div className="row-1">
+          <div className="">
             {this.props.tags.tags.map(tag =>
               <div key={tag.id} className="edit-post-list">
                 <h2><em>{tag.name}</em></h2>
-                <button id={tag.id} className="submit delete-post-button" onClick={this.handleDeleteClick}>Delete Tag</button>
+                <button id={tag.id} className="delete-post-button" onClick={this.handleDeleteClick}>Delete Tag</button>
                 <hr className="line"/>
               </div>)}
           </div>
 
-          <div className="row-2">
+          <div className="">
             <TagContainer />
           </div>
           </div>
