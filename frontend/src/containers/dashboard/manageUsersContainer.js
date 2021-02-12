@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import fetchUsers from '../../actions/fetchUsers'
 import updateUser from '../../actions/updateUser'
 import ManageUsers from '../../components/dashboard/ManageUsers'
+import { BlockReserveLoading } from 'react-loadingg';
 
 class ManageUsersContainer extends React.Component {
   constructor(props) {
@@ -28,11 +29,30 @@ class ManageUsersContainer extends React.Component {
     let formData = this.state
     this.props.updateUser(formData)
   }
+
+  handleDelete = (event) => {
+    event.preventDefault()
+    console.log("clicked")
+  }
+
+  handleLoading = () => {
+    if (this.props.users.requesting) {
+      return <BlockReserveLoading />;
+    }
+    else {
+      return (
+        <div onChange={this.handleChange}>
+          <ManageUsers submit={this.handleSubmit} users={this.props.users.users} delete={this.handleDelete}/>
+        </div>
+      )
+    }
+  }
+
   render() {
     return (
-      <div onSubmit={this.handleSubmit} onChange={this.handleChange}>
-        <ManageUsers users={this.props.users.users} />
-      </div>
+      <>
+        {this.handleLoading()}
+      </>
     )
   }
 }

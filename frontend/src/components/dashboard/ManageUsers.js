@@ -15,8 +15,8 @@ const ManageUsers = (props) => {
               <option value="true">Admin</option>
               <option value="false">User</option>
             </select><br/>
-            <input type="submit" value="Update" className="submit"/>
-            <button value="true" className="delete">Delete Account</button>
+            <input onClick={props.submit} type="submit" value="Update" className="submit"/>
+            <button onClick={props.delete} value="true" className="delete">Delete Account</button>
           </form>
           <hr className="line"/>
       </div>)}

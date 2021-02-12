@@ -10,9 +10,9 @@ export default function updateUser(formData) {
             body: JSON.stringify(formData)
         })
         .then(res => res.json())
-        .then(user => dispatch({
+        .then(users => dispatch({
           type: 'UPDATE_USER',
-          payload: user
+          payload: users
         }))
       }
     }

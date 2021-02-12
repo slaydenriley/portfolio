@@ -15,7 +15,9 @@ class EditTagContainer extends React.Component {
 
   handleDeleteClick = (event) => {
     let tag = {tag: {id: event.target.id}}
-    this.props.deleteTag(tag)
+    if (window.confirm("Are you sure you want to delete this tag?")) {
+      this.props.deleteTag(tag)
+    }
   }
 
 
