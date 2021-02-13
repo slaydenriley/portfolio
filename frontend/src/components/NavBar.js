@@ -37,9 +37,9 @@ const NavBar = props => {
                 <NavLink exact={true} to="/">Home</NavLink>
                 <NavLink to="/projects">Projects</NavLink>
                 <NavLink to="/posts">Blog</NavLink>
-                <NavLink to="/resume">Resumé</NavLink>
+                <NavLink to="/resume">Resume</NavLink>
                 <div className="ml-auto">
-
+                  <NavLink to="/account/edit">My Profile</NavLink>
                   <NavLink to="/logout">Logout</NavLink>
                 </div>
             </Navbar>
@@ -57,7 +57,7 @@ const NavBar = props => {
             <NavLink exact={true} to="/">Home</NavLink>
             <NavLink to="/projects">Projects</NavLink>
             <NavLink to="/posts">Blog</NavLink>
-            <NavLink to="/resume">Resumé</NavLink>
+            <NavLink to="/resume">Resume</NavLink>
               <div className="ml-auto">
                 <NavLink to="/signup">Create Account</NavLink>
                 <NavLink to="/login">Login</NavLink>

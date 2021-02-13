@@ -32,7 +32,7 @@ class SignupContainer extends React.Component {
           <SignupForm />
         </div>)
     } else {
-      return <Redirect to="/dashboard" />
+      return <Redirect to="/" />
     }
   }
 

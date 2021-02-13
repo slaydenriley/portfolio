@@ -169,6 +169,17 @@ body {
   margin-top: 30px;
 }
 
+.edit-form {
+  margin-top: 30px;
+}
+
+.edit-form input {
+  margin-top: 10px;
+  font-size: 20px;
+  width: 400px;
+  padding: 10px;
+}
+
 .login input, .new-post input, .new-post select, .signup-form input {
   margin-top: 10px;
   font-size: 20px;

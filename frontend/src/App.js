@@ -14,7 +14,7 @@ import SingleProjectContainer from './containers/projects/singleProjectContainer
 
 import Resume from './components/Resume'
 
-
+import AccountContainer from './containers/dashboard/accountContainer'
 import LoginContainer from './containers/authorized/loginContainer';
 import SignupContainer from './containers/authorized/signupContainer'
 import DashboardContainer from './containers/dashboard/dashboardContainer';
@@ -46,12 +46,18 @@ class App extends React.Component {
             <Route exact path="/dashboard/posts/edit/:id" component={EditSinglePostContainer} />
             <Route exact path="/dashboard/tags/edit" component={EditTagContainer} />
             <Route exact path="/dashboard/users/edit" component={ManageUsersContainer} />
+            <Route exact path="/dashboard/account/edit" component={AccountContainer} />
           </>
         )
       }
 
       else  {
-        return <Route exact path="/logout" component={LogoutContainer} />
+        return(
+          <>
+           <Route exact path="/logout" component={LogoutContainer} />
+           <Route exact path="/account/edit" component={AccountContainer} />
+          </>
+        )
       }
     }
     else {

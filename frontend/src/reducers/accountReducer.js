@@ -44,6 +44,24 @@ export default function accountReducer(state = {logged_in: false, errors: null, 
         admin: action.payload.admin
       }
 
+    case "START_UPDATE_ACCOUNT":
+      return {
+        ...state,
+        requesting: true
+      }
+
+    case "UPDATE_ACCOUNT":
+      return {
+        ...state,
+        requesting: false
+      }
+
+    case "START_DELETING_USER":
+      return {
+        ...state,
+        requesting: true
+      }
+      
     default:
       return state
   }
