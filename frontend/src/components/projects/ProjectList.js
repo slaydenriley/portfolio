@@ -1,14 +1,11 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-class ProjectList extends React.Component {
-
-  render() {
+const ProjectList = (props) => {
     return (
       <div>
         <hr className="line"/>
         <div>
-          {this.props.posts.map(post =>
+          {props.posts.map(post =>
             <div key={post.id} className="post-list">
               <Link to={`/projects/${post.id}`}>
                 <em>{post.title}</em>
@@ -19,7 +16,6 @@ class ProjectList extends React.Component {
         </div>
       </div>
     );
-  }
 }
 
 export default ProjectList;

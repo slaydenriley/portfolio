@@ -1,5 +1,3 @@
-import React from 'react'
-import {connect} from 'react-redux'
 import DeleteComment from '../../components/comments/DeleteComment'
 
 const Comments = (props) => {
@@ -19,10 +17,6 @@ const Comments = (props) => {
           </div>)}
       </div>
     );
-
 }
 
-
 export default Comments
-
-//  <DeleteComment comment={comment} user_id={props.user.id}/>

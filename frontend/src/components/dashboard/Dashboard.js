@@ -1,9 +1,6 @@
-import React from 'react';
 import {Link} from "react-router-dom"
 
-class Dashboard extends React.Component {
-
-  render() {
+const Dashboard = () => {
     return (
       <div className="dashboard">
         <h1>Admin Dashboard</h1>
@@ -16,7 +13,6 @@ class Dashboard extends React.Component {
             <h1><Link className="dashboard-components" to="/dashboard/tags/edit">Manage Tags</Link></h1>
           </div>
         </div>)
-  }
 };
 
 export default Dashboard;

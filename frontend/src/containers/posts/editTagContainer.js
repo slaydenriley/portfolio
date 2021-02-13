@@ -6,6 +6,7 @@ import deleteTag from '../../actions/deleteTag'
 import { useHistory } from 'react-router-dom'
 import { BlockReserveLoading } from 'react-loadingg';
 import TagContainer from './tagContainer'
+import TagEditor from '../../components/tags/TagEditor'
 
 class EditTagContainer extends React.Component {
 
@@ -20,7 +21,6 @@ class EditTagContainer extends React.Component {
     }
   }
 
-
   handleLoading = () => {
     if (this.props.tags.requesting) {
       return <BlockReserveLoading />
@@ -29,20 +29,11 @@ class EditTagContainer extends React.Component {
       return (
         <div className="posts">
           <h1>Tag Manager</h1>
-          <hr className="line"/>
-          <div className="tags">
           <div className="row-1">
-            {this.props.tags.tags.map(tag =>
-              <div key={tag.id} className="edit-post-list">
-                <h2><em>{tag.name}</em></h2>
-                <button id={tag.id} className="delete-post-button" onClick={this.handleDeleteClick}>Delete Tag</button>
-                <hr className="line"/>
-              </div>)}
+            <TagEditor tags={this.props.tags} delete={this.handleDeleteClick}/>
           </div>
-
           <div className="row-2">
             <TagContainer />
-          </div>
           </div>
         </div>
       )
