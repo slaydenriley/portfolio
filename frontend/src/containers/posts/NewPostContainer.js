@@ -1,6 +1,6 @@
 import React from 'react'
 import NewPost from '../../components/posts/NewPost'
-import TagContainer from './tagContainer.js'
+import TagContainer from '../tags/tagContainer.js'
 import {connect} from 'react-redux'
 import addNewPost from '../../actions/addNewPost.js'
 import fetchTags from '../../actions/fetchTags.js'

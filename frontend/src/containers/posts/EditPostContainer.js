@@ -1,8 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import fetchPosts from '../../actions/fetchPosts'
-
-
 import deletePost from '../../actions/deletePost'
 import PostEditor from '../../components/posts/PostEditor'
 import {Link, Redirect} from 'react-router-dom'

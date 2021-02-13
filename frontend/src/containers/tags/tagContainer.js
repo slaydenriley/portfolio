@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import fetchTags from '../../actions/fetchTags'
 import addNewTag from '../../actions/addNewTag'
-import Tags from '../../components/posts/Tags'
+import Tags from '../../components/tags/Tags'
 import { BlockReserveLoading } from 'react-loadingg';
 
 class TagContainer extends React.Component {

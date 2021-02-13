@@ -17,11 +17,11 @@ import Resume from './components/Resume'
 import AccountContainer from './containers/dashboard/accountContainer'
 import LoginContainer from './containers/authorized/loginContainer';
 import SignupContainer from './containers/authorized/signupContainer'
-import DashboardContainer from './containers/dashboard/dashboardContainer';
+import Dashboard from './components/dashboard/Dashboard';
 import LogoutContainer from './containers/authorized/logoutContainer';
 import NewPostContainer from './containers/posts/NewPostContainer';
 import EditPostContainer from './containers/posts/EditPostContainer';
-import EditTagContainer from './containers/posts/editTagContainer';
+import EditTagContainer from './containers/tags/editTagContainer';
 import EditSinglePostContainer from './containers/posts/EditSinglePostContainer'
 import ManageUsersContainer from './containers/dashboard/manageUsersContainer'
 import loginStatus from './actions/loginStatus'
@@ -39,7 +39,7 @@ class App extends React.Component {
       if (this.props.admin) {
         return(
           <>
-            <Route exact path="/dashboard" component={DashboardContainer} />
+            <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/dashboard/posts/new" component={NewPostContainer} />
             <Route exact path="/dashboard/posts/edit" component={EditPostContainer} />
             <Route exact path="/logout" component={LogoutContainer} />
