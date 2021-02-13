@@ -6,12 +6,8 @@ import Tags from '../../components/tags/Tags'
 import { BlockReserveLoading } from 'react-loadingg';
 
 class TagContainer extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      tag: ''
-    }
-  }
+  
+  state = {}
 
   componentDidMount() {
     this.props.fetchTags()

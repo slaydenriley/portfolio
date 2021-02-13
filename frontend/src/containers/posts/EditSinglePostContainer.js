@@ -33,22 +33,8 @@ class EditSinglePostContainer extends React.Component {
     this.props.fetchTags()
   }
 
-  componentWillReceiveProps(props) {
-    this.setState({
-      title: props.post.post.title,
-      user_id: props.post.post.user_id,
-      content: props.post.post.content,
-      category: props.post.post.category,
-      id: props.post.post.id,
-      image_link: props.post.post.image_link,
-      redirectToNewPage: false,
-      tags: []
-    })
-  }
-
   handleEditorChange(value) {
     this.setState({content: value})
-    console.log(this.state)
   }
 
   handleChange = event => {

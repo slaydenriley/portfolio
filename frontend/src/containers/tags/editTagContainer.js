@@ -3,12 +3,14 @@ import {connect} from 'react-redux'
 import {Link, Redirect} from 'react-router-dom'
 import fetchTags from '../../actions/fetchTags'
 import deleteTag from '../../actions/deleteTag'
+import addNewTag from '../../actions/addNewTag'
 import { useHistory } from 'react-router-dom'
 import { BlockReserveLoading } from 'react-loadingg';
-import TagContainer from './tagContainer'
 import TagEditor from '../../components/tags/TagEditor'
+import Tags from '../../components/tags/Tags'
 
 class EditTagContainer extends React.Component {
+  state = {}
 
   componentDidMount() {
     this.props.fetchTags()
@@ -21,8 +23,20 @@ class EditTagContainer extends React.Component {
     }
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    let tag = {tag: {name: this.state.tag}}
+    this.props.addNewTag(tag)
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
   handleLoading = () => {
-    if (this.props.tags.requesting) {
+    if (this.props.requesting) {
       return <BlockReserveLoading />
     }
     else {
@@ -32,8 +46,8 @@ class EditTagContainer extends React.Component {
           <div className="row-1">
             <TagEditor tags={this.props.tags} delete={this.handleDeleteClick}/>
           </div>
-          <div className="row-2">
-            <TagContainer />
+          <div className="row-2" onChange={this.handleChange} onSubmit={this.handleSubmit}>
+            <Tags />
           </div>
         </div>
       )
@@ -51,8 +65,9 @@ class EditTagContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    tags: state.tags
+    tags: state.tags,
+    requesting: state.tags.requesting
   }
 }
 
-export default connect(mapStateToProps, {fetchTags, deleteTag})(EditTagContainer)
+export default connect(mapStateToProps, {fetchTags, deleteTag, addNewTag})(EditTagContainer)

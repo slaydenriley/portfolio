@@ -1,5 +1,10 @@
 export default function postReducer(state = { posts: [], requesting: true}, action) {
   switch(action.type) {
+    case 'START_FETCHING_POSTS':
+      return {
+        requesting: true
+      }
+
     case 'FETCH_POSTS':
       return {
         posts: action.payload,
