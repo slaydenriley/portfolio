@@ -13,24 +13,40 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 class EditSinglePostContainer extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      title: this.props.post.post.title,
-      user_id: this.props.post.post.user_id,
-      content: this.props.post.post.content,
-      category: this.props.post.post.category,
-      id: this.props.match.params.id,
-      image_link: this.props.post.post.image_link,
-      redirectToNewPage: false,
-      tags: []
-    }
+  state = {
+    title: this.props.post.post.title,
+    user_id: this.props.post.post.user_id,
+    content: this.props.post.post.content,
+    category: this.props.post.post.category,
+    id: this.props.match.params.id,
+    image_link: this.props.post.post.image_link,
+    redirectToNewPage: false,
+    tags: []
   }
 
   componentDidMount() {
     let id = this.props.match.params.id
     this.props.fetchSinglePost(id)
     this.props.fetchTags()
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps !== this.props) {
+      this.setState({
+        title: this.props.post.post.title,
+        user_id: this.props.post.post.user_id,
+        content: this.props.post.post.content,
+        category: this.props.post.post.category,
+        id: this.props.match.params.id,
+        image_link: this.props.post.post.image_link,
+        redirectToNewPage: false,
+        tags: []
+      })
+
+    if (this.props.post.post.tags) {
+      this.setState({tags: this.props.post.post.tags.map(tag => tag.id.toString())})
+    }
+    }
   }
 
   handleEditorChange(value) {
@@ -49,6 +65,7 @@ class EditSinglePostContainer extends React.Component {
           [event.target.name]: event.target.value
         })
       }
+      console.log(this.state)
   };
 
   handleSubmit = (event) => {
@@ -61,10 +78,8 @@ class EditSinglePostContainer extends React.Component {
   handleLoading = () => {
     if (this.props.post.requesting) {
       return <BlockReserveLoading />;
-      console.log("we are requesting")
     }
     else {
-      console.log("we are not requesting")
       return (
         <div className="new-post" onSubmit={this.handleSubmit}>
           <form>
@@ -101,3 +116,5 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {fetchSinglePost, editPost, fetchTags})(EditSinglePostContainer)
+
+//this.props.post.post.tags.map(tag => tag.id.toString())

@@ -46,8 +46,12 @@ body {
 }
 
 .app-body {
-  padding-bottom: 10%;
+  position: fixed;
+  overflow: auto;
+  height: 100vh;
+  padding-bottom: 20vh;
 }
+
 
 .ql-syntax {
   color: #bfbfbf;

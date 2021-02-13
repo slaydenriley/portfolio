@@ -6,7 +6,7 @@ const PostList = (props) => {
         <h1>Blog Posts</h1>
         <em>These are my technical blog posts</em>
         <hr className="line"/>
-        <div>
+        <div className="all-posts">
         {props.posts.map(post =>
           <div key={post.id} className="post-list">
             <Link key={post.id} to={`/posts/${post.id}`}>

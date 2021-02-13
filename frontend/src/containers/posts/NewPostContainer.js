@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import addNewPost from '../../actions/addNewPost.js'
 import fetchTags from '../../actions/fetchTags.js'
 import ReactQuill from 'react-quill';
+import { BlockReserveLoading } from 'react-loadingg';
 import 'react-quill/dist/quill.snow.css';
 
 class NewPostContainer extends React.Component {
@@ -25,14 +26,11 @@ class NewPostContainer extends React.Component {
   handleChange = event => {
     let index
     if (event.target.type === "checkbox" && event.target.checked === true) {
-      console.log("checked")
       this.state.tags.push(event.target.value)
     } else if (event.target.type === "checkbox" && event.target.checked === false) {
-      console.log("unchecked")
         index = this.state.tags.indexOf(+event.target.value)
         this.state.tags.splice(index, 1)
     } else {
-        console.log("neither")
         this.setState({
           [event.target.name]: event.target.value
         })
@@ -43,27 +41,38 @@ class NewPostContainer extends React.Component {
     event.preventDefault()
     const formData = this.state
     this.props.addNewPost(formData)
-    this.props.history.push(`/${this.state.category}s`)
+    this.props.history.push(`/${this.state.category}s/${this.props.post.post.id}`)
   };
 
   handleEditorChange = (value) => {
     this.setState({content: value})
   }
 
+  handleLoading = () => {
+    if (this.props.tags.requesting || this.props.post.requesting) {
+      return <BlockReserveLoading />;
+    }
+    else {
+      return (
+        <div className="new-post">
+          <div onSubmit={this.handleSubmit.bind(this)} onChange={this.handleChange.bind(this)}>
+            <NewPost tags={this.props.tags.tags}/>
+          </div>
+
+            <div className="rich-text-editor">
+              <ReactQuill
+                value={this.state.content}
+                onChange={this.handleEditorChange}
+              />
+            </div>
+        </div>
+      )
+    }
+  }
+
   render() {
     return (
-      <div className="new-post">
-        <div onSubmit={this.handleSubmit.bind(this)} onChange={this.handleChange.bind(this)}>
-          <NewPost tags={this.props.tags.tags}/>
-        </div>
-        <TagContainer />
-          <div className="rich-text-editor">
-            <ReactQuill
-              value={this.state.content}
-              onChange={this.handleEditorChange}
-            />
-          </div>
-      </div>
+      <>{this.handleLoading()}</>
     )
   }
 }
@@ -71,7 +80,8 @@ class NewPostContainer extends React.Component {
 const mapStateToProps = (state) => {
     return {
         user_id: state.account.user.id,
-        tags: state.tags
+        tags: state.tags,
+        post: state.single_post
     };
 };
 
