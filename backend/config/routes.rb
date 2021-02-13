@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   delete '/comments', to: 'comments#destroy'
   delete '/posts', to: 'posts#destroy'
   delete '/tags', to: 'tags#destroy'
+  delete '/users', to: 'users#destroy'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

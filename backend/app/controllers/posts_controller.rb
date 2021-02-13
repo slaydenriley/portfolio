@@ -29,12 +29,14 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find_by(id: post_params[:id])
-    tags = params[:tags]
-    post.tags.delete_all
     if post.update(post_params)
-      tags.each do |tag|
-        assign = Tag.find_by(id: tag.to_i)
-        post.tags << assign
+      if params[:tags].size != 0
+        tags = params[:tags]
+        post.tags.delete_all
+        tags.each do |tag|
+          assign = Tag.find_by(id: tag.to_i)
+          post.tags << assign
+        end
       end
       render json: PostSerializer.new(post).to_serialized_json
     else
