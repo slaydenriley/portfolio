@@ -15,9 +15,7 @@ const PostEditor = (props) => {
             <input className="submit" type="submit" value="Updated Post"/><br/><br/>
 
             <div className="post-filters">
-              <em>Previous tags: {props.post.tags.map(tag => tag.name + " ")}<br/> </em><br/>
                 {props.tags.map(tag =>
-
                     <label key={tag.id} className="tag-submit checkboxes">
                       <input
                         className="checkbox"

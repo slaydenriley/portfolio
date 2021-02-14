@@ -22,7 +22,7 @@ const NewPost = (props) => {
                   <input className="checkbox" type="checkbox" name="tags" value={tag.id}/><br/>
                   {tag.name.toUpperCase()}
                 </label>
-            )}
+            )}<br/><br/>
         </div>
       </div>
     </div>
@@ -30,23 +30,3 @@ const NewPost = (props) => {
 }
 
 export default NewPost;
-
-
-/*
-<select name="tag" required>
-  <option value="null">None</option>
-  <option value="ruby">Ruby</option>
-  <option value="rails">Rails</option>
-  <option value="sinatra">Sinatra</option>
-  <option value="javascript">Javascript</option>
-  <option value="react-redux">React/Redux</option>
-</select><br/>
-
-
-{props.tags.map(tag =>
-    <label className="submit checkboxes">
-        {tag.name.toUpperCase()}<br/>
-        <input type="checkbox" name="tags" value={tag.id}/>
-      </label>
-)}
-*/

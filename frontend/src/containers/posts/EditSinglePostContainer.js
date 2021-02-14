@@ -65,7 +65,6 @@ class EditSinglePostContainer extends React.Component {
           [event.target.name]: event.target.value
         })
       }
-      console.log(this.state)
   };
 
   handleSubmit = (event) => {
@@ -86,7 +85,7 @@ class EditSinglePostContainer extends React.Component {
   }
 
   handleLoading = () => {
-    if (this.props.post.requesting) {
+    if (this.props.post.requesting || this.props.tags.requesting) {
       return <BlockReserveLoading />;
     }
     else {
