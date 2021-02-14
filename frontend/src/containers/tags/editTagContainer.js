@@ -43,6 +43,7 @@ class EditTagContainer extends React.Component {
       return (
         <div className="posts">
           <h1>Tag Manager</h1>
+          <hr className="line"/>
           <div className="row-1">
             <TagEditor tags={this.props.tags} delete={this.handleDeleteClick}/>
           </div>

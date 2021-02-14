@@ -1,6 +1,5 @@
 import React from 'react'
 import NewPost from '../../components/posts/NewPost'
-import TagContainer from '../tags/tagContainer.js'
 import {connect} from 'react-redux'
 import addNewPost from '../../actions/addNewPost.js'
 import fetchTags from '../../actions/fetchTags.js'
@@ -41,15 +40,25 @@ class NewPostContainer extends React.Component {
     event.preventDefault()
     const formData = this.state
     this.props.addNewPost(formData)
-    this.props.history.push(`/${this.state.category}s/${this.props.post.post.id}`)
+    this.props.history.push(`/${this.state.category}s`)
   };
 
   handleEditorChange = (value) => {
     this.setState({content: value})
   }
 
+  modules = {
+    toolbar: [
+      [{ 'header': [1, 2, false] }],
+      ['bold', 'italic', 'underline','strike', 'blockquote', 'code-block'],
+      [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+      ['link', 'image', 'video'],
+      ['clean']
+    ],
+  }
+
   handleLoading = () => {
-    if (this.props.tags.requesting || this.props.post.requesting) {
+    if (this.props.tags.requesting) {
       return <BlockReserveLoading />;
     }
     else {
@@ -63,6 +72,7 @@ class NewPostContainer extends React.Component {
               <ReactQuill
                 value={this.state.content}
                 onChange={this.handleEditorChange}
+                modules={this.modules}
               />
             </div>
         </div>

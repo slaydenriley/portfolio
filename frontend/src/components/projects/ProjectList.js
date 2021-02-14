@@ -16,9 +16,11 @@ class ProjectList extends React.Component {
       })
     }
     else {
+      let new_posts = this.props.posts.filter(project =>
+            project.tags.find(tag =>
+              tag.name.includes(event.target.value)))
       this.setState({
-        posts: this.props.posts.filter(project =>
-          project.tags.find(tag => tag.name.includes(event.target.value)))
+        posts: new_posts
       })
     }
   }

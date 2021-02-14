@@ -14,13 +14,13 @@ class ProjectsContainer extends React.Component {
   }
 
   handleLoading = () => {
-    if (this.props.requesting) {
+    if (this.props.requesting || this.props.tags.requesting) {
       return <BlockReserveLoading />;
 
     } else {
       return(
         <div className="posts">
-          <ProjectList posts={this.props.posts} tags={this.props.tags}/>
+          <ProjectList posts={this.props.posts.filter(project => project.category === "project")} tags={this.props.tags}/>
         </div>
       )
     }

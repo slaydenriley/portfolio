@@ -1,7 +1,6 @@
 const TagEditor = (props) => {
   return (
     <>
-      <hr className="line"/>
       <div className="tags">
         {props.tags.tags.map(tag =>
           <div key={tag.id} className="edit-post-list">

@@ -75,6 +75,16 @@ class EditSinglePostContainer extends React.Component {
     this.props.history.push(`/${this.state.category}s/${this.state.id}`)
   }
 
+  modules = {
+    toolbar: [
+      [{ 'header': [1, 2, false] }],
+      ['bold', 'italic', 'underline','strike', 'blockquote', 'code-block'],
+      [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+      ['link', 'image', 'video'],
+      ['clean']
+    ],
+  }
+
   handleLoading = () => {
     if (this.props.post.requesting) {
       return <BlockReserveLoading />;
@@ -91,6 +101,7 @@ class EditSinglePostContainer extends React.Component {
               <ReactQuill
                 defaultValue={this.props.post.post.content}
                 onChange={this.handleEditorChange.bind(this)}
+                modules={this.modules}
               />
             </div>
           </form>

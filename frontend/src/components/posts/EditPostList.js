@@ -7,7 +7,7 @@ const EditPostList = (props) => {
     <hr className="line"/>
 
     <div className="project-edit-list">
-      <h2><u>Projects</u></h2>
+      <h1>Projects</h1>
       {props.posts.posts.filter(post => post.category === "project").map(post =>
         <div key={post.id} className="edit-post-list">
           <h2><em>{post.title}</em></h2>
@@ -27,7 +27,7 @@ const EditPostList = (props) => {
     <br/>
 
     <div className="post-edit-list">
-      <h2><u>Posts</u></h2>
+      <h1>Posts</h1>
       {props.posts.posts.filter(post => post.category === "post").map(post =>
         <div key={post.id} className="edit-post-list">
           <h2><em>{post.title}</em></h2>
