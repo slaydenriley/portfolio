@@ -1,7 +1,7 @@
 export default function deletePost(post) {
     return (dispatch) => {
         dispatch({ type: 'START_DELETING_POST' });
-        fetch(`https://riley-portfolio-api.herokuapp.com/posts`, {
+        fetch(`http://localhost:3001/posts`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'

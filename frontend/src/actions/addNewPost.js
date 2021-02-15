@@ -1,7 +1,7 @@
 export default function addNewPost(formData) {
     return (dispatch) => {
         dispatch({ type: 'START_POSTING_POST' });
-        fetch(`https://riley-portfolio-api.herokuapp.com/posts`, {
+        fetch(`http://localhost:3001/posts`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'

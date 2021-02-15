@@ -1,7 +1,7 @@
 export default function deleteTag(tag) {
     return (dispatch) => {
         dispatch({ type: 'START_DELETING_TAG' });
-        fetch(`https://riley-portfolio-api.herokuapp.com/tags`, {
+        fetch(`http://localhost:3001/tags`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
