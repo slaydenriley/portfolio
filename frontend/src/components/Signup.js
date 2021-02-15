@@ -1,7 +1,8 @@
-const Signup = () => {
+const Signup = (props) => {
   return(
     <form className="signup-form">
       <h1>Create an Account</h1>
+      <div className="errors">{props.errors}</div>
       <input type="text" name="name" placeholder="Your Name" required/><br/>
       <input type="text" name="email" placeholder="Email" required/><br/>
       <input type="password" name="password" placeholder="Password" required/><br/>
