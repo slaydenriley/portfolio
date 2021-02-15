@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         status: 401,
         logged_in: false,
         admin: false,
-        errors: ['Cannot find user, please try again']
+        errors: ['Something went wrong, please try again']
       }
     end
   end
