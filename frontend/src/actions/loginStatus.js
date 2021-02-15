@@ -1,5 +1,6 @@
 export default function loginStatus() {
   return (dispatch) => {
+    dispatch({ type: 'START_LOGIN_STATUS' });
     fetch('http://localhost:3001/logged_in', {
       method: 'GET',
       credentials: 'include'})
