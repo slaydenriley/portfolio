@@ -30,7 +30,7 @@ class LoginContainer extends React.Component {
           <Login errors={this.props.errors}/>
         </div>)
     } else {
-      return <Redirect to="/" />
+        this.props.history.push('/')
     }
   }
 
