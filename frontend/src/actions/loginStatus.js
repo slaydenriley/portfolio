@@ -1,6 +1,6 @@
 export default function loginStatus() {
   return (dispatch) => {
-    fetch('http://localhost:3001/logged_in', {
+    fetch('https://riley-portfolio-api.herokuapp.com/logged_in', {
       method: 'GET',
       credentials: 'include'})
       .then(res => res.json())

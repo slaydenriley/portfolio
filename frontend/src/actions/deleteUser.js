@@ -1,7 +1,7 @@
 export default function deleteUser(id) {
     return (dispatch) => {
         dispatch({ type: 'START_DELETING_USER' });
-        fetch(`http://localhost:3001/users`, {
+        fetch(`https://riley-portfolio-api.herokuapp.com/users`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
