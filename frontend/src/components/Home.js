@@ -23,8 +23,9 @@ const Home = (props) => {
           Flatiron School's software engineering course. The technologies I use include
           Ruby on Rails, React/Redux. HTML/CSS/Javascript.</p>
         <p>
-          Aside from coding, I am a huge outdoor enthusiast. Being raised in Montana, I was exposed
-          to skiing, fly-fishing, hiking, camping, to mention a few.
+          Aside from coding, I am a huge outdoor enthusiast and musician. Being raised in Montana, I was exposed
+          to skiing, fly-fishing, hiking, and camping. For a while, I toured the country as a professional banjo player
+          with the band "National Park Radio."
         </p>
         <hr className="line"/>
         <div class="home-cards">
