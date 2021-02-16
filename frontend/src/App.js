@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from './components/NavBar.js'
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import Home from './components/Home';
 import {connect} from 'react-redux'
 
@@ -66,6 +66,7 @@ class App extends React.Component {
         <>
           <Route exact path="/signup" component={SignupContainer} />
           <Route exact path="/login" component={LoginContainer} />
+          <Redirect exact to="/" />
         </>
       )
     }
