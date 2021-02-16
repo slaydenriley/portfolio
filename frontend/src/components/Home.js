@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import picture from '../images/ProfilePic.jpeg'
 
 const Home = (props) => {
   return (
     <div className="home">
       <div className="home-left">
-        <img src={picture} alt="Headshot"/>
+        <img src="https://i.imgur.com/o8oMm9i.jpg" alt="Riley Slayden Headshot"/>
         <div className="social">
           <h2>Riley Slayden</h2>
           <p>Missoula, MT</p>
