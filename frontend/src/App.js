@@ -66,7 +66,6 @@ class App extends React.Component {
         <>
           <Route exact path="/signup" component={SignupContainer} />
           <Route exact path="/login" component={LoginContainer} />
-          <Redirect exact to="/" />
         </>
       )
     }

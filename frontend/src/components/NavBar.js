@@ -76,8 +76,4 @@ const NavBar = props => {
   );
 };
 
-
-
 export default NavBar;
-
-//<NavLink to="/account">Account</NavLink>

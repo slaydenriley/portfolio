@@ -27,7 +27,7 @@ const Home = (props) => {
           with the band "National Park Radio."
         </p>
         <hr className="line"/>
-        <div class="home-cards">
+        <div className="home-cards">
           <Link className="home-card" to="/projects">Projects</Link>
           <Link className="home-card" to="/posts">Blog</Link>
           <Link className="home-card" to="/resume">Resume</Link>
