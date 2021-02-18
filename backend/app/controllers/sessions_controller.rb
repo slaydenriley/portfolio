@@ -5,9 +5,10 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(session_params[:password])
       login!
+      user_json = UserSerializer.new(current_user).to_serialized_json
       render json: {
         logged_in: true,
-        user: current_user,
+        user: JSON.parse(user_json),
         admin: current_user.admin
       }
     else
@@ -24,7 +25,7 @@ class SessionsController < ApplicationController
     if logged_in? && current_user
       render json: {
         logged_in: true,
-        user: current_user,
+        user: UserSerializer.new(current_user).to_serialized_json,
         admin: current_user.admin
       }
     else
