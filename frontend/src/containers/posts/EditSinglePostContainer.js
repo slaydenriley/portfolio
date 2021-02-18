@@ -4,9 +4,7 @@ import fetchPosts from '../../actions/fetchPosts'
 import editPost from '../../actions/editPost'
 import fetchSinglePost from '../../actions/fetchSinglePost'
 import fetchTags from '../../actions/fetchTags'
-import {stateToHTML} from 'draft-js-export-html';
 import PostEditor from '../../components/posts/PostEditor'
-import { Editor } from "react-draft-wysiwyg";
 import { BlockReserveLoading } from 'react-loadingg';
 import { Redirect} from 'react-router-dom'
 import ReactQuill from 'react-quill';
@@ -126,5 +124,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {fetchSinglePost, editPost, fetchTags})(EditSinglePostContainer)
-
-//this.props.post.post.tags.map(tag => tag.id.toString())
