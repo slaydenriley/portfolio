@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from './components/NavBar.js'
-import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './components/Home';
 import {connect} from 'react-redux'
 
@@ -26,7 +26,6 @@ import EditTagContainer from './containers/tags/editTagContainer';
 import EditSinglePostContainer from './containers/posts/EditSinglePostContainer'
 import ManageUsersContainer from './containers/dashboard/manageUsersContainer'
 import loginStatus from './actions/loginStatus'
-import fetchPosts from './actions/fetchPosts'
 import Footer from "./components/Footer";
 
 class App extends React.Component {

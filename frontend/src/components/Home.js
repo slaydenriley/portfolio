@@ -10,7 +10,7 @@ const Home = (props) => {
           <h2>Riley Slayden</h2>
           <p>Missoula, MT</p>
           <hr className="line"/>
-          <h3><a target="_blank" href="https://github.com/slaydenriley">GitHub</a> | <a target="_blank" href="https://www.linkedin.com/in/riley-slayden-9a82b8193/">LinkedIn</a></h3>
+          <h3><a target="_blank" rel="noreferrer" href="https://github.com/slaydenriley">GitHub</a> | <a rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/riley-slayden-9a82b8193/">LinkedIn</a></h3>
         </div>
       </div>
 
