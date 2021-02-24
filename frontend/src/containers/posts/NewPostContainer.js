@@ -64,7 +64,7 @@ class NewPostContainer extends React.Component {
     else {
       return (
         <div className="new-post">
-          <div onSubmit={this.handleSubmit.bind(this)} onChange={this.handleChange.bind(this)}>
+          <div onSubmit={this.handleSubmit} onChange={this.handleChange}>
             <NewPost tags={this.props.tags.tags}/>
           </div>
 
