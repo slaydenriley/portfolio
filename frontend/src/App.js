@@ -3,18 +3,12 @@ import NavBar from './components/NavBar.js'
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './components/Home';
 import {connect} from 'react-redux'
-
-//import Posts
 import PostsContainer from './containers/posts/postsContainer';
 import SinglePostContainer from './containers/posts/singlePostContainer';
 import { BlockReserveLoading } from 'react-loadingg';
-
-//import Projects
 import ProjectsContainer from './containers/projects/projectsContainer';
 import SingleProjectContainer from './containers/projects/singleProjectContainer';
-
 import Resume from './components/Resume'
-
 import AccountContainer from './containers/dashboard/accountContainer'
 import LoginContainer from './containers/authorized/loginContainer';
 import SignupContainer from './containers/authorized/signupContainer'
