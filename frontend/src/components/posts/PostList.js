@@ -5,6 +5,7 @@ const PostList = (props) => {
       <div className="posts">
         <h1>Blog Posts</h1>
         <em>These are my technical blog posts</em>
+        <button onClick={props.click}>Filter by name</button>
         <hr className="line"/>
         <div className="all-posts">
         {props.posts.map(post =>
