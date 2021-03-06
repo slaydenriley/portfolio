@@ -11,10 +11,10 @@ class TagsController < ApplicationController
       render json: TagSerializer.new(tags).to_serialized_json
     else
       payload = {
-        error: "Something went wrong. Please try again.",
+        error: 'Something went wrong. Please try again.',
         status: 400
       }
-      render :json => payload, :status => :bad_request
+      render json: payload, status: :bad_request
     end
   end
 
@@ -25,10 +25,10 @@ class TagsController < ApplicationController
       render json: TagSerializer.new(tags).to_serialized_json
     else
       payload = {
-        error: "Something went wrong. Please try again.",
+        error: 'Something went wrong. Please try again.',
         status: 400
       }
-      render :json => payload, :status => :bad_request
+      render json: payload, status: :bad_request
     end
   end
 
@@ -40,5 +40,4 @@ class TagsController < ApplicationController
       :id
     )
   end
-
 end

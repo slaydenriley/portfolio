@@ -8,14 +8,14 @@ class UsersController < ApplicationController
         logged_in: true,
         admin: current_user.admin
       }
-      render :json => payload
+      render json: payload
     else
       payload = {
-        errors: ["Something went wrong. Please try again."],
+        errors: ['Something went wrong. Please try again.'],
         status: 400,
         logged_in: false
       }
-      render :json => payload, :status => :bad_request
+      render json: payload, status: :bad_request
     end
   end
 
@@ -36,10 +36,10 @@ class UsersController < ApplicationController
       render json: UserSerializer.new(users).to_serialized_json
     else
       payload = {
-        error: "Something went wrong. Please try again.",
+        error: 'Something went wrong. Please try again.',
         status: 400
       }
-      render :json => payload, :status => :bad_request
+      render json: payload, status: :bad_request
     end
   end
 
@@ -50,10 +50,10 @@ class UsersController < ApplicationController
       render json: UserSerializer.new(users).to_serialized_json
     else
       payload = {
-        error: "Something went wrong. Please try again.",
+        error: 'Something went wrong. Please try again.',
         status: 400
       }
-      render :json => payload, :status => :bad_request
+      render json: payload, status: :bad_request
     end
   end
 

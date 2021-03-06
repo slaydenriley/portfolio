@@ -10,10 +10,10 @@ class PostsController < ApplicationController
       render json: PostSerializer.new(post).to_serialized_json
     else
       payload = {
-        error: "Something went wrong. Please try again.",
+        error: 'Something went wrong. Please try again.',
         status: 400
       }
-      render :json => payload, :status => :bad_request
+      render json: payload, status: :bad_request
     end
   end
 
@@ -41,25 +41,25 @@ class PostsController < ApplicationController
       render json: PostSerializer.new(post).to_serialized_json
     else
       payload = {
-        error: "Something went wrong. Please try again.",
+        error: 'Something went wrong. Please try again.',
         status: 400
       }
-      render :json => payload, :status => :bad_request
+      render json: payload, status: :bad_request
     end
   end
 
   def destroy
     post = Post.find_by(id: post_params[:id])
-      if post.destroy
-        posts = Post.all
-        render json: PostSerializer.new(posts).to_serialized_json
-      else
-        payload = {
-          error: "Something went wrong. Please try again.",
-          status: 400
-        }
-        render :json => payload, :status => :bad_request
-      end
+    if post.destroy
+      posts = Post.all
+      render json: PostSerializer.new(posts).to_serialized_json
+    else
+      payload = {
+        error: 'Something went wrong. Please try again.',
+        status: 400
+      }
+      render json: payload, status: :bad_request
+    end
   end
 
   private
@@ -72,8 +72,7 @@ class PostsController < ApplicationController
       :category,
       :id,
       :image_link,
-      tags:[]
+      tags: []
     )
   end
-
 end
