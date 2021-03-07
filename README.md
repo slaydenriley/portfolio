@@ -9,6 +9,14 @@
   </p>
 </div>
 
+## Overview
+
+Well, this is finally it. After a year and a half of hacking away at Flatiron’s online self-paced software engineering course, I’ve finished my last project. The crux of the course. A “magnum opus.” The most frustrating, bug-ridden $%#$@#….well, nevermind. I DID IT!
+
+For my final project, I decided to build something that would help kickstart my career in web development. Using a Rails API backend and React + Redux on the frontend, I created my very own portfolio website to showcase my previous work at Flatiron, my blog posts, and my future work as a developer.
+
+That’s right, my portfolio project is a portfolio. 🤯
+
 ## The Backend
 
 On the backend, you'll find Ruby on Rails. This app requires Ruby 3.0.0 and Rails 6. To get this running locally:
