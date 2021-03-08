@@ -46,6 +46,11 @@ On the frontend, you'll find React + Redux.
 * ```npm start```
 * ```open browser to localhost:3000```
 
+## Contact
+👨‍💻 [LinkedIn](https://linkedin.com/in/rileyslayden) <br/>
+‍💻 [Portfolio](https://www.rileyslayden.com) <br/>
+📧 Email: slaydenriley@gmail.com
+
 ## To Read More...
 
 Please visit https://www.rileyslayden.com/posts/3 to read more about this project.
