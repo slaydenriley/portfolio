@@ -1,7 +1,9 @@
+import baseUrl from "../BaseUrl";
+
 export default function deleteUser(id) {
   return (dispatch) => {
     dispatch({ type: "START_DELETING_USER" });
-    fetch(`https://www.api.rileyslayden.com/users`, {
+    fetch(`${baseUrl}/users`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

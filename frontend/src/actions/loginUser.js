@@ -1,7 +1,9 @@
+import baseUrl from "../BaseUrl";
+
 export default function loginUser(formData) {
   return (dispatch) => {
     dispatch({ type: "START_LOGIN" });
-    fetch(`https://www.api.rileyslayden.com/login`, {
+    fetch(`${baseUrl}/login`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

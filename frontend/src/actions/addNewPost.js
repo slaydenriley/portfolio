@@ -1,7 +1,9 @@
+import baseUrl from "../BaseUrl";
+
 export default function addNewPost(formData) {
   return (dispatch) => {
     dispatch({ type: "START_POSTING_POST" });
-    fetch(`https://www.api.rileyslayden.com/posts`, {
+    fetch(`${baseUrl}/posts`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

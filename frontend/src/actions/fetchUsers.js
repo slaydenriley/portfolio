@@ -1,6 +1,8 @@
+import baseUrl from "../BaseUrl";
+
 export default function fetchUsers(action) {
   return (dispatch) => {
-    fetch("https://www.api.rileyslayden.com/users")
+    fetch("${baseUrl}/users")
       .then((resp) => resp.json())
       .then((users) =>
         dispatch({

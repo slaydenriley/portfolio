@@ -1,6 +1,8 @@
+import baseUrl from "../BaseUrl";
+
 export default function logout() {
   return (dispatch) => {
-    fetch(`https://www.api.rileyslayden.com/logout`, {
+    fetch(`${baseUrl}/logout`, {
       method: "POST",
       credentials: "include",
     })

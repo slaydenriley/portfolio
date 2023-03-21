@@ -1,7 +1,9 @@
+import baseUrl from "../BaseUrl";
+
 export default function updateAccount(formData) {
   return (dispatch) => {
     dispatch({ type: "START_UPDATE_ACCOUNT" });
-    fetch(`https://www.api.rileyslayden.com/users/${formData.id}`, {
+    fetch(`${baseUrl}/users/${formData.id}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

@@ -1,7 +1,9 @@
+import baseUrl from "../BaseUrl";
+
 export default function deletePost(post) {
   return (dispatch) => {
     dispatch({ type: "START_DELETING_POST" });
-    fetch(`https://www.api.rileyslayden.com/posts`, {
+    fetch(`${baseUrl}/posts`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

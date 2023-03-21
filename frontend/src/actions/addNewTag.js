@@ -1,7 +1,9 @@
+import baseUrl from "../BaseUrl";
+
 export default function addNewPost(tag) {
   return (dispatch) => {
     dispatch({ type: "START_ADDING_TAG" });
-    fetch(`https://www.api.rileyslayden.com/tags`, {
+    fetch(`${baseUrl}/tags`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
