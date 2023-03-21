@@ -1,6 +1,6 @@
 export default function fetchUsers(action) {
   return (dispatch) => {
-    fetch("${process.env.API_BASE_URL}/users")
+    fetch("https://www.api.rileyslayden.com/users")
       .then((resp) => resp.json())
       .then((users) =>
         dispatch({

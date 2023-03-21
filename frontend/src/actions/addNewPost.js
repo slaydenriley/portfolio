@@ -1,7 +1,7 @@
 export default function addNewPost(formData) {
   return (dispatch) => {
     dispatch({ type: "START_POSTING_POST" });
-    fetch(`${process.env.API_BASE_URL}/posts`, {
+    fetch(`https://www.api.rileyslayden.com/posts`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

@@ -1,7 +1,7 @@
 export default function deleteUser(id) {
   return (dispatch) => {
     dispatch({ type: "START_DELETING_USER" });
-    fetch(`${process.env.API_BASE_URL}/users`, {
+    fetch(`https://www.api.rileyslayden.com/users`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

@@ -1,7 +1,7 @@
 export default function fetchSinglePost(id) {
   return (dispatch) => {
     dispatch({ type: "START_FETCHING_POST" });
-    fetch(`${process.env.API_BASE_URL}/posts/${id}`)
+    fetch(`https://www.api.rileyslayden.com/posts/${id}`)
       .then((resp) => resp.json())
       .then((post) =>
         dispatch({

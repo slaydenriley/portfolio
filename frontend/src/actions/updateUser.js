@@ -1,7 +1,7 @@
 export default function updateUser(formData) {
   return (dispatch) => {
     dispatch({ type: "START_UPDATE_USER" });
-    fetch(`${process.env.API_BASE_URL}/users/${formData.id}`, {
+    fetch(`https://www.api.rileyslayden.com/users/${formData.id}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

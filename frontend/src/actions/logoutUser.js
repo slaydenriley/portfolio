@@ -1,6 +1,6 @@
 export default function logout() {
   return (dispatch) => {
-    fetch(`${process.env.API_BASE_URL}/logout`, {
+    fetch(`https://www.api.rileyslayden.com/logout`, {
       method: "POST",
       credentials: "include",
     })

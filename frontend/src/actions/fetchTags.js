@@ -1,7 +1,7 @@
 export default function fetchTags() {
   return (dispatch) => {
     dispatch({ type: "START_FETCH_TAGS" });
-    fetch("${process.env.API_BASE_URL}/tags")
+    fetch("https://www.api.rileyslayden.com/tags")
       .then((resp) => resp.json())
       .then((tags) =>
         dispatch({

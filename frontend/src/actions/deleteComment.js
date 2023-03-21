@@ -1,7 +1,7 @@
 export default function deleteComment(formData) {
   return (dispatch) => {
     dispatch({ type: "START_FETCHING_POST" });
-    fetch(`${process.env.API_BASE_URL}/comments`, {
+    fetch(`https://www.api.rileyslayden.com/comments`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

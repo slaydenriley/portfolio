@@ -1,7 +1,7 @@
 export default function loginStatus() {
   return (dispatch) => {
     dispatch({ type: "START_LOGIN_STATUS" });
-    fetch("${process.env.API_BASE_URL}/logged_in", {
+    fetch("https://www.api.rileyslayden.com/logged_in", {
       method: "GET",
       credentials: "include",
     })

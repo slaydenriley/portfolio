@@ -1,7 +1,7 @@
 export default function addNewPost(tag) {
   return (dispatch) => {
     dispatch({ type: "START_ADDING_TAG" });
-    fetch(`${process.env.API_BASE_URL}/tags`, {
+    fetch(`https://www.api.rileyslayden.com/tags`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
