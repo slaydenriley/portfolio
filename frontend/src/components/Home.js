@@ -1,17 +1,20 @@
 import React from 'react';
+import { Panel } from 'rsuite';
 import { Link } from 'react-router-dom';
 
 const Home = (props) => {
   return (
     <div className="home">
       <div className="home-left">
-        <img src="https://i.imgur.com/o8oMm9i.jpg" alt="Riley Slayden Headshot"/>
-        <div className="social">
-          <h2>Riley Slayden</h2>
-          <p>Missoula, MT</p>
-          <hr className="line"/>
-          <h3><a target="_blank" rel="noreferrer" href="https://github.com/slaydenriley">GitHub</a> | <a rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/riley-slayden-9a82b8193/">LinkedIn</a></h3>
-        </div>
+        <Panel shaded bordered bodyFill style={{ display: 'inline-block', width: 240 }}>
+          <img src="https://i.imgur.com/o8oMm9i.jpg" height="240" />
+            <Panel header="Riley Slayden">
+              <p>Missoula, MT</p>
+              <hr className="line"/>
+              <h3><a target="_blank" rel="noreferrer" href="https://github.com/slaydenriley">GitHub</a> | <a rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/riley-slayden-9a82b8193/">LinkedIn</a></h3>
+  
+            </Panel>
+        </Panel>
       </div>
 
       <div className="home-right">

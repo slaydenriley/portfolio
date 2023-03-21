@@ -23,7 +23,7 @@ class LoginContainer extends React.Component {
   };
 
   handleLogin = () => {
-    if (this.props.logged_in === false) {
+    if (!this.props.logged_in) {
       return(
         <div onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <Login errors={this.props.errors}/>
@@ -44,7 +44,7 @@ class LoginContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    logged_in: state.account.logged_in,
+    logged_in: state.account.logged_in ?? false,
     errors: state.account.errors
   }
 }

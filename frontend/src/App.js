@@ -21,12 +21,29 @@ import EditSinglePostContainer from './containers/posts/EditSinglePostContainer'
 import ManageUsersContainer from './containers/dashboard/manageUsersContainer'
 import loginStatus from './actions/loginStatus'
 import Footer from "./components/Footer";
+import CookieConsent, {
+  getCookieConsentValue,
+  Cookies,
+} from "react-cookie-consent";
+import { initGA } from "./ga-utils";
 
 class App extends React.Component {
 
   componentDidMount() {
     this.props.loginStatus()
   }
+
+  handleAcceptCookie = () => {
+    if (process.env.REACT_APP_GOOGLE_ANALYTICS_ID) {
+      initGA(process.env.REACT_APP_GOOGLE_ANALYTICS_ID);
+    }
+  };
+
+  handleDeclineCookie = () => {
+    Cookies.remove("_ga");
+    Cookies.remove("_gat");
+    Cookies.remove("_gid");
+};
 
   handleView = () => {
     if (this.props.logged_in) {
@@ -91,16 +108,22 @@ class App extends React.Component {
 
   render() {
     return(
-      <>{this.handleLoading()}</>
+      <>
+        {this.handleLoading()}
+        <CookieConsent enableDeclineButton onAccept={this.handleAcceptCookie} onDecline={this.handleDeclineCookie}>
+          Riley Slayden's portfolio website uses cookies to enhance the user experience.
+        </CookieConsent>
+
+      </>
     )
   }
 };
 
 const mapStateToProps = (state) => {
   return {
-    logged_in: state.account.logged_in,
-    admin: state.account.admin,
-    requesting: state.account.requesting
+    logged_in: state.account.logged_in ?? false,
+    admin: state.account.admin ?? false,
+    requesting: state.account.requesting ?? false
   }
 }
 
