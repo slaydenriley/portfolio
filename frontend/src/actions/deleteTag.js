@@ -1,19 +1,21 @@
 export default function deleteTag(tag) {
-    return (dispatch) => {
-        dispatch({ type: 'START_DELETING_TAG' });
-        fetch(`http://localhost:3001/tags`, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            method: 'DELETE',
-            credentials: 'include',
-            body: JSON.stringify(tag)
+  return (dispatch) => {
+    dispatch({ type: "START_DELETING_TAG" });
+    fetch(`${process.env.API_BASE_URL}/tags`, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      method: "DELETE",
+      credentials: "include",
+      body: JSON.stringify(tag),
+    })
+      .then((res) => res.json())
+      .then((res) =>
+        dispatch({
+          type: "FETCH_TAGS",
+          payload: res,
         })
-        .then(res => res.json())
-        .then(res => dispatch({
-          type: 'FETCH_TAGS',
-          payload: res
-        }))
-    }
+      );
+  };
 }
