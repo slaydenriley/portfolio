@@ -5,7 +5,7 @@
 <hr/>
 <p>
   Explore:
-  <a href="https://www.youtube.com/watch?v=6UhS9__NFjQ&t=3s&ab_channel=RileySlayden">VIDEO DEMO</a> | <a href="https://www.rileyslayden.com">LIVE SITE</a>
+  <a href="https://www.youtube.com/watch?v=6UhS9__NFjQ&t=3s&ab_channel=RileySlayden">VIDEO DEMO</a>
   </p>
 </div>
 
